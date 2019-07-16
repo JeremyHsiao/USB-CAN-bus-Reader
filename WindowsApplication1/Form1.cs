@@ -326,7 +326,7 @@ namespace WindowsApplication1
 
                 switch(ID)
                 {
-                    case 0x1:
+                    case 0x1:       // CMD_A
                         if ( DLC == 1 )
                         {
                             Byte status = DATA[0];
@@ -345,7 +345,7 @@ namespace WindowsApplication1
                         }
                         break;
 
-                    case 0x2:
+                    case 0x2:       // CMD_B
                         if (DLC == 5)
                         {
                             // Speed
@@ -376,6 +376,28 @@ namespace WindowsApplication1
                                 Consumption /= 10;
                                 Value_FuelConsumption.Text = Consumption.ToString() + " km/L";
                             }
+                        }
+                        else
+                        {
+                            // Error
+                        }
+                        break;
+
+                    case 0x4:       // CMD_D
+                        if (DLC == 5)
+                        {
+                            // Mileage
+                            uint Mileage = (((uint)DATA[0])*0x10000) + (((uint)DATA[1]) * 0x100) + DATA[2];
+                            Value_TotalMileage.Text = Mileage.ToString() + " km";
+
+                            // Max Speed
+                            uint MaxSpeed = DATA[3];
+                            Value_MaxSpeed.Text = ((MaxSpeed!=0xff)?(MaxSpeed.ToString()):("--")) + " km/h";
+
+                            // Average Speed
+                            uint AveSpeed = DATA[4];
+                            AveSpeed = DATA[4];
+                            Value_AveSpeed.Text = ((AveSpeed != 0xff) ? (AveSpeed.ToString()) : ("--")) + " km/h";
                         }
                         else
                         {

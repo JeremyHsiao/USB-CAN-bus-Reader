@@ -81,6 +81,12 @@
             this.Label_EngineRPM = new System.Windows.Forms.Label();
             this.Value_FuelConsumption = new System.Windows.Forms.TextBox();
             this.Label_FuelConsumption = new System.Windows.Forms.Label();
+            this.Value_AveSpeed = new System.Windows.Forms.TextBox();
+            this.Label_AveSpeed = new System.Windows.Forms.Label();
+            this.Value_MaxSpeed = new System.Windows.Forms.TextBox();
+            this.Label_MaxSpeed = new System.Windows.Forms.Label();
+            this.Value_TotalMileage = new System.Windows.Forms.TextBox();
+            this.Label_TotalMileage = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -506,10 +512,16 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.Value_AveSpeed);
             this.groupBox5.Controls.Add(this.Value_FuelConsumption);
+            this.groupBox5.Controls.Add(this.Label_AveSpeed);
             this.groupBox5.Controls.Add(this.Label_FuelConsumption);
+            this.groupBox5.Controls.Add(this.Value_MaxSpeed);
+            this.groupBox5.Controls.Add(this.Label_MaxSpeed);
             this.groupBox5.Controls.Add(this.Value_EngineRPM);
+            this.groupBox5.Controls.Add(this.Value_TotalMileage);
             this.groupBox5.Controls.Add(this.Label_EngineRPM);
+            this.groupBox5.Controls.Add(this.Label_TotalMileage);
             this.groupBox5.Controls.Add(this.Value_Speed);
             this.groupBox5.Controls.Add(this.Label_Speed);
             this.groupBox5.Controls.Add(this.Status_RearTirePressure);
@@ -626,7 +638,7 @@
             // Label_Speed
             // 
             this.Label_Speed.AutoSize = true;
-            this.Label_Speed.Location = new System.Drawing.Point(187, 24);
+            this.Label_Speed.Location = new System.Drawing.Point(168, 26);
             this.Label_Speed.Name = "Label_Speed";
             this.Label_Speed.Size = new System.Drawing.Size(84, 15);
             this.Label_Speed.TabIndex = 8;
@@ -634,7 +646,7 @@
             // 
             // Value_Speed
             // 
-            this.Value_Speed.Location = new System.Drawing.Point(317, 21);
+            this.Value_Speed.Location = new System.Drawing.Point(298, 23);
             this.Value_Speed.Name = "Value_Speed";
             this.Value_Speed.ReadOnly = true;
             this.Value_Speed.Size = new System.Drawing.Size(93, 25);
@@ -644,7 +656,7 @@
             // 
             // Value_EngineRPM
             // 
-            this.Value_EngineRPM.Location = new System.Drawing.Point(317, 69);
+            this.Value_EngineRPM.Location = new System.Drawing.Point(298, 60);
             this.Value_EngineRPM.Name = "Value_EngineRPM";
             this.Value_EngineRPM.ReadOnly = true;
             this.Value_EngineRPM.Size = new System.Drawing.Size(93, 25);
@@ -655,7 +667,7 @@
             // Label_EngineRPM
             // 
             this.Label_EngineRPM.AutoSize = true;
-            this.Label_EngineRPM.Location = new System.Drawing.Point(187, 72);
+            this.Label_EngineRPM.Location = new System.Drawing.Point(168, 63);
             this.Label_EngineRPM.Name = "Label_EngineRPM";
             this.Label_EngineRPM.Size = new System.Drawing.Size(90, 15);
             this.Label_EngineRPM.TabIndex = 10;
@@ -663,7 +675,7 @@
             // 
             // Value_FuelConsumption
             // 
-            this.Value_FuelConsumption.Location = new System.Drawing.Point(317, 119);
+            this.Value_FuelConsumption.Location = new System.Drawing.Point(298, 97);
             this.Value_FuelConsumption.Name = "Value_FuelConsumption";
             this.Value_FuelConsumption.ReadOnly = true;
             this.Value_FuelConsumption.Size = new System.Drawing.Size(93, 25);
@@ -674,11 +686,68 @@
             // Label_FuelConsumption
             // 
             this.Label_FuelConsumption.AutoSize = true;
-            this.Label_FuelConsumption.Location = new System.Drawing.Point(187, 122);
+            this.Label_FuelConsumption.Location = new System.Drawing.Point(168, 100);
             this.Label_FuelConsumption.Name = "Label_FuelConsumption";
             this.Label_FuelConsumption.Size = new System.Drawing.Size(117, 15);
             this.Label_FuelConsumption.TabIndex = 12;
             this.Label_FuelConsumption.Text = "Consumption km/L";
+            // 
+            // Value_AveSpeed
+            // 
+            this.Value_AveSpeed.Location = new System.Drawing.Point(557, 97);
+            this.Value_AveSpeed.Name = "Value_AveSpeed";
+            this.Value_AveSpeed.ReadOnly = true;
+            this.Value_AveSpeed.Size = new System.Drawing.Size(93, 25);
+            this.Value_AveSpeed.TabIndex = 19;
+            this.Value_AveSpeed.Text = "0";
+            this.Value_AveSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_AveSpeed
+            // 
+            this.Label_AveSpeed.AutoSize = true;
+            this.Label_AveSpeed.Location = new System.Drawing.Point(427, 100);
+            this.Label_AveSpeed.Name = "Label_AveSpeed";
+            this.Label_AveSpeed.Size = new System.Drawing.Size(92, 15);
+            this.Label_AveSpeed.TabIndex = 18;
+            this.Label_AveSpeed.Text = "Average Speed";
+            // 
+            // Value_MaxSpeed
+            // 
+            this.Value_MaxSpeed.Location = new System.Drawing.Point(557, 60);
+            this.Value_MaxSpeed.Name = "Value_MaxSpeed";
+            this.Value_MaxSpeed.ReadOnly = true;
+            this.Value_MaxSpeed.Size = new System.Drawing.Size(93, 25);
+            this.Value_MaxSpeed.TabIndex = 17;
+            this.Value_MaxSpeed.Text = "0";
+            this.Value_MaxSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_MaxSpeed
+            // 
+            this.Label_MaxSpeed.AutoSize = true;
+            this.Label_MaxSpeed.Location = new System.Drawing.Point(427, 63);
+            this.Label_MaxSpeed.Name = "Label_MaxSpeed";
+            this.Label_MaxSpeed.Size = new System.Drawing.Size(71, 15);
+            this.Label_MaxSpeed.TabIndex = 16;
+            this.Label_MaxSpeed.Text = "Max Speed";
+            // 
+            // Value_TotalMileage
+            // 
+            this.Value_TotalMileage.Location = new System.Drawing.Point(557, 23);
+            this.Value_TotalMileage.Name = "Value_TotalMileage";
+            this.Value_TotalMileage.ReadOnly = true;
+            this.Value_TotalMileage.Size = new System.Drawing.Size(93, 25);
+            this.Value_TotalMileage.TabIndex = 15;
+            this.Value_TotalMileage.Text = "0";
+            this.Value_TotalMileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_TotalMileage
+            // 
+            this.Label_TotalMileage.AutoSize = true;
+            this.Label_TotalMileage.Location = new System.Drawing.Point(427, 26);
+            this.Label_TotalMileage.Name = "Label_TotalMileage";
+            this.Label_TotalMileage.Size = new System.Drawing.Size(47, 15);
+            this.Label_TotalMileage.TabIndex = 14;
+            this.Label_TotalMileage.Text = "Milage";
             // 
             // Form1
             // 
@@ -765,6 +834,12 @@
         private System.Windows.Forms.Label Label_EngineRPM;
         private System.Windows.Forms.TextBox Value_Speed;
         private System.Windows.Forms.Label Label_Speed;
+        private System.Windows.Forms.TextBox Value_AveSpeed;
+        private System.Windows.Forms.Label Label_AveSpeed;
+        private System.Windows.Forms.TextBox Value_MaxSpeed;
+        private System.Windows.Forms.Label Label_MaxSpeed;
+        private System.Windows.Forms.TextBox Value_TotalMileage;
+        private System.Windows.Forms.Label Label_TotalMileage;
     }
 }
 
