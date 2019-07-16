@@ -157,7 +157,7 @@ namespace WindowsApplication1
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox_DevIndex.SelectedIndex = 0;
-            comboBox_CANIndex.SelectedIndex = 0;
+            comboBox_CANIndex.SelectedIndex = 1;
             textBox_AccCode.Text = "80000000";
             textBox_AccMask.Text = "FFFFFFFF";
             textBox_Time0.Text = "00";
@@ -166,8 +166,8 @@ namespace WindowsApplication1
             comboBox_Mode.SelectedIndex = 0;                //还回测试模式
             comboBox_FrameFormat.SelectedIndex = 0;
             comboBox_FrameType.SelectedIndex = 0;
-            textBox_ID.Text = "00000123";
-            textBox_Data.Text = "00 01 02 03 04 05 06 07 ";
+            textBox_ID.Text = "00000001";
+            textBox_Data.Text = "00 00 00 00 00 00 00 00 ";
 
             //
             Int32 curindex = 0;
