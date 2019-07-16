@@ -247,6 +247,9 @@ namespace WindowsApplication1
             //res = VCI_Receive(m_devtype, m_devind, m_canind, pt, 50/*50*/, 100);
             ////////////////////////////////////////////////////////
 
+            uint ID=0, DLC=0;
+            byte[] DATA = new byte[8];
+
             String str = "";
             for (UInt32 i = 0; i < res; i++)
             {
@@ -254,6 +257,7 @@ namespace WindowsApplication1
 
                 str = "接收到数据: ";
                 str += "  帧ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16);
+                ID = m_recobj[i].ID;
                 str += "  帧格式:";
                 if (m_recobj[i].RemoteFlag == 0)
                     str += "数据帧 ";
@@ -270,29 +274,119 @@ namespace WindowsApplication1
                     str += "数据: ";
                     byte len = (byte)(m_recobj[i].DataLen % 9);
                     byte j = 0;
+                    DLC = len;
+
                     fixed (VCI_CAN_OBJ* m_recobj1 = &m_recobj[i])
                     {
                         if (j++ < len)
+                        {
                             str += " " + System.Convert.ToString(m_recobj1->Data[0], 16);
+                            DATA[0] = m_recobj1->Data[0];
+                        }
                         if (j++ < len)
+                        {
                             str += " " + System.Convert.ToString(m_recobj1->Data[1], 16);
+                            DATA[1] = m_recobj1->Data[1];
+                        }
                         if (j++ < len)
+                        {
                             str += " " + System.Convert.ToString(m_recobj1->Data[2], 16);
+                            DATA[2] = m_recobj1->Data[2];
+                        }
                         if (j++ < len)
+                        {
                             str += " " + System.Convert.ToString(m_recobj1->Data[3], 16);
-                        if (j++ < len)
+                            DATA[3] = m_recobj1->Data[3];
+                        }
+                       if (j++ < len)
+                        {
                             str += " " + System.Convert.ToString(m_recobj1->Data[4], 16);
+                            DATA[4] = m_recobj1->Data[4];
+                        }
                         if (j++ < len)
+                        {
                             str += " " + System.Convert.ToString(m_recobj1->Data[5], 16);
+                            DATA[5] = m_recobj1->Data[5];
+                        }
                         if (j++ < len)
+                        {
                             str += " " + System.Convert.ToString(m_recobj1->Data[6], 16);
+                            DATA[6] = m_recobj1->Data[6];
+                        }
                         if (j++ < len)
+                        {
                             str += " " + System.Convert.ToString(m_recobj1->Data[7], 16);
+                            DATA[7] = m_recobj1->Data[7];
+                        }
                     }
                 }
 
                 listBox_Info.Items.Add(str);
                 listBox_Info.SelectedIndex = listBox_Info.Items.Count - 1;
+
+                switch(ID)
+                {
+                    case 0x1:
+                        if ( DLC == 1 )
+                        {
+                            Byte status = DATA[0];
+                            Status_OnOff.Checked             = ((status & 0x01) != 0) ? true : false;
+                            Status_EngineOil.Checked         = ((status & 0x02) != 0) ? true : false;
+                            Status_Fuel.Checked              = ((status & 0x04) != 0) ? true : false;
+                            Status_ABS.Checked               = ((status & 0x08) != 0) ? true : false;
+                            Status_WaterTemp.Checked         = ((status & 0x10) != 0) ? true : false;
+                            Status_Maintenance.Checked       = ((status & 0x20) != 0) ? true : false;
+                            Status_FrontTirePressure.Checked = ((status & 0x40) != 0) ? true : false;
+                            Status_RearTirePressure.Checked  = ((status & 0x80) != 0) ? true : false;
+                        }
+                        else
+                        {
+                            // Error
+                        }
+                        break;
+
+                    case 0x2:
+                        if (DLC == 5)
+                        {
+                            // Speed
+                            uint Speed = DATA[0];
+                            if (Speed<=255)  // 180?
+                            {
+                                Value_Speed.Text = Speed.ToString() + " km/h";
+                            }
+                            else
+                            {
+                                // Out of range
+                            }
+
+                            // RPM
+                            uint RPM = DATA[1];
+                            RPM = RPM * 256 + DATA[2];
+                            Value_EngineRPM.Text = RPM.ToString() + " RPM"; ;
+
+                            // Consumption
+                            uint Consumption = DATA[3];
+                            Consumption = Consumption * 256 + DATA[4];
+                            if ((Consumption == 0xfffe) || (Speed < 9))
+                            {
+                                Value_Speed.Text = "--.-km/L";
+                            }
+                            else
+                            {
+                                Consumption /= 10;
+                                Value_FuelConsumption.Text = Consumption.ToString() + " km/L";
+                            }
+                        }
+                        else
+                        {
+                            // Error
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+
             }
             //Marshal.FreeHGlobal(ptArray[0]);
             //Marshal.FreeHGlobal(pt);

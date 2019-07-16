@@ -66,10 +66,26 @@
             this.listBox_Info = new System.Windows.Forms.ListBox();
             this.timer_rec = new System.Windows.Forms.Timer(this.components);
             this.button_Clear = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Status_OnOff = new System.Windows.Forms.RadioButton();
+            this.Status_EngineOil = new System.Windows.Forms.RadioButton();
+            this.Status_Fuel = new System.Windows.Forms.RadioButton();
+            this.Status_ABS = new System.Windows.Forms.RadioButton();
+            this.Status_WaterTemp = new System.Windows.Forms.RadioButton();
+            this.Status_Maintenance = new System.Windows.Forms.RadioButton();
+            this.Status_FrontTirePressure = new System.Windows.Forms.RadioButton();
+            this.Status_RearTirePressure = new System.Windows.Forms.RadioButton();
+            this.Label_Speed = new System.Windows.Forms.Label();
+            this.Value_Speed = new System.Windows.Forms.TextBox();
+            this.Value_EngineRPM = new System.Windows.Forms.TextBox();
+            this.Label_EngineRPM = new System.Windows.Forms.Label();
+            this.Value_FuelConsumption = new System.Windows.Forms.TextBox();
+            this.Label_FuelConsumption = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -458,7 +474,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(707, 258);
+            this.groupBox4.Size = new System.Drawing.Size(707, 160);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "信息";
@@ -470,7 +486,7 @@
             this.listBox_Info.Location = new System.Drawing.Point(13, 25);
             this.listBox_Info.Margin = new System.Windows.Forms.Padding(4);
             this.listBox_Info.Name = "listBox_Info";
-            this.listBox_Info.Size = new System.Drawing.Size(679, 214);
+            this.listBox_Info.Size = new System.Drawing.Size(679, 124);
             this.listBox_Info.TabIndex = 0;
             // 
             // timer_rec
@@ -488,11 +504,188 @@
             this.button_Clear.UseVisualStyleBackColor = true;
             this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.Value_FuelConsumption);
+            this.groupBox5.Controls.Add(this.Label_FuelConsumption);
+            this.groupBox5.Controls.Add(this.Value_EngineRPM);
+            this.groupBox5.Controls.Add(this.Label_EngineRPM);
+            this.groupBox5.Controls.Add(this.Value_Speed);
+            this.groupBox5.Controls.Add(this.Label_Speed);
+            this.groupBox5.Controls.Add(this.Status_RearTirePressure);
+            this.groupBox5.Controls.Add(this.Status_FrontTirePressure);
+            this.groupBox5.Controls.Add(this.Status_Maintenance);
+            this.groupBox5.Controls.Add(this.Status_WaterTemp);
+            this.groupBox5.Controls.Add(this.Status_ABS);
+            this.groupBox5.Controls.Add(this.Status_Fuel);
+            this.groupBox5.Controls.Add(this.Status_EngineOil);
+            this.groupBox5.Controls.Add(this.Status_OnOff);
+            this.groupBox5.Location = new System.Drawing.Point(16, 471);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(707, 230);
+            this.groupBox5.TabIndex = 9;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "CAN Data Visualizer";
+            // 
+            // Status_OnOff
+            // 
+            this.Status_OnOff.AutoCheck = false;
+            this.Status_OnOff.AutoSize = true;
+            this.Status_OnOff.Location = new System.Drawing.Point(13, 24);
+            this.Status_OnOff.Name = "Status_OnOff";
+            this.Status_OnOff.Size = new System.Drawing.Size(103, 19);
+            this.Status_OnOff.TabIndex = 0;
+            this.Status_OnOff.TabStop = true;
+            this.Status_OnOff.Text = "開機指示燈";
+            this.Status_OnOff.UseVisualStyleBackColor = true;
+            // 
+            // Status_EngineOil
+            // 
+            this.Status_EngineOil.AutoCheck = false;
+            this.Status_EngineOil.AutoSize = true;
+            this.Status_EngineOil.Location = new System.Drawing.Point(13, 49);
+            this.Status_EngineOil.Name = "Status_EngineOil";
+            this.Status_EngineOil.Size = new System.Drawing.Size(133, 19);
+            this.Status_EngineOil.TabIndex = 1;
+            this.Status_EngineOil.TabStop = true;
+            this.Status_EngineOil.Text = "機油壓力指示燈";
+            this.Status_EngineOil.UseVisualStyleBackColor = true;
+            // 
+            // Status_Fuel
+            // 
+            this.Status_Fuel.AutoCheck = false;
+            this.Status_Fuel.AutoSize = true;
+            this.Status_Fuel.Location = new System.Drawing.Point(13, 75);
+            this.Status_Fuel.Name = "Status_Fuel";
+            this.Status_Fuel.Size = new System.Drawing.Size(73, 19);
+            this.Status_Fuel.TabIndex = 2;
+            this.Status_Fuel.TabStop = true;
+            this.Status_Fuel.Text = "燃油燈";
+            this.Status_Fuel.UseVisualStyleBackColor = true;
+            // 
+            // Status_ABS
+            // 
+            this.Status_ABS.AutoCheck = false;
+            this.Status_ABS.AutoSize = true;
+            this.Status_ABS.Location = new System.Drawing.Point(13, 100);
+            this.Status_ABS.Name = "Status_ABS";
+            this.Status_ABS.Size = new System.Drawing.Size(100, 19);
+            this.Status_ABS.TabIndex = 3;
+            this.Status_ABS.TabStop = true;
+            this.Status_ABS.Text = "ABS故障燈";
+            this.Status_ABS.UseVisualStyleBackColor = true;
+            // 
+            // Status_WaterTemp
+            // 
+            this.Status_WaterTemp.AutoCheck = false;
+            this.Status_WaterTemp.AutoSize = true;
+            this.Status_WaterTemp.Location = new System.Drawing.Point(13, 125);
+            this.Status_WaterTemp.Name = "Status_WaterTemp";
+            this.Status_WaterTemp.Size = new System.Drawing.Size(73, 19);
+            this.Status_WaterTemp.TabIndex = 4;
+            this.Status_WaterTemp.TabStop = true;
+            this.Status_WaterTemp.Text = "水溫燈";
+            this.Status_WaterTemp.UseVisualStyleBackColor = true;
+            // 
+            // Status_Maintenance
+            // 
+            this.Status_Maintenance.AutoCheck = false;
+            this.Status_Maintenance.AutoSize = true;
+            this.Status_Maintenance.Location = new System.Drawing.Point(13, 150);
+            this.Status_Maintenance.Name = "Status_Maintenance";
+            this.Status_Maintenance.Size = new System.Drawing.Size(133, 19);
+            this.Status_Maintenance.TabIndex = 5;
+            this.Status_Maintenance.TabStop = true;
+            this.Status_Maintenance.Text = "保養提示指示燈";
+            this.Status_Maintenance.UseVisualStyleBackColor = true;
+            // 
+            // Status_FrontTirePressure
+            // 
+            this.Status_FrontTirePressure.AutoCheck = false;
+            this.Status_FrontTirePressure.AutoSize = true;
+            this.Status_FrontTirePressure.Location = new System.Drawing.Point(13, 175);
+            this.Status_FrontTirePressure.Name = "Status_FrontTirePressure";
+            this.Status_FrontTirePressure.Size = new System.Drawing.Size(148, 19);
+            this.Status_FrontTirePressure.TabIndex = 6;
+            this.Status_FrontTirePressure.TabStop = true;
+            this.Status_FrontTirePressure.Text = "前輪胎胎壓指示燈";
+            this.Status_FrontTirePressure.UseVisualStyleBackColor = true;
+            // 
+            // Status_RearTirePressure
+            // 
+            this.Status_RearTirePressure.AutoCheck = false;
+            this.Status_RearTirePressure.AutoSize = true;
+            this.Status_RearTirePressure.Location = new System.Drawing.Point(13, 200);
+            this.Status_RearTirePressure.Name = "Status_RearTirePressure";
+            this.Status_RearTirePressure.Size = new System.Drawing.Size(148, 19);
+            this.Status_RearTirePressure.TabIndex = 7;
+            this.Status_RearTirePressure.TabStop = true;
+            this.Status_RearTirePressure.Text = "後輪胎胎壓指示燈";
+            this.Status_RearTirePressure.UseVisualStyleBackColor = true;
+            // 
+            // Label_Speed
+            // 
+            this.Label_Speed.AutoSize = true;
+            this.Label_Speed.Location = new System.Drawing.Point(187, 24);
+            this.Label_Speed.Name = "Label_Speed";
+            this.Label_Speed.Size = new System.Drawing.Size(84, 15);
+            this.Label_Speed.TabIndex = 8;
+            this.Label_Speed.Text = "Speed (km/h)";
+            // 
+            // Value_Speed
+            // 
+            this.Value_Speed.Location = new System.Drawing.Point(317, 21);
+            this.Value_Speed.Name = "Value_Speed";
+            this.Value_Speed.ReadOnly = true;
+            this.Value_Speed.Size = new System.Drawing.Size(93, 25);
+            this.Value_Speed.TabIndex = 9;
+            this.Value_Speed.Text = "0";
+            this.Value_Speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Value_EngineRPM
+            // 
+            this.Value_EngineRPM.Location = new System.Drawing.Point(317, 69);
+            this.Value_EngineRPM.Name = "Value_EngineRPM";
+            this.Value_EngineRPM.ReadOnly = true;
+            this.Value_EngineRPM.Size = new System.Drawing.Size(93, 25);
+            this.Value_EngineRPM.TabIndex = 11;
+            this.Value_EngineRPM.Text = "0";
+            this.Value_EngineRPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_EngineRPM
+            // 
+            this.Label_EngineRPM.AutoSize = true;
+            this.Label_EngineRPM.Location = new System.Drawing.Point(187, 72);
+            this.Label_EngineRPM.Name = "Label_EngineRPM";
+            this.Label_EngineRPM.Size = new System.Drawing.Size(90, 15);
+            this.Label_EngineRPM.TabIndex = 10;
+            this.Label_EngineRPM.Text = "Engine - RPM";
+            // 
+            // Value_FuelConsumption
+            // 
+            this.Value_FuelConsumption.Location = new System.Drawing.Point(317, 119);
+            this.Value_FuelConsumption.Name = "Value_FuelConsumption";
+            this.Value_FuelConsumption.ReadOnly = true;
+            this.Value_FuelConsumption.Size = new System.Drawing.Size(93, 25);
+            this.Value_FuelConsumption.TabIndex = 13;
+            this.Value_FuelConsumption.Text = "0";
+            this.Value_FuelConsumption.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_FuelConsumption
+            // 
+            this.Label_FuelConsumption.AutoSize = true;
+            this.Label_FuelConsumption.Location = new System.Drawing.Point(187, 122);
+            this.Label_FuelConsumption.Name = "Label_FuelConsumption";
+            this.Label_FuelConsumption.Size = new System.Drawing.Size(117, 15);
+            this.Label_FuelConsumption.TabIndex = 12;
+            this.Label_FuelConsumption.Text = "Consumption km/L";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 576);
+            this.ClientSize = new System.Drawing.Size(741, 708);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonConnect);
@@ -512,6 +705,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -555,6 +750,21 @@
         private System.Windows.Forms.ComboBox comboBox_devtype;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button_Clear;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton Status_RearTirePressure;
+        private System.Windows.Forms.RadioButton Status_FrontTirePressure;
+        private System.Windows.Forms.RadioButton Status_Maintenance;
+        private System.Windows.Forms.RadioButton Status_WaterTemp;
+        private System.Windows.Forms.RadioButton Status_ABS;
+        private System.Windows.Forms.RadioButton Status_Fuel;
+        private System.Windows.Forms.RadioButton Status_EngineOil;
+        private System.Windows.Forms.RadioButton Status_OnOff;
+        private System.Windows.Forms.TextBox Value_FuelConsumption;
+        private System.Windows.Forms.Label Label_FuelConsumption;
+        private System.Windows.Forms.TextBox Value_EngineRPM;
+        private System.Windows.Forms.Label Label_EngineRPM;
+        private System.Windows.Forms.TextBox Value_Speed;
+        private System.Windows.Forms.Label Label_Speed;
     }
 }
 
