@@ -341,7 +341,7 @@ namespace WindowsApplication1
                         }
                         else
                         {
-                            // Error
+                            // Error DLC
                         }
                         break;
 
@@ -373,13 +373,72 @@ namespace WindowsApplication1
                             }
                             else
                             {
-                                Consumption /= 10;
-                                Value_FuelConsumption.Text = Consumption.ToString() + " km/L";
+                                float f_Consumption = ((float)Consumption) / 10;
+                                Value_FuelConsumption.Text = f_Consumption.ToString() + " km/L";
                             }
                         }
                         else
                         {
-                            // Error
+                            // Error DLC
+                        }
+                        break;
+
+                    case 0x3:       // CMD_C
+                        if (DLC == 5)
+                        {
+                            // Water Temp
+                            uint WaterTemp = DATA[0];
+                            if (WaterTemp <= 8)  
+                            {
+                                Value_WaterTemp.Text = WaterTemp.ToString();
+                            }
+                            else
+                            {
+                                // Out of range
+                            }
+
+                            // Room Temperature
+                            uint Temp_Sign_Value = DATA[1];
+                            uint Room_Temp = DATA[2];
+                            if ((DATA[1] == 0xFF) && (DATA[2] == 0xFE))
+                            {
+                                Value_RoomTemp.Text = "-- C";
+                            }
+                            else if (Temp_Sign_Value == 0)
+                            {
+                                Value_RoomTemp.Text = "+" + Room_Temp.ToString() + " C";
+                            }
+                            else if (Temp_Sign_Value == 1)
+                            {
+                                Value_RoomTemp.Text = "-" + Room_Temp.ToString() + " C";
+                            }
+                            else
+                            {
+                                // Error data of Temp_Sign
+                            }
+
+                            // Fuel
+                            uint Fuel = DATA[3];
+                            if (Fuel <= 160)
+                            {
+                                float f_Fuel;
+                                f_Fuel = ((float)Fuel) / 10;
+                                Value_Fuel.Text = f_Fuel.ToString() + "L";
+                            }
+                            else
+                            {
+                                // Error data of Fuel
+                            }
+
+                            // Battery
+                            uint Battery = DATA[4];
+                            float f_Battery;
+                            f_Battery = ((float)Battery) / 10;
+                            Value_Battery.Text = f_Battery.ToString() + "V";
+                        }
+                        else
+                        {
+                            // Error DLC
                         }
                         break;
 
@@ -401,10 +460,102 @@ namespace WindowsApplication1
                         }
                         else
                         {
-                            // Error
+                            // Error DLC
                         }
                         break;
 
+                    case 0x5:       // CMD_E
+                        if (DLC == 2)
+                        {
+                            Byte status = DATA[0];
+                            ABS_0x5055.Checked = ((status & 0x01) != 0) ? true : false;
+                            ABS_0x5019.Checked = ((status & 0x02) != 0) ? true : false;
+                            ABS_0x5017.Checked = ((status & 0x04) != 0) ? true : false;
+                            ABS_0x5013.Checked = ((status & 0x08) != 0) ? true : false;
+                            ABS_0x5018.Checked = ((status & 0x10) != 0) ? true : false;
+                            ABS_0x5014.Checked = ((status & 0x20) != 0) ? true : false;
+                            ABS_0x5053.Checked = ((status & 0x40) != 0) ? true : false;
+                            ABS_0x5052.Checked = ((status & 0x80) != 0) ? true : false;
+                            status = DATA[1];
+                            ABS_0x5035.Checked = ((status & 0x01) != 0) ? true : false;
+                            ABS_0x5043.Checked = ((status & 0x02) != 0) ? true : false;
+                            ABS_0x5045.Checked = ((status & 0x04) != 0) ? true : false;
+                            ABS_0x5042.Checked = ((status & 0x08) != 0) ? true : false;
+                            ABS_0x5044.Checked = ((status & 0x10) != 0) ? true : false;
+                            ABS_0x5025.Checked = ((status & 0x20) != 0) ? true : false;
+                        }
+                        else
+                        {
+                            // Error DLC
+                        }
+                        break;
+
+                    case 0x6:       // CMD_F
+                        if (DLC == 7)
+                        {
+                            Byte status = DATA[0];
+                            OBD_P0503.Checked = ((status & 0x01) != 0) ? true : false;
+                            OBD_C0083.Checked = ((status & 0x02) != 0) ? true : false;
+                            OBD_C0085.Checked = ((status & 0x04) != 0) ? true : false;
+                            OBD_P0105.Checked = ((status & 0x08) != 0) ? true : false;
+                            OBD_P0110.Checked = ((status & 0x10) != 0) ? true : false;
+                            OBD_P0115.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P0120.Checked = ((status & 0x40) != 0) ? true : false;
+                            OBD_P0130.Checked = ((status & 0x80) != 0) ? true : false;
+                            status = DATA[1];
+                            OBD_P0135.Checked = ((status & 0x01) != 0) ? true : false;
+                            OBD_P0150.Checked = ((status & 0x02) != 0) ? true : false;
+                            OBD_P0155.Checked = ((status & 0x04) != 0) ? true : false;
+                            OBD_P0201.Checked = ((status & 0x08) != 0) ? true : false;
+                            OBD_P0202.Checked = ((status & 0x10) != 0) ? true : false;
+                            OBD_P0217.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P0230.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P0335.Checked = ((status & 0x20) != 0) ? true : false;
+                            status = DATA[2];
+                            OBD_P0336.Checked = ((status & 0x01) != 0) ? true : false;
+                            OBD_P0351.Checked = ((status & 0x02) != 0) ? true : false;
+                            OBD_P0352.Checked = ((status & 0x04) != 0) ? true : false;
+                            OBD_P0410.Checked = ((status & 0x08) != 0) ? true : false;
+                            OBD_P0480.Checked = ((status & 0x10) != 0) ? true : false;
+                            OBD_P0500.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P0501.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P0505.Checked = ((status & 0x20) != 0) ? true : false;
+                            status = DATA[3];
+                            OBD_P0512.Checked = ((status & 0x01) != 0) ? true : false;
+                            OBD_P0560.Checked = ((status & 0x02) != 0) ? true : false;
+                            OBD_P0601.Checked = ((status & 0x04) != 0) ? true : false;
+                            OBD_P0604.Checked = ((status & 0x08) != 0) ? true : false;
+                            OBD_P0605.Checked = ((status & 0x10) != 0) ? true : false;
+                            OBD_P0606.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P0620_PIN2.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P0620_PIN31.Checked = ((status & 0x20) != 0) ? true : false;
+                            status = DATA[4];
+                            OBD_P0650.Checked = ((status & 0x01) != 0) ? true : false;
+                            OBD_P0655.Checked = ((status & 0x02) != 0) ? true : false;
+                            OBD_P0A0F.Checked = ((status & 0x04) != 0) ? true : false;
+                            OBD_P1300.Checked = ((status & 0x08) != 0) ? true : false;
+                            OBD_P1310.Checked = ((status & 0x10) != 0) ? true : false;
+                            OBD_P1536.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P1607.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_P1800.Checked = ((status & 0x20) != 0) ? true : false;
+                            status = DATA[5];
+                            OBD_P2158.Checked = ((status & 0x01) != 0) ? true : false;
+                            OBD_P2600.Checked = ((status & 0x02) != 0) ? true : false;
+                            OBD_U0001.Checked = ((status & 0x04) != 0) ? true : false;
+                            OBD_U0002.Checked = ((status & 0x08) != 0) ? true : false;
+                            OBD_U0121.Checked = ((status & 0x10) != 0) ? true : false;
+                            OBD_U0122.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_U0128.Checked = ((status & 0x20) != 0) ? true : false;
+                            OBD_U0140.Checked = ((status & 0x20) != 0) ? true : false;
+                            status = DATA[6];
+                            OBD_U0426.Checked = ((status & 0x01) != 0) ? true : false;
+                            OBD_U0486.Checked = ((status & 0x02) != 0) ? true : false;
+                        }
+                        else
+                        {
+                            // Error DLC
+                        }
+                        break;
                     default:
                         break;
                 }

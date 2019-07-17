@@ -66,32 +66,108 @@
             this.listBox_Info = new System.Windows.Forms.ListBox();
             this.timer_rec = new System.Windows.Forms.Timer(this.components);
             this.button_Clear = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.Status_OnOff = new System.Windows.Forms.RadioButton();
-            this.Status_EngineOil = new System.Windows.Forms.RadioButton();
-            this.Status_Fuel = new System.Windows.Forms.RadioButton();
-            this.Status_ABS = new System.Windows.Forms.RadioButton();
-            this.Status_WaterTemp = new System.Windows.Forms.RadioButton();
-            this.Status_Maintenance = new System.Windows.Forms.RadioButton();
-            this.Status_FrontTirePressure = new System.Windows.Forms.RadioButton();
-            this.Status_RearTirePressure = new System.Windows.Forms.RadioButton();
-            this.Label_Speed = new System.Windows.Forms.Label();
-            this.Value_Speed = new System.Windows.Forms.TextBox();
-            this.Value_EngineRPM = new System.Windows.Forms.TextBox();
-            this.Label_EngineRPM = new System.Windows.Forms.Label();
-            this.Value_FuelConsumption = new System.Windows.Forms.TextBox();
-            this.Label_FuelConsumption = new System.Windows.Forms.Label();
+            this.Group_CAN_CMD = new System.Windows.Forms.GroupBox();
             this.Value_AveSpeed = new System.Windows.Forms.TextBox();
+            this.Value_FuelConsumption = new System.Windows.Forms.TextBox();
             this.Label_AveSpeed = new System.Windows.Forms.Label();
+            this.Label_FuelConsumption = new System.Windows.Forms.Label();
             this.Value_MaxSpeed = new System.Windows.Forms.TextBox();
             this.Label_MaxSpeed = new System.Windows.Forms.Label();
+            this.Value_EngineRPM = new System.Windows.Forms.TextBox();
             this.Value_TotalMileage = new System.Windows.Forms.TextBox();
+            this.Label_EngineRPM = new System.Windows.Forms.Label();
             this.Label_TotalMileage = new System.Windows.Forms.Label();
+            this.Value_Speed = new System.Windows.Forms.TextBox();
+            this.Label_Speed = new System.Windows.Forms.Label();
+            this.Status_RearTirePressure = new System.Windows.Forms.RadioButton();
+            this.Status_FrontTirePressure = new System.Windows.Forms.RadioButton();
+            this.Status_Maintenance = new System.Windows.Forms.RadioButton();
+            this.Status_WaterTemp = new System.Windows.Forms.RadioButton();
+            this.Status_ABS = new System.Windows.Forms.RadioButton();
+            this.Status_Fuel = new System.Windows.Forms.RadioButton();
+            this.Status_EngineOil = new System.Windows.Forms.RadioButton();
+            this.Status_OnOff = new System.Windows.Forms.RadioButton();
+            this.Group_ABS_Error_Code = new System.Windows.Forms.GroupBox();
+            this.ABS_0x5025 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5044 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5052 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5042 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5053 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5045 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5014 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5043 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5018 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5035 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5013 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5017 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5019 = new System.Windows.Forms.RadioButton();
+            this.ABS_0x5055 = new System.Windows.Forms.RadioButton();
+            this.Group_OBD_Error_Code = new System.Windows.Forms.GroupBox();
+            this.OBD_U0486 = new System.Windows.Forms.RadioButton();
+            this.OBD_U0426 = new System.Windows.Forms.RadioButton();
+            this.OBD_U0122 = new System.Windows.Forms.RadioButton();
+            this.OBD_U0121 = new System.Windows.Forms.RadioButton();
+            this.OBD_U0002 = new System.Windows.Forms.RadioButton();
+            this.OBD_U0140 = new System.Windows.Forms.RadioButton();
+            this.OBD_U0001 = new System.Windows.Forms.RadioButton();
+            this.OBD_U0128 = new System.Windows.Forms.RadioButton();
+            this.OBD_P2600 = new System.Windows.Forms.RadioButton();
+            this.OBD_P2158 = new System.Windows.Forms.RadioButton();
+            this.OBD_P1800 = new System.Windows.Forms.RadioButton();
+            this.OBD_P1607 = new System.Windows.Forms.RadioButton();
+            this.OBD_P1536 = new System.Windows.Forms.RadioButton();
+            this.OBD_P1310 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0620_PIN31 = new System.Windows.Forms.RadioButton();
+            this.OBD_P1300 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0620_PIN2 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0A0F = new System.Windows.Forms.RadioButton();
+            this.OBD_P0606 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0655 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0605 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0650 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0604 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0601 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0560 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0512 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0500 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0480 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0410 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0505 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0352 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0501 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0351 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0336 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0335 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0230 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0217 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0202 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0130 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0201 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0120 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0155 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0115 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0150 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0110 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0135 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0105 = new System.Windows.Forms.RadioButton();
+            this.OBD_C0085 = new System.Windows.Forms.RadioButton();
+            this.OBD_C0083 = new System.Windows.Forms.RadioButton();
+            this.OBD_P0503 = new System.Windows.Forms.RadioButton();
+            this.Value_Battery = new System.Windows.Forms.TextBox();
+            this.Label_Battery = new System.Windows.Forms.Label();
+            this.Value_RoomTemp = new System.Windows.Forms.TextBox();
+            this.Value_Fuel = new System.Windows.Forms.TextBox();
+            this.Label_RoomTemp = new System.Windows.Forms.Label();
+            this.Label_Fuel = new System.Windows.Forms.Label();
+            this.Value_WaterTemp = new System.Windows.Forms.TextBox();
+            this.Label_WaterTemp = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.Group_CAN_CMD.SuspendLayout();
+            this.Group_ABS_Error_Code.SuspendLayout();
+            this.Group_OBD_Error_Code.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -510,187 +586,42 @@
             this.button_Clear.UseVisualStyleBackColor = true;
             this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
             // 
-            // groupBox5
+            // Group_CAN_CMD
             // 
-            this.groupBox5.Controls.Add(this.Value_AveSpeed);
-            this.groupBox5.Controls.Add(this.Value_FuelConsumption);
-            this.groupBox5.Controls.Add(this.Label_AveSpeed);
-            this.groupBox5.Controls.Add(this.Label_FuelConsumption);
-            this.groupBox5.Controls.Add(this.Value_MaxSpeed);
-            this.groupBox5.Controls.Add(this.Label_MaxSpeed);
-            this.groupBox5.Controls.Add(this.Value_EngineRPM);
-            this.groupBox5.Controls.Add(this.Value_TotalMileage);
-            this.groupBox5.Controls.Add(this.Label_EngineRPM);
-            this.groupBox5.Controls.Add(this.Label_TotalMileage);
-            this.groupBox5.Controls.Add(this.Value_Speed);
-            this.groupBox5.Controls.Add(this.Label_Speed);
-            this.groupBox5.Controls.Add(this.Status_RearTirePressure);
-            this.groupBox5.Controls.Add(this.Status_FrontTirePressure);
-            this.groupBox5.Controls.Add(this.Status_Maintenance);
-            this.groupBox5.Controls.Add(this.Status_WaterTemp);
-            this.groupBox5.Controls.Add(this.Status_ABS);
-            this.groupBox5.Controls.Add(this.Status_Fuel);
-            this.groupBox5.Controls.Add(this.Status_EngineOil);
-            this.groupBox5.Controls.Add(this.Status_OnOff);
-            this.groupBox5.Location = new System.Drawing.Point(16, 471);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(707, 230);
-            this.groupBox5.TabIndex = 9;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "CAN Data Visualizer";
-            // 
-            // Status_OnOff
-            // 
-            this.Status_OnOff.AutoCheck = false;
-            this.Status_OnOff.AutoSize = true;
-            this.Status_OnOff.Location = new System.Drawing.Point(13, 24);
-            this.Status_OnOff.Name = "Status_OnOff";
-            this.Status_OnOff.Size = new System.Drawing.Size(103, 19);
-            this.Status_OnOff.TabIndex = 0;
-            this.Status_OnOff.TabStop = true;
-            this.Status_OnOff.Text = "開機指示燈";
-            this.Status_OnOff.UseVisualStyleBackColor = true;
-            // 
-            // Status_EngineOil
-            // 
-            this.Status_EngineOil.AutoCheck = false;
-            this.Status_EngineOil.AutoSize = true;
-            this.Status_EngineOil.Location = new System.Drawing.Point(13, 49);
-            this.Status_EngineOil.Name = "Status_EngineOil";
-            this.Status_EngineOil.Size = new System.Drawing.Size(133, 19);
-            this.Status_EngineOil.TabIndex = 1;
-            this.Status_EngineOil.TabStop = true;
-            this.Status_EngineOil.Text = "機油壓力指示燈";
-            this.Status_EngineOil.UseVisualStyleBackColor = true;
-            // 
-            // Status_Fuel
-            // 
-            this.Status_Fuel.AutoCheck = false;
-            this.Status_Fuel.AutoSize = true;
-            this.Status_Fuel.Location = new System.Drawing.Point(13, 75);
-            this.Status_Fuel.Name = "Status_Fuel";
-            this.Status_Fuel.Size = new System.Drawing.Size(73, 19);
-            this.Status_Fuel.TabIndex = 2;
-            this.Status_Fuel.TabStop = true;
-            this.Status_Fuel.Text = "燃油燈";
-            this.Status_Fuel.UseVisualStyleBackColor = true;
-            // 
-            // Status_ABS
-            // 
-            this.Status_ABS.AutoCheck = false;
-            this.Status_ABS.AutoSize = true;
-            this.Status_ABS.Location = new System.Drawing.Point(13, 100);
-            this.Status_ABS.Name = "Status_ABS";
-            this.Status_ABS.Size = new System.Drawing.Size(100, 19);
-            this.Status_ABS.TabIndex = 3;
-            this.Status_ABS.TabStop = true;
-            this.Status_ABS.Text = "ABS故障燈";
-            this.Status_ABS.UseVisualStyleBackColor = true;
-            // 
-            // Status_WaterTemp
-            // 
-            this.Status_WaterTemp.AutoCheck = false;
-            this.Status_WaterTemp.AutoSize = true;
-            this.Status_WaterTemp.Location = new System.Drawing.Point(13, 125);
-            this.Status_WaterTemp.Name = "Status_WaterTemp";
-            this.Status_WaterTemp.Size = new System.Drawing.Size(73, 19);
-            this.Status_WaterTemp.TabIndex = 4;
-            this.Status_WaterTemp.TabStop = true;
-            this.Status_WaterTemp.Text = "水溫燈";
-            this.Status_WaterTemp.UseVisualStyleBackColor = true;
-            // 
-            // Status_Maintenance
-            // 
-            this.Status_Maintenance.AutoCheck = false;
-            this.Status_Maintenance.AutoSize = true;
-            this.Status_Maintenance.Location = new System.Drawing.Point(13, 150);
-            this.Status_Maintenance.Name = "Status_Maintenance";
-            this.Status_Maintenance.Size = new System.Drawing.Size(133, 19);
-            this.Status_Maintenance.TabIndex = 5;
-            this.Status_Maintenance.TabStop = true;
-            this.Status_Maintenance.Text = "保養提示指示燈";
-            this.Status_Maintenance.UseVisualStyleBackColor = true;
-            // 
-            // Status_FrontTirePressure
-            // 
-            this.Status_FrontTirePressure.AutoCheck = false;
-            this.Status_FrontTirePressure.AutoSize = true;
-            this.Status_FrontTirePressure.Location = new System.Drawing.Point(13, 175);
-            this.Status_FrontTirePressure.Name = "Status_FrontTirePressure";
-            this.Status_FrontTirePressure.Size = new System.Drawing.Size(148, 19);
-            this.Status_FrontTirePressure.TabIndex = 6;
-            this.Status_FrontTirePressure.TabStop = true;
-            this.Status_FrontTirePressure.Text = "前輪胎胎壓指示燈";
-            this.Status_FrontTirePressure.UseVisualStyleBackColor = true;
-            // 
-            // Status_RearTirePressure
-            // 
-            this.Status_RearTirePressure.AutoCheck = false;
-            this.Status_RearTirePressure.AutoSize = true;
-            this.Status_RearTirePressure.Location = new System.Drawing.Point(13, 200);
-            this.Status_RearTirePressure.Name = "Status_RearTirePressure";
-            this.Status_RearTirePressure.Size = new System.Drawing.Size(148, 19);
-            this.Status_RearTirePressure.TabIndex = 7;
-            this.Status_RearTirePressure.TabStop = true;
-            this.Status_RearTirePressure.Text = "後輪胎胎壓指示燈";
-            this.Status_RearTirePressure.UseVisualStyleBackColor = true;
-            // 
-            // Label_Speed
-            // 
-            this.Label_Speed.AutoSize = true;
-            this.Label_Speed.Location = new System.Drawing.Point(168, 26);
-            this.Label_Speed.Name = "Label_Speed";
-            this.Label_Speed.Size = new System.Drawing.Size(84, 15);
-            this.Label_Speed.TabIndex = 8;
-            this.Label_Speed.Text = "Speed (km/h)";
-            // 
-            // Value_Speed
-            // 
-            this.Value_Speed.Location = new System.Drawing.Point(298, 23);
-            this.Value_Speed.Name = "Value_Speed";
-            this.Value_Speed.ReadOnly = true;
-            this.Value_Speed.Size = new System.Drawing.Size(93, 25);
-            this.Value_Speed.TabIndex = 9;
-            this.Value_Speed.Text = "0";
-            this.Value_Speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Value_EngineRPM
-            // 
-            this.Value_EngineRPM.Location = new System.Drawing.Point(298, 60);
-            this.Value_EngineRPM.Name = "Value_EngineRPM";
-            this.Value_EngineRPM.ReadOnly = true;
-            this.Value_EngineRPM.Size = new System.Drawing.Size(93, 25);
-            this.Value_EngineRPM.TabIndex = 11;
-            this.Value_EngineRPM.Text = "0";
-            this.Value_EngineRPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Label_EngineRPM
-            // 
-            this.Label_EngineRPM.AutoSize = true;
-            this.Label_EngineRPM.Location = new System.Drawing.Point(168, 63);
-            this.Label_EngineRPM.Name = "Label_EngineRPM";
-            this.Label_EngineRPM.Size = new System.Drawing.Size(90, 15);
-            this.Label_EngineRPM.TabIndex = 10;
-            this.Label_EngineRPM.Text = "Engine - RPM";
-            // 
-            // Value_FuelConsumption
-            // 
-            this.Value_FuelConsumption.Location = new System.Drawing.Point(298, 97);
-            this.Value_FuelConsumption.Name = "Value_FuelConsumption";
-            this.Value_FuelConsumption.ReadOnly = true;
-            this.Value_FuelConsumption.Size = new System.Drawing.Size(93, 25);
-            this.Value_FuelConsumption.TabIndex = 13;
-            this.Value_FuelConsumption.Text = "0";
-            this.Value_FuelConsumption.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Label_FuelConsumption
-            // 
-            this.Label_FuelConsumption.AutoSize = true;
-            this.Label_FuelConsumption.Location = new System.Drawing.Point(168, 100);
-            this.Label_FuelConsumption.Name = "Label_FuelConsumption";
-            this.Label_FuelConsumption.Size = new System.Drawing.Size(117, 15);
-            this.Label_FuelConsumption.TabIndex = 12;
-            this.Label_FuelConsumption.Text = "Consumption km/L";
+            this.Group_CAN_CMD.Controls.Add(this.Value_Battery);
+            this.Group_CAN_CMD.Controls.Add(this.Label_Battery);
+            this.Group_CAN_CMD.Controls.Add(this.Value_RoomTemp);
+            this.Group_CAN_CMD.Controls.Add(this.Value_Fuel);
+            this.Group_CAN_CMD.Controls.Add(this.Label_RoomTemp);
+            this.Group_CAN_CMD.Controls.Add(this.Label_Fuel);
+            this.Group_CAN_CMD.Controls.Add(this.Value_WaterTemp);
+            this.Group_CAN_CMD.Controls.Add(this.Label_WaterTemp);
+            this.Group_CAN_CMD.Controls.Add(this.Value_AveSpeed);
+            this.Group_CAN_CMD.Controls.Add(this.Value_FuelConsumption);
+            this.Group_CAN_CMD.Controls.Add(this.Label_AveSpeed);
+            this.Group_CAN_CMD.Controls.Add(this.Label_FuelConsumption);
+            this.Group_CAN_CMD.Controls.Add(this.Value_MaxSpeed);
+            this.Group_CAN_CMD.Controls.Add(this.Label_MaxSpeed);
+            this.Group_CAN_CMD.Controls.Add(this.Value_EngineRPM);
+            this.Group_CAN_CMD.Controls.Add(this.Value_TotalMileage);
+            this.Group_CAN_CMD.Controls.Add(this.Label_EngineRPM);
+            this.Group_CAN_CMD.Controls.Add(this.Label_TotalMileage);
+            this.Group_CAN_CMD.Controls.Add(this.Value_Speed);
+            this.Group_CAN_CMD.Controls.Add(this.Label_Speed);
+            this.Group_CAN_CMD.Controls.Add(this.Status_RearTirePressure);
+            this.Group_CAN_CMD.Controls.Add(this.Status_FrontTirePressure);
+            this.Group_CAN_CMD.Controls.Add(this.Status_Maintenance);
+            this.Group_CAN_CMD.Controls.Add(this.Status_WaterTemp);
+            this.Group_CAN_CMD.Controls.Add(this.Status_ABS);
+            this.Group_CAN_CMD.Controls.Add(this.Status_Fuel);
+            this.Group_CAN_CMD.Controls.Add(this.Status_EngineOil);
+            this.Group_CAN_CMD.Controls.Add(this.Status_OnOff);
+            this.Group_CAN_CMD.Location = new System.Drawing.Point(16, 471);
+            this.Group_CAN_CMD.Name = "Group_CAN_CMD";
+            this.Group_CAN_CMD.Size = new System.Drawing.Size(707, 229);
+            this.Group_CAN_CMD.TabIndex = 9;
+            this.Group_CAN_CMD.TabStop = false;
+            this.Group_CAN_CMD.Text = "CAN Data Visualizer";
             // 
             // Value_AveSpeed
             // 
@@ -702,6 +633,16 @@
             this.Value_AveSpeed.Text = "0";
             this.Value_AveSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // Value_FuelConsumption
+            // 
+            this.Value_FuelConsumption.Location = new System.Drawing.Point(298, 97);
+            this.Value_FuelConsumption.Name = "Value_FuelConsumption";
+            this.Value_FuelConsumption.ReadOnly = true;
+            this.Value_FuelConsumption.Size = new System.Drawing.Size(93, 25);
+            this.Value_FuelConsumption.TabIndex = 13;
+            this.Value_FuelConsumption.Text = "0";
+            this.Value_FuelConsumption.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Label_AveSpeed
             // 
             this.Label_AveSpeed.AutoSize = true;
@@ -710,6 +651,15 @@
             this.Label_AveSpeed.Size = new System.Drawing.Size(92, 15);
             this.Label_AveSpeed.TabIndex = 18;
             this.Label_AveSpeed.Text = "Average Speed";
+            // 
+            // Label_FuelConsumption
+            // 
+            this.Label_FuelConsumption.AutoSize = true;
+            this.Label_FuelConsumption.Location = new System.Drawing.Point(168, 100);
+            this.Label_FuelConsumption.Name = "Label_FuelConsumption";
+            this.Label_FuelConsumption.Size = new System.Drawing.Size(117, 15);
+            this.Label_FuelConsumption.TabIndex = 12;
+            this.Label_FuelConsumption.Text = "Consumption km/L";
             // 
             // Value_MaxSpeed
             // 
@@ -730,6 +680,16 @@
             this.Label_MaxSpeed.TabIndex = 16;
             this.Label_MaxSpeed.Text = "Max Speed";
             // 
+            // Value_EngineRPM
+            // 
+            this.Value_EngineRPM.Location = new System.Drawing.Point(298, 60);
+            this.Value_EngineRPM.Name = "Value_EngineRPM";
+            this.Value_EngineRPM.ReadOnly = true;
+            this.Value_EngineRPM.Size = new System.Drawing.Size(93, 25);
+            this.Value_EngineRPM.TabIndex = 11;
+            this.Value_EngineRPM.Text = "0";
+            this.Value_EngineRPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Value_TotalMileage
             // 
             this.Value_TotalMileage.Location = new System.Drawing.Point(557, 23);
@@ -740,21 +700,1073 @@
             this.Value_TotalMileage.Text = "0";
             this.Value_TotalMileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // Label_EngineRPM
+            // 
+            this.Label_EngineRPM.AutoSize = true;
+            this.Label_EngineRPM.Location = new System.Drawing.Point(168, 63);
+            this.Label_EngineRPM.Name = "Label_EngineRPM";
+            this.Label_EngineRPM.Size = new System.Drawing.Size(90, 15);
+            this.Label_EngineRPM.TabIndex = 10;
+            this.Label_EngineRPM.Text = "Engine - RPM";
+            // 
             // Label_TotalMileage
             // 
             this.Label_TotalMileage.AutoSize = true;
             this.Label_TotalMileage.Location = new System.Drawing.Point(427, 26);
             this.Label_TotalMileage.Name = "Label_TotalMileage";
-            this.Label_TotalMileage.Size = new System.Drawing.Size(47, 15);
+            this.Label_TotalMileage.Size = new System.Drawing.Size(53, 15);
             this.Label_TotalMileage.TabIndex = 14;
-            this.Label_TotalMileage.Text = "Milage";
+            this.Label_TotalMileage.Text = "Mileage";
+            // 
+            // Value_Speed
+            // 
+            this.Value_Speed.Location = new System.Drawing.Point(298, 23);
+            this.Value_Speed.Name = "Value_Speed";
+            this.Value_Speed.ReadOnly = true;
+            this.Value_Speed.Size = new System.Drawing.Size(93, 25);
+            this.Value_Speed.TabIndex = 9;
+            this.Value_Speed.Text = "0";
+            this.Value_Speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_Speed
+            // 
+            this.Label_Speed.AutoSize = true;
+            this.Label_Speed.Location = new System.Drawing.Point(168, 26);
+            this.Label_Speed.Name = "Label_Speed";
+            this.Label_Speed.Size = new System.Drawing.Size(84, 15);
+            this.Label_Speed.TabIndex = 8;
+            this.Label_Speed.Text = "Speed (km/h)";
+            // 
+            // Status_RearTirePressure
+            // 
+            this.Status_RearTirePressure.AutoCheck = false;
+            this.Status_RearTirePressure.AutoSize = true;
+            this.Status_RearTirePressure.Location = new System.Drawing.Point(13, 200);
+            this.Status_RearTirePressure.Name = "Status_RearTirePressure";
+            this.Status_RearTirePressure.Size = new System.Drawing.Size(148, 19);
+            this.Status_RearTirePressure.TabIndex = 7;
+            this.Status_RearTirePressure.TabStop = true;
+            this.Status_RearTirePressure.Text = "後輪胎胎壓指示燈";
+            this.Status_RearTirePressure.UseVisualStyleBackColor = true;
+            // 
+            // Status_FrontTirePressure
+            // 
+            this.Status_FrontTirePressure.AutoCheck = false;
+            this.Status_FrontTirePressure.AutoSize = true;
+            this.Status_FrontTirePressure.Location = new System.Drawing.Point(13, 175);
+            this.Status_FrontTirePressure.Name = "Status_FrontTirePressure";
+            this.Status_FrontTirePressure.Size = new System.Drawing.Size(148, 19);
+            this.Status_FrontTirePressure.TabIndex = 6;
+            this.Status_FrontTirePressure.TabStop = true;
+            this.Status_FrontTirePressure.Text = "前輪胎胎壓指示燈";
+            this.Status_FrontTirePressure.UseVisualStyleBackColor = true;
+            // 
+            // Status_Maintenance
+            // 
+            this.Status_Maintenance.AutoCheck = false;
+            this.Status_Maintenance.AutoSize = true;
+            this.Status_Maintenance.Location = new System.Drawing.Point(13, 150);
+            this.Status_Maintenance.Name = "Status_Maintenance";
+            this.Status_Maintenance.Size = new System.Drawing.Size(133, 19);
+            this.Status_Maintenance.TabIndex = 5;
+            this.Status_Maintenance.TabStop = true;
+            this.Status_Maintenance.Text = "保養提示指示燈";
+            this.Status_Maintenance.UseVisualStyleBackColor = true;
+            // 
+            // Status_WaterTemp
+            // 
+            this.Status_WaterTemp.AutoCheck = false;
+            this.Status_WaterTemp.AutoSize = true;
+            this.Status_WaterTemp.Location = new System.Drawing.Point(13, 125);
+            this.Status_WaterTemp.Name = "Status_WaterTemp";
+            this.Status_WaterTemp.Size = new System.Drawing.Size(73, 19);
+            this.Status_WaterTemp.TabIndex = 4;
+            this.Status_WaterTemp.TabStop = true;
+            this.Status_WaterTemp.Text = "水溫燈";
+            this.Status_WaterTemp.UseVisualStyleBackColor = true;
+            // 
+            // Status_ABS
+            // 
+            this.Status_ABS.AutoCheck = false;
+            this.Status_ABS.AutoSize = true;
+            this.Status_ABS.Location = new System.Drawing.Point(13, 100);
+            this.Status_ABS.Name = "Status_ABS";
+            this.Status_ABS.Size = new System.Drawing.Size(100, 19);
+            this.Status_ABS.TabIndex = 3;
+            this.Status_ABS.TabStop = true;
+            this.Status_ABS.Text = "ABS故障燈";
+            this.Status_ABS.UseVisualStyleBackColor = true;
+            // 
+            // Status_Fuel
+            // 
+            this.Status_Fuel.AutoCheck = false;
+            this.Status_Fuel.AutoSize = true;
+            this.Status_Fuel.Location = new System.Drawing.Point(13, 75);
+            this.Status_Fuel.Name = "Status_Fuel";
+            this.Status_Fuel.Size = new System.Drawing.Size(73, 19);
+            this.Status_Fuel.TabIndex = 2;
+            this.Status_Fuel.TabStop = true;
+            this.Status_Fuel.Text = "燃油燈";
+            this.Status_Fuel.UseVisualStyleBackColor = true;
+            // 
+            // Status_EngineOil
+            // 
+            this.Status_EngineOil.AutoCheck = false;
+            this.Status_EngineOil.AutoSize = true;
+            this.Status_EngineOil.Location = new System.Drawing.Point(13, 49);
+            this.Status_EngineOil.Name = "Status_EngineOil";
+            this.Status_EngineOil.Size = new System.Drawing.Size(133, 19);
+            this.Status_EngineOil.TabIndex = 1;
+            this.Status_EngineOil.TabStop = true;
+            this.Status_EngineOil.Text = "機油壓力指示燈";
+            this.Status_EngineOil.UseVisualStyleBackColor = true;
+            // 
+            // Status_OnOff
+            // 
+            this.Status_OnOff.AutoCheck = false;
+            this.Status_OnOff.AutoSize = true;
+            this.Status_OnOff.Location = new System.Drawing.Point(13, 24);
+            this.Status_OnOff.Name = "Status_OnOff";
+            this.Status_OnOff.Size = new System.Drawing.Size(103, 19);
+            this.Status_OnOff.TabIndex = 0;
+            this.Status_OnOff.TabStop = true;
+            this.Status_OnOff.Text = "開機指示燈";
+            this.Status_OnOff.UseVisualStyleBackColor = true;
+            // 
+            // Group_ABS_Error_Code
+            // 
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5025);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5044);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5052);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5042);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5053);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5045);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5014);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5043);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5018);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5035);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5013);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5017);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5019);
+            this.Group_ABS_Error_Code.Controls.Add(this.ABS_0x5055);
+            this.Group_ABS_Error_Code.Location = new System.Drawing.Point(730, 15);
+            this.Group_ABS_Error_Code.Name = "Group_ABS_Error_Code";
+            this.Group_ABS_Error_Code.Size = new System.Drawing.Size(126, 377);
+            this.Group_ABS_Error_Code.TabIndex = 10;
+            this.Group_ABS_Error_Code.TabStop = false;
+            this.Group_ABS_Error_Code.Text = "ABS Status";
+            // 
+            // ABS_0x5025
+            // 
+            this.ABS_0x5025.AutoCheck = false;
+            this.ABS_0x5025.AutoSize = true;
+            this.ABS_0x5025.Location = new System.Drawing.Point(13, 350);
+            this.ABS_0x5025.Name = "ABS_0x5025";
+            this.ABS_0x5025.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5025.TabIndex = 16;
+            this.ABS_0x5025.TabStop = true;
+            this.ABS_0x5025.Text = "0x5025";
+            this.ABS_0x5025.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5044
+            // 
+            this.ABS_0x5044.AutoCheck = false;
+            this.ABS_0x5044.AutoSize = true;
+            this.ABS_0x5044.Location = new System.Drawing.Point(13, 325);
+            this.ABS_0x5044.Name = "ABS_0x5044";
+            this.ABS_0x5044.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5044.TabIndex = 15;
+            this.ABS_0x5044.TabStop = true;
+            this.ABS_0x5044.Text = "0x5044";
+            this.ABS_0x5044.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5052
+            // 
+            this.ABS_0x5052.AutoCheck = false;
+            this.ABS_0x5052.AutoSize = true;
+            this.ABS_0x5052.Location = new System.Drawing.Point(13, 200);
+            this.ABS_0x5052.Name = "ABS_0x5052";
+            this.ABS_0x5052.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5052.TabIndex = 7;
+            this.ABS_0x5052.TabStop = true;
+            this.ABS_0x5052.Text = "0x5052";
+            this.ABS_0x5052.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5042
+            // 
+            this.ABS_0x5042.AutoCheck = false;
+            this.ABS_0x5042.AutoSize = true;
+            this.ABS_0x5042.Location = new System.Drawing.Point(13, 300);
+            this.ABS_0x5042.Name = "ABS_0x5042";
+            this.ABS_0x5042.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5042.TabIndex = 14;
+            this.ABS_0x5042.TabStop = true;
+            this.ABS_0x5042.Text = "0x5042";
+            this.ABS_0x5042.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5053
+            // 
+            this.ABS_0x5053.AutoCheck = false;
+            this.ABS_0x5053.AutoSize = true;
+            this.ABS_0x5053.Location = new System.Drawing.Point(13, 175);
+            this.ABS_0x5053.Name = "ABS_0x5053";
+            this.ABS_0x5053.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5053.TabIndex = 6;
+            this.ABS_0x5053.TabStop = true;
+            this.ABS_0x5053.Text = "0x5053";
+            this.ABS_0x5053.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5045
+            // 
+            this.ABS_0x5045.AutoCheck = false;
+            this.ABS_0x5045.AutoSize = true;
+            this.ABS_0x5045.Location = new System.Drawing.Point(13, 275);
+            this.ABS_0x5045.Name = "ABS_0x5045";
+            this.ABS_0x5045.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5045.TabIndex = 13;
+            this.ABS_0x5045.TabStop = true;
+            this.ABS_0x5045.Text = "0x5045";
+            this.ABS_0x5045.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5014
+            // 
+            this.ABS_0x5014.AutoCheck = false;
+            this.ABS_0x5014.AutoSize = true;
+            this.ABS_0x5014.Location = new System.Drawing.Point(13, 150);
+            this.ABS_0x5014.Name = "ABS_0x5014";
+            this.ABS_0x5014.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5014.TabIndex = 5;
+            this.ABS_0x5014.TabStop = true;
+            this.ABS_0x5014.Text = "0x5014";
+            this.ABS_0x5014.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5043
+            // 
+            this.ABS_0x5043.AutoCheck = false;
+            this.ABS_0x5043.AutoSize = true;
+            this.ABS_0x5043.Location = new System.Drawing.Point(13, 250);
+            this.ABS_0x5043.Name = "ABS_0x5043";
+            this.ABS_0x5043.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5043.TabIndex = 12;
+            this.ABS_0x5043.TabStop = true;
+            this.ABS_0x5043.Text = "0x5043";
+            this.ABS_0x5043.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5018
+            // 
+            this.ABS_0x5018.AutoCheck = false;
+            this.ABS_0x5018.AutoSize = true;
+            this.ABS_0x5018.Location = new System.Drawing.Point(13, 125);
+            this.ABS_0x5018.Name = "ABS_0x5018";
+            this.ABS_0x5018.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5018.TabIndex = 4;
+            this.ABS_0x5018.TabStop = true;
+            this.ABS_0x5018.Text = "0x5018";
+            this.ABS_0x5018.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5035
+            // 
+            this.ABS_0x5035.AutoCheck = false;
+            this.ABS_0x5035.AutoSize = true;
+            this.ABS_0x5035.Location = new System.Drawing.Point(13, 225);
+            this.ABS_0x5035.Name = "ABS_0x5035";
+            this.ABS_0x5035.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5035.TabIndex = 11;
+            this.ABS_0x5035.TabStop = true;
+            this.ABS_0x5035.Text = "0x5035";
+            this.ABS_0x5035.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5013
+            // 
+            this.ABS_0x5013.AutoCheck = false;
+            this.ABS_0x5013.AutoSize = true;
+            this.ABS_0x5013.Location = new System.Drawing.Point(13, 100);
+            this.ABS_0x5013.Name = "ABS_0x5013";
+            this.ABS_0x5013.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5013.TabIndex = 3;
+            this.ABS_0x5013.TabStop = true;
+            this.ABS_0x5013.Text = "0x5013";
+            this.ABS_0x5013.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5017
+            // 
+            this.ABS_0x5017.AutoCheck = false;
+            this.ABS_0x5017.AutoSize = true;
+            this.ABS_0x5017.Location = new System.Drawing.Point(13, 75);
+            this.ABS_0x5017.Name = "ABS_0x5017";
+            this.ABS_0x5017.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5017.TabIndex = 2;
+            this.ABS_0x5017.TabStop = true;
+            this.ABS_0x5017.Text = "0x5017";
+            this.ABS_0x5017.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5019
+            // 
+            this.ABS_0x5019.AutoCheck = false;
+            this.ABS_0x5019.AutoSize = true;
+            this.ABS_0x5019.Location = new System.Drawing.Point(13, 49);
+            this.ABS_0x5019.Name = "ABS_0x5019";
+            this.ABS_0x5019.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5019.TabIndex = 1;
+            this.ABS_0x5019.TabStop = true;
+            this.ABS_0x5019.Text = "0x5019";
+            this.ABS_0x5019.UseVisualStyleBackColor = true;
+            // 
+            // ABS_0x5055
+            // 
+            this.ABS_0x5055.AutoCheck = false;
+            this.ABS_0x5055.AutoSize = true;
+            this.ABS_0x5055.Location = new System.Drawing.Point(13, 24);
+            this.ABS_0x5055.Name = "ABS_0x5055";
+            this.ABS_0x5055.Size = new System.Drawing.Size(70, 19);
+            this.ABS_0x5055.TabIndex = 0;
+            this.ABS_0x5055.TabStop = true;
+            this.ABS_0x5055.Text = "0x5055";
+            this.ABS_0x5055.UseVisualStyleBackColor = true;
+            // 
+            // Group_OBD_Error_Code
+            // 
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_U0486);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_U0426);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_U0122);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_U0121);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_U0002);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_U0140);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_U0001);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_U0128);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P2600);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P2158);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P1800);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P1607);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P1536);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P1310);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0620_PIN31);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P1300);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0620_PIN2);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0A0F);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0606);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0655);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0605);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0650);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0604);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0601);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0560);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0512);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0500);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0480);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0410);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0505);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0352);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0501);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0351);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0336);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0335);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0230);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0217);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0202);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0130);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0201);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0120);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0155);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0115);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0150);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0110);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0135);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0105);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_C0085);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_C0083);
+            this.Group_OBD_Error_Code.Controls.Add(this.OBD_P0503);
+            this.Group_OBD_Error_Code.Location = new System.Drawing.Point(862, 15);
+            this.Group_OBD_Error_Code.Name = "Group_OBD_Error_Code";
+            this.Group_OBD_Error_Code.Size = new System.Drawing.Size(310, 685);
+            this.Group_OBD_Error_Code.TabIndex = 11;
+            this.Group_OBD_Error_Code.TabStop = false;
+            this.Group_OBD_Error_Code.Text = "OBD Status";
+            // 
+            // OBD_U0486
+            // 
+            this.OBD_U0486.AutoCheck = false;
+            this.OBD_U0486.AutoSize = true;
+            this.OBD_U0486.Location = new System.Drawing.Point(220, 49);
+            this.OBD_U0486.Name = "OBD_U0486";
+            this.OBD_U0486.Size = new System.Drawing.Size(66, 19);
+            this.OBD_U0486.TabIndex = 52;
+            this.OBD_U0486.TabStop = true;
+            this.OBD_U0486.Text = "U0486";
+            this.OBD_U0486.UseVisualStyleBackColor = true;
+            // 
+            // OBD_U0426
+            // 
+            this.OBD_U0426.AutoCheck = false;
+            this.OBD_U0426.AutoSize = true;
+            this.OBD_U0426.Location = new System.Drawing.Point(220, 24);
+            this.OBD_U0426.Name = "OBD_U0426";
+            this.OBD_U0426.Size = new System.Drawing.Size(66, 19);
+            this.OBD_U0426.TabIndex = 51;
+            this.OBD_U0426.TabStop = true;
+            this.OBD_U0426.Text = "U0426";
+            this.OBD_U0426.UseVisualStyleBackColor = true;
+            // 
+            // OBD_U0122
+            // 
+            this.OBD_U0122.AutoCheck = false;
+            this.OBD_U0122.AutoSize = true;
+            this.OBD_U0122.Location = new System.Drawing.Point(113, 551);
+            this.OBD_U0122.Name = "OBD_U0122";
+            this.OBD_U0122.Size = new System.Drawing.Size(66, 19);
+            this.OBD_U0122.TabIndex = 48;
+            this.OBD_U0122.TabStop = true;
+            this.OBD_U0122.Text = "U0122";
+            this.OBD_U0122.UseVisualStyleBackColor = true;
+            // 
+            // OBD_U0121
+            // 
+            this.OBD_U0121.AutoCheck = false;
+            this.OBD_U0121.AutoSize = true;
+            this.OBD_U0121.Location = new System.Drawing.Point(113, 526);
+            this.OBD_U0121.Name = "OBD_U0121";
+            this.OBD_U0121.Size = new System.Drawing.Size(66, 19);
+            this.OBD_U0121.TabIndex = 47;
+            this.OBD_U0121.TabStop = true;
+            this.OBD_U0121.Text = "U0121";
+            this.OBD_U0121.UseVisualStyleBackColor = true;
+            // 
+            // OBD_U0002
+            // 
+            this.OBD_U0002.AutoCheck = false;
+            this.OBD_U0002.AutoSize = true;
+            this.OBD_U0002.Location = new System.Drawing.Point(113, 501);
+            this.OBD_U0002.Name = "OBD_U0002";
+            this.OBD_U0002.Size = new System.Drawing.Size(66, 19);
+            this.OBD_U0002.TabIndex = 46;
+            this.OBD_U0002.TabStop = true;
+            this.OBD_U0002.Text = "U0002";
+            this.OBD_U0002.UseVisualStyleBackColor = true;
+            // 
+            // OBD_U0140
+            // 
+            this.OBD_U0140.AutoCheck = false;
+            this.OBD_U0140.AutoSize = true;
+            this.OBD_U0140.Location = new System.Drawing.Point(113, 601);
+            this.OBD_U0140.Name = "OBD_U0140";
+            this.OBD_U0140.Size = new System.Drawing.Size(66, 19);
+            this.OBD_U0140.TabIndex = 50;
+            this.OBD_U0140.TabStop = true;
+            this.OBD_U0140.Text = "U0140";
+            this.OBD_U0140.UseVisualStyleBackColor = true;
+            // 
+            // OBD_U0001
+            // 
+            this.OBD_U0001.AutoCheck = false;
+            this.OBD_U0001.AutoSize = true;
+            this.OBD_U0001.Location = new System.Drawing.Point(113, 476);
+            this.OBD_U0001.Name = "OBD_U0001";
+            this.OBD_U0001.Size = new System.Drawing.Size(66, 19);
+            this.OBD_U0001.TabIndex = 45;
+            this.OBD_U0001.TabStop = true;
+            this.OBD_U0001.Text = "U0001";
+            this.OBD_U0001.UseVisualStyleBackColor = true;
+            // 
+            // OBD_U0128
+            // 
+            this.OBD_U0128.AutoCheck = false;
+            this.OBD_U0128.AutoSize = true;
+            this.OBD_U0128.Location = new System.Drawing.Point(113, 576);
+            this.OBD_U0128.Name = "OBD_U0128";
+            this.OBD_U0128.Size = new System.Drawing.Size(66, 19);
+            this.OBD_U0128.TabIndex = 49;
+            this.OBD_U0128.TabStop = true;
+            this.OBD_U0128.Text = "U0128";
+            this.OBD_U0128.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P2600
+            // 
+            this.OBD_P2600.AutoCheck = false;
+            this.OBD_P2600.AutoSize = true;
+            this.OBD_P2600.Location = new System.Drawing.Point(113, 451);
+            this.OBD_P2600.Name = "OBD_P2600";
+            this.OBD_P2600.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P2600.TabIndex = 44;
+            this.OBD_P2600.TabStop = true;
+            this.OBD_P2600.Text = "P2600";
+            this.OBD_P2600.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P2158
+            // 
+            this.OBD_P2158.AutoCheck = false;
+            this.OBD_P2158.AutoSize = true;
+            this.OBD_P2158.Location = new System.Drawing.Point(113, 426);
+            this.OBD_P2158.Name = "OBD_P2158";
+            this.OBD_P2158.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P2158.TabIndex = 43;
+            this.OBD_P2158.TabStop = true;
+            this.OBD_P2158.Text = "P2158";
+            this.OBD_P2158.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P1800
+            // 
+            this.OBD_P1800.AutoCheck = false;
+            this.OBD_P1800.AutoSize = true;
+            this.OBD_P1800.Location = new System.Drawing.Point(113, 400);
+            this.OBD_P1800.Name = "OBD_P1800";
+            this.OBD_P1800.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P1800.TabIndex = 42;
+            this.OBD_P1800.TabStop = true;
+            this.OBD_P1800.Text = "P1800";
+            this.OBD_P1800.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P1607
+            // 
+            this.OBD_P1607.AutoCheck = false;
+            this.OBD_P1607.AutoSize = true;
+            this.OBD_P1607.Location = new System.Drawing.Point(113, 375);
+            this.OBD_P1607.Name = "OBD_P1607";
+            this.OBD_P1607.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P1607.TabIndex = 41;
+            this.OBD_P1607.TabStop = true;
+            this.OBD_P1607.Text = "P1607";
+            this.OBD_P1607.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P1536
+            // 
+            this.OBD_P1536.AutoCheck = false;
+            this.OBD_P1536.AutoSize = true;
+            this.OBD_P1536.Location = new System.Drawing.Point(113, 350);
+            this.OBD_P1536.Name = "OBD_P1536";
+            this.OBD_P1536.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P1536.TabIndex = 40;
+            this.OBD_P1536.TabStop = true;
+            this.OBD_P1536.Text = "P1536";
+            this.OBD_P1536.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P1310
+            // 
+            this.OBD_P1310.AutoCheck = false;
+            this.OBD_P1310.AutoSize = true;
+            this.OBD_P1310.Location = new System.Drawing.Point(113, 325);
+            this.OBD_P1310.Name = "OBD_P1310";
+            this.OBD_P1310.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P1310.TabIndex = 39;
+            this.OBD_P1310.TabStop = true;
+            this.OBD_P1310.Text = "P1310";
+            this.OBD_P1310.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0620_PIN31
+            // 
+            this.OBD_P0620_PIN31.AutoCheck = false;
+            this.OBD_P0620_PIN31.AutoSize = true;
+            this.OBD_P0620_PIN31.Location = new System.Drawing.Point(113, 200);
+            this.OBD_P0620_PIN31.Name = "OBD_P0620_PIN31";
+            this.OBD_P0620_PIN31.Size = new System.Drawing.Size(108, 19);
+            this.OBD_P0620_PIN31.TabIndex = 34;
+            this.OBD_P0620_PIN31.TabStop = true;
+            this.OBD_P0620_PIN31.Text = "P0620_PIN31";
+            this.OBD_P0620_PIN31.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P1300
+            // 
+            this.OBD_P1300.AutoCheck = false;
+            this.OBD_P1300.AutoSize = true;
+            this.OBD_P1300.Location = new System.Drawing.Point(113, 300);
+            this.OBD_P1300.Name = "OBD_P1300";
+            this.OBD_P1300.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P1300.TabIndex = 38;
+            this.OBD_P1300.TabStop = true;
+            this.OBD_P1300.Text = "P1300";
+            this.OBD_P1300.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0620_PIN2
+            // 
+            this.OBD_P0620_PIN2.AutoCheck = false;
+            this.OBD_P0620_PIN2.AutoSize = true;
+            this.OBD_P0620_PIN2.Location = new System.Drawing.Point(113, 175);
+            this.OBD_P0620_PIN2.Name = "OBD_P0620_PIN2";
+            this.OBD_P0620_PIN2.Size = new System.Drawing.Size(101, 19);
+            this.OBD_P0620_PIN2.TabIndex = 33;
+            this.OBD_P0620_PIN2.TabStop = true;
+            this.OBD_P0620_PIN2.Text = "P0620_PIN2";
+            this.OBD_P0620_PIN2.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0A0F
+            // 
+            this.OBD_P0A0F.AutoCheck = false;
+            this.OBD_P0A0F.AutoSize = true;
+            this.OBD_P0A0F.Location = new System.Drawing.Point(113, 275);
+            this.OBD_P0A0F.Name = "OBD_P0A0F";
+            this.OBD_P0A0F.Size = new System.Drawing.Size(68, 19);
+            this.OBD_P0A0F.TabIndex = 37;
+            this.OBD_P0A0F.TabStop = true;
+            this.OBD_P0A0F.Text = "P0A0F";
+            this.OBD_P0A0F.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0606
+            // 
+            this.OBD_P0606.AutoCheck = false;
+            this.OBD_P0606.AutoSize = true;
+            this.OBD_P0606.Location = new System.Drawing.Point(113, 150);
+            this.OBD_P0606.Name = "OBD_P0606";
+            this.OBD_P0606.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0606.TabIndex = 32;
+            this.OBD_P0606.TabStop = true;
+            this.OBD_P0606.Text = "P0606";
+            this.OBD_P0606.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0655
+            // 
+            this.OBD_P0655.AutoCheck = false;
+            this.OBD_P0655.AutoSize = true;
+            this.OBD_P0655.Location = new System.Drawing.Point(113, 250);
+            this.OBD_P0655.Name = "OBD_P0655";
+            this.OBD_P0655.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0655.TabIndex = 36;
+            this.OBD_P0655.TabStop = true;
+            this.OBD_P0655.Text = "P0655";
+            this.OBD_P0655.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0605
+            // 
+            this.OBD_P0605.AutoCheck = false;
+            this.OBD_P0605.AutoSize = true;
+            this.OBD_P0605.Location = new System.Drawing.Point(113, 125);
+            this.OBD_P0605.Name = "OBD_P0605";
+            this.OBD_P0605.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0605.TabIndex = 31;
+            this.OBD_P0605.TabStop = true;
+            this.OBD_P0605.Text = "P0605";
+            this.OBD_P0605.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0650
+            // 
+            this.OBD_P0650.AutoCheck = false;
+            this.OBD_P0650.AutoSize = true;
+            this.OBD_P0650.Location = new System.Drawing.Point(113, 225);
+            this.OBD_P0650.Name = "OBD_P0650";
+            this.OBD_P0650.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0650.TabIndex = 35;
+            this.OBD_P0650.TabStop = true;
+            this.OBD_P0650.Text = "P0650";
+            this.OBD_P0650.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0604
+            // 
+            this.OBD_P0604.AutoCheck = false;
+            this.OBD_P0604.AutoSize = true;
+            this.OBD_P0604.Location = new System.Drawing.Point(113, 100);
+            this.OBD_P0604.Name = "OBD_P0604";
+            this.OBD_P0604.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0604.TabIndex = 30;
+            this.OBD_P0604.TabStop = true;
+            this.OBD_P0604.Text = "P0604";
+            this.OBD_P0604.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0601
+            // 
+            this.OBD_P0601.AutoCheck = false;
+            this.OBD_P0601.AutoSize = true;
+            this.OBD_P0601.Location = new System.Drawing.Point(113, 75);
+            this.OBD_P0601.Name = "OBD_P0601";
+            this.OBD_P0601.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0601.TabIndex = 29;
+            this.OBD_P0601.TabStop = true;
+            this.OBD_P0601.Text = "P0601";
+            this.OBD_P0601.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0560
+            // 
+            this.OBD_P0560.AutoCheck = false;
+            this.OBD_P0560.AutoSize = true;
+            this.OBD_P0560.Location = new System.Drawing.Point(113, 49);
+            this.OBD_P0560.Name = "OBD_P0560";
+            this.OBD_P0560.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0560.TabIndex = 28;
+            this.OBD_P0560.TabStop = true;
+            this.OBD_P0560.Text = "P0560";
+            this.OBD_P0560.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0512
+            // 
+            this.OBD_P0512.AutoCheck = false;
+            this.OBD_P0512.AutoSize = true;
+            this.OBD_P0512.Location = new System.Drawing.Point(113, 24);
+            this.OBD_P0512.Name = "OBD_P0512";
+            this.OBD_P0512.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0512.TabIndex = 27;
+            this.OBD_P0512.TabStop = true;
+            this.OBD_P0512.Text = "P0512";
+            this.OBD_P0512.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0500
+            // 
+            this.OBD_P0500.AutoCheck = false;
+            this.OBD_P0500.AutoSize = true;
+            this.OBD_P0500.Location = new System.Drawing.Point(13, 551);
+            this.OBD_P0500.Name = "OBD_P0500";
+            this.OBD_P0500.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0500.TabIndex = 24;
+            this.OBD_P0500.TabStop = true;
+            this.OBD_P0500.Text = "P0500";
+            this.OBD_P0500.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0480
+            // 
+            this.OBD_P0480.AutoCheck = false;
+            this.OBD_P0480.AutoSize = true;
+            this.OBD_P0480.Location = new System.Drawing.Point(13, 526);
+            this.OBD_P0480.Name = "OBD_P0480";
+            this.OBD_P0480.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0480.TabIndex = 23;
+            this.OBD_P0480.TabStop = true;
+            this.OBD_P0480.Text = "P0480";
+            this.OBD_P0480.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0410
+            // 
+            this.OBD_P0410.AutoCheck = false;
+            this.OBD_P0410.AutoSize = true;
+            this.OBD_P0410.Location = new System.Drawing.Point(13, 501);
+            this.OBD_P0410.Name = "OBD_P0410";
+            this.OBD_P0410.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0410.TabIndex = 22;
+            this.OBD_P0410.TabStop = true;
+            this.OBD_P0410.Text = "P0410";
+            this.OBD_P0410.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0505
+            // 
+            this.OBD_P0505.AutoCheck = false;
+            this.OBD_P0505.AutoSize = true;
+            this.OBD_P0505.Location = new System.Drawing.Point(13, 601);
+            this.OBD_P0505.Name = "OBD_P0505";
+            this.OBD_P0505.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0505.TabIndex = 26;
+            this.OBD_P0505.TabStop = true;
+            this.OBD_P0505.Text = "P0505";
+            this.OBD_P0505.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0352
+            // 
+            this.OBD_P0352.AutoCheck = false;
+            this.OBD_P0352.AutoSize = true;
+            this.OBD_P0352.Location = new System.Drawing.Point(13, 476);
+            this.OBD_P0352.Name = "OBD_P0352";
+            this.OBD_P0352.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0352.TabIndex = 21;
+            this.OBD_P0352.TabStop = true;
+            this.OBD_P0352.Text = "P0352";
+            this.OBD_P0352.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0501
+            // 
+            this.OBD_P0501.AutoCheck = false;
+            this.OBD_P0501.AutoSize = true;
+            this.OBD_P0501.Location = new System.Drawing.Point(13, 576);
+            this.OBD_P0501.Name = "OBD_P0501";
+            this.OBD_P0501.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0501.TabIndex = 25;
+            this.OBD_P0501.TabStop = true;
+            this.OBD_P0501.Text = "P0501";
+            this.OBD_P0501.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0351
+            // 
+            this.OBD_P0351.AutoCheck = false;
+            this.OBD_P0351.AutoSize = true;
+            this.OBD_P0351.Location = new System.Drawing.Point(13, 451);
+            this.OBD_P0351.Name = "OBD_P0351";
+            this.OBD_P0351.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0351.TabIndex = 20;
+            this.OBD_P0351.TabStop = true;
+            this.OBD_P0351.Text = "P0351";
+            this.OBD_P0351.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0336
+            // 
+            this.OBD_P0336.AutoCheck = false;
+            this.OBD_P0336.AutoSize = true;
+            this.OBD_P0336.Location = new System.Drawing.Point(13, 426);
+            this.OBD_P0336.Name = "OBD_P0336";
+            this.OBD_P0336.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0336.TabIndex = 19;
+            this.OBD_P0336.TabStop = true;
+            this.OBD_P0336.Text = "P0336";
+            this.OBD_P0336.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0335
+            // 
+            this.OBD_P0335.AutoCheck = false;
+            this.OBD_P0335.AutoSize = true;
+            this.OBD_P0335.Location = new System.Drawing.Point(13, 400);
+            this.OBD_P0335.Name = "OBD_P0335";
+            this.OBD_P0335.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0335.TabIndex = 18;
+            this.OBD_P0335.TabStop = true;
+            this.OBD_P0335.Text = "P0335";
+            this.OBD_P0335.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0230
+            // 
+            this.OBD_P0230.AutoCheck = false;
+            this.OBD_P0230.AutoSize = true;
+            this.OBD_P0230.Location = new System.Drawing.Point(13, 375);
+            this.OBD_P0230.Name = "OBD_P0230";
+            this.OBD_P0230.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0230.TabIndex = 17;
+            this.OBD_P0230.TabStop = true;
+            this.OBD_P0230.Text = "P0230";
+            this.OBD_P0230.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0217
+            // 
+            this.OBD_P0217.AutoCheck = false;
+            this.OBD_P0217.AutoSize = true;
+            this.OBD_P0217.Location = new System.Drawing.Point(13, 350);
+            this.OBD_P0217.Name = "OBD_P0217";
+            this.OBD_P0217.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0217.TabIndex = 16;
+            this.OBD_P0217.TabStop = true;
+            this.OBD_P0217.Text = "P0217";
+            this.OBD_P0217.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0202
+            // 
+            this.OBD_P0202.AutoCheck = false;
+            this.OBD_P0202.AutoSize = true;
+            this.OBD_P0202.Location = new System.Drawing.Point(13, 325);
+            this.OBD_P0202.Name = "OBD_P0202";
+            this.OBD_P0202.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0202.TabIndex = 15;
+            this.OBD_P0202.TabStop = true;
+            this.OBD_P0202.Text = "P0202";
+            this.OBD_P0202.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0130
+            // 
+            this.OBD_P0130.AutoCheck = false;
+            this.OBD_P0130.AutoSize = true;
+            this.OBD_P0130.Location = new System.Drawing.Point(13, 200);
+            this.OBD_P0130.Name = "OBD_P0130";
+            this.OBD_P0130.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0130.TabIndex = 7;
+            this.OBD_P0130.TabStop = true;
+            this.OBD_P0130.Text = "P0130";
+            this.OBD_P0130.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0201
+            // 
+            this.OBD_P0201.AutoCheck = false;
+            this.OBD_P0201.AutoSize = true;
+            this.OBD_P0201.Location = new System.Drawing.Point(13, 300);
+            this.OBD_P0201.Name = "OBD_P0201";
+            this.OBD_P0201.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0201.TabIndex = 14;
+            this.OBD_P0201.TabStop = true;
+            this.OBD_P0201.Text = "P0201";
+            this.OBD_P0201.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0120
+            // 
+            this.OBD_P0120.AutoCheck = false;
+            this.OBD_P0120.AutoSize = true;
+            this.OBD_P0120.Location = new System.Drawing.Point(13, 175);
+            this.OBD_P0120.Name = "OBD_P0120";
+            this.OBD_P0120.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0120.TabIndex = 6;
+            this.OBD_P0120.TabStop = true;
+            this.OBD_P0120.Text = "P0120";
+            this.OBD_P0120.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0155
+            // 
+            this.OBD_P0155.AutoCheck = false;
+            this.OBD_P0155.AutoSize = true;
+            this.OBD_P0155.Location = new System.Drawing.Point(13, 275);
+            this.OBD_P0155.Name = "OBD_P0155";
+            this.OBD_P0155.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0155.TabIndex = 13;
+            this.OBD_P0155.TabStop = true;
+            this.OBD_P0155.Text = "P0155";
+            this.OBD_P0155.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0115
+            // 
+            this.OBD_P0115.AutoCheck = false;
+            this.OBD_P0115.AutoSize = true;
+            this.OBD_P0115.Location = new System.Drawing.Point(13, 150);
+            this.OBD_P0115.Name = "OBD_P0115";
+            this.OBD_P0115.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0115.TabIndex = 5;
+            this.OBD_P0115.TabStop = true;
+            this.OBD_P0115.Text = "P0115";
+            this.OBD_P0115.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0150
+            // 
+            this.OBD_P0150.AutoCheck = false;
+            this.OBD_P0150.AutoSize = true;
+            this.OBD_P0150.Location = new System.Drawing.Point(13, 250);
+            this.OBD_P0150.Name = "OBD_P0150";
+            this.OBD_P0150.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0150.TabIndex = 12;
+            this.OBD_P0150.TabStop = true;
+            this.OBD_P0150.Text = "P0150";
+            this.OBD_P0150.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0110
+            // 
+            this.OBD_P0110.AutoCheck = false;
+            this.OBD_P0110.AutoSize = true;
+            this.OBD_P0110.Location = new System.Drawing.Point(13, 125);
+            this.OBD_P0110.Name = "OBD_P0110";
+            this.OBD_P0110.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0110.TabIndex = 4;
+            this.OBD_P0110.TabStop = true;
+            this.OBD_P0110.Text = "P0110";
+            this.OBD_P0110.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0135
+            // 
+            this.OBD_P0135.AutoCheck = false;
+            this.OBD_P0135.AutoSize = true;
+            this.OBD_P0135.Location = new System.Drawing.Point(13, 225);
+            this.OBD_P0135.Name = "OBD_P0135";
+            this.OBD_P0135.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0135.TabIndex = 11;
+            this.OBD_P0135.TabStop = true;
+            this.OBD_P0135.Text = "P0135";
+            this.OBD_P0135.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0105
+            // 
+            this.OBD_P0105.AutoCheck = false;
+            this.OBD_P0105.AutoSize = true;
+            this.OBD_P0105.Location = new System.Drawing.Point(13, 100);
+            this.OBD_P0105.Name = "OBD_P0105";
+            this.OBD_P0105.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0105.TabIndex = 3;
+            this.OBD_P0105.TabStop = true;
+            this.OBD_P0105.Text = "P0105";
+            this.OBD_P0105.UseVisualStyleBackColor = true;
+            // 
+            // OBD_C0085
+            // 
+            this.OBD_C0085.AutoCheck = false;
+            this.OBD_C0085.AutoSize = true;
+            this.OBD_C0085.Location = new System.Drawing.Point(13, 75);
+            this.OBD_C0085.Name = "OBD_C0085";
+            this.OBD_C0085.Size = new System.Drawing.Size(65, 19);
+            this.OBD_C0085.TabIndex = 2;
+            this.OBD_C0085.TabStop = true;
+            this.OBD_C0085.Text = "C0085";
+            this.OBD_C0085.UseVisualStyleBackColor = true;
+            // 
+            // OBD_C0083
+            // 
+            this.OBD_C0083.AutoCheck = false;
+            this.OBD_C0083.AutoSize = true;
+            this.OBD_C0083.Location = new System.Drawing.Point(13, 49);
+            this.OBD_C0083.Name = "OBD_C0083";
+            this.OBD_C0083.Size = new System.Drawing.Size(65, 19);
+            this.OBD_C0083.TabIndex = 1;
+            this.OBD_C0083.TabStop = true;
+            this.OBD_C0083.Text = "C0083";
+            this.OBD_C0083.UseVisualStyleBackColor = true;
+            // 
+            // OBD_P0503
+            // 
+            this.OBD_P0503.AutoCheck = false;
+            this.OBD_P0503.AutoSize = true;
+            this.OBD_P0503.Location = new System.Drawing.Point(13, 24);
+            this.OBD_P0503.Name = "OBD_P0503";
+            this.OBD_P0503.Size = new System.Drawing.Size(64, 19);
+            this.OBD_P0503.TabIndex = 0;
+            this.OBD_P0503.TabStop = true;
+            this.OBD_P0503.Text = "P0503";
+            this.OBD_P0503.UseVisualStyleBackColor = true;
+            // 
+            // Value_Battery
+            // 
+            this.Value_Battery.Location = new System.Drawing.Point(557, 182);
+            this.Value_Battery.Name = "Value_Battery";
+            this.Value_Battery.ReadOnly = true;
+            this.Value_Battery.Size = new System.Drawing.Size(93, 25);
+            this.Value_Battery.TabIndex = 27;
+            this.Value_Battery.Text = "0";
+            this.Value_Battery.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_Battery
+            // 
+            this.Label_Battery.AutoSize = true;
+            this.Label_Battery.Location = new System.Drawing.Point(427, 185);
+            this.Label_Battery.Name = "Label_Battery";
+            this.Label_Battery.Size = new System.Drawing.Size(48, 15);
+            this.Label_Battery.TabIndex = 26;
+            this.Label_Battery.Text = "Battery";
+            // 
+            // Value_RoomTemp
+            // 
+            this.Value_RoomTemp.Location = new System.Drawing.Point(298, 182);
+            this.Value_RoomTemp.Name = "Value_RoomTemp";
+            this.Value_RoomTemp.ReadOnly = true;
+            this.Value_RoomTemp.Size = new System.Drawing.Size(93, 25);
+            this.Value_RoomTemp.TabIndex = 23;
+            this.Value_RoomTemp.Text = "0";
+            this.Value_RoomTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Value_Fuel
+            // 
+            this.Value_Fuel.Location = new System.Drawing.Point(557, 145);
+            this.Value_Fuel.Name = "Value_Fuel";
+            this.Value_Fuel.ReadOnly = true;
+            this.Value_Fuel.Size = new System.Drawing.Size(93, 25);
+            this.Value_Fuel.TabIndex = 25;
+            this.Value_Fuel.Text = "0";
+            this.Value_Fuel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_RoomTemp
+            // 
+            this.Label_RoomTemp.AutoSize = true;
+            this.Label_RoomTemp.Location = new System.Drawing.Point(168, 185);
+            this.Label_RoomTemp.Name = "Label_RoomTemp";
+            this.Label_RoomTemp.Size = new System.Drawing.Size(79, 15);
+            this.Label_RoomTemp.TabIndex = 22;
+            this.Label_RoomTemp.Text = "Temperature";
+            // 
+            // Label_Fuel
+            // 
+            this.Label_Fuel.AutoSize = true;
+            this.Label_Fuel.Location = new System.Drawing.Point(427, 148);
+            this.Label_Fuel.Name = "Label_Fuel";
+            this.Label_Fuel.Size = new System.Drawing.Size(32, 15);
+            this.Label_Fuel.TabIndex = 24;
+            this.Label_Fuel.Text = "Fuel";
+            // 
+            // Value_WaterTemp
+            // 
+            this.Value_WaterTemp.Location = new System.Drawing.Point(298, 145);
+            this.Value_WaterTemp.Name = "Value_WaterTemp";
+            this.Value_WaterTemp.ReadOnly = true;
+            this.Value_WaterTemp.Size = new System.Drawing.Size(93, 25);
+            this.Value_WaterTemp.TabIndex = 21;
+            this.Value_WaterTemp.Text = "0";
+            this.Value_WaterTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_WaterTemp
+            // 
+            this.Label_WaterTemp.AutoSize = true;
+            this.Label_WaterTemp.Location = new System.Drawing.Point(168, 150);
+            this.Label_WaterTemp.Name = "Label_WaterTemp";
+            this.Label_WaterTemp.Size = new System.Drawing.Size(78, 15);
+            this.Label_WaterTemp.TabIndex = 20;
+            this.Label_WaterTemp.Text = "Water Temp";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 708);
-            this.Controls.Add(this.groupBox5);
+            this.ClientSize = new System.Drawing.Size(1184, 708);
+            this.Controls.Add(this.Group_OBD_Error_Code);
+            this.Controls.Add(this.Group_ABS_Error_Code);
+            this.Controls.Add(this.Group_CAN_CMD);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonConnect);
@@ -764,7 +1776,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "USB CAN Demo(创芯光电科技有限公司)";
+            this.Text = "USB CAN Demo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -774,8 +1786,12 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.Group_CAN_CMD.ResumeLayout(false);
+            this.Group_CAN_CMD.PerformLayout();
+            this.Group_ABS_Error_Code.ResumeLayout(false);
+            this.Group_ABS_Error_Code.PerformLayout();
+            this.Group_OBD_Error_Code.ResumeLayout(false);
+            this.Group_OBD_Error_Code.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -819,7 +1835,7 @@
         private System.Windows.Forms.ComboBox comboBox_devtype;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button_Clear;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox Group_CAN_CMD;
         private System.Windows.Forms.RadioButton Status_RearTirePressure;
         private System.Windows.Forms.RadioButton Status_FrontTirePressure;
         private System.Windows.Forms.RadioButton Status_Maintenance;
@@ -840,6 +1856,80 @@
         private System.Windows.Forms.Label Label_MaxSpeed;
         private System.Windows.Forms.TextBox Value_TotalMileage;
         private System.Windows.Forms.Label Label_TotalMileage;
+        private System.Windows.Forms.GroupBox Group_ABS_Error_Code;
+        private System.Windows.Forms.RadioButton ABS_0x5052;
+        private System.Windows.Forms.RadioButton ABS_0x5053;
+        private System.Windows.Forms.RadioButton ABS_0x5014;
+        private System.Windows.Forms.RadioButton ABS_0x5018;
+        private System.Windows.Forms.RadioButton ABS_0x5013;
+        private System.Windows.Forms.RadioButton ABS_0x5017;
+        private System.Windows.Forms.RadioButton ABS_0x5019;
+        private System.Windows.Forms.RadioButton ABS_0x5055;
+        private System.Windows.Forms.RadioButton ABS_0x5025;
+        private System.Windows.Forms.RadioButton ABS_0x5044;
+        private System.Windows.Forms.RadioButton ABS_0x5042;
+        private System.Windows.Forms.RadioButton ABS_0x5045;
+        private System.Windows.Forms.RadioButton ABS_0x5043;
+        private System.Windows.Forms.RadioButton ABS_0x5035;
+        private System.Windows.Forms.GroupBox Group_OBD_Error_Code;
+        private System.Windows.Forms.RadioButton OBD_P0217;
+        private System.Windows.Forms.RadioButton OBD_P0202;
+        private System.Windows.Forms.RadioButton OBD_P0130;
+        private System.Windows.Forms.RadioButton OBD_P0201;
+        private System.Windows.Forms.RadioButton OBD_P0120;
+        private System.Windows.Forms.RadioButton OBD_P0155;
+        private System.Windows.Forms.RadioButton OBD_P0115;
+        private System.Windows.Forms.RadioButton OBD_P0150;
+        private System.Windows.Forms.RadioButton OBD_P0110;
+        private System.Windows.Forms.RadioButton OBD_P0135;
+        private System.Windows.Forms.RadioButton OBD_P0105;
+        private System.Windows.Forms.RadioButton OBD_C0085;
+        private System.Windows.Forms.RadioButton OBD_C0083;
+        private System.Windows.Forms.RadioButton OBD_P0503;
+        private System.Windows.Forms.RadioButton OBD_P0500;
+        private System.Windows.Forms.RadioButton OBD_P0480;
+        private System.Windows.Forms.RadioButton OBD_P0410;
+        private System.Windows.Forms.RadioButton OBD_P0505;
+        private System.Windows.Forms.RadioButton OBD_P0352;
+        private System.Windows.Forms.RadioButton OBD_P0501;
+        private System.Windows.Forms.RadioButton OBD_P0351;
+        private System.Windows.Forms.RadioButton OBD_P0336;
+        private System.Windows.Forms.RadioButton OBD_P0335;
+        private System.Windows.Forms.RadioButton OBD_P0230;
+        private System.Windows.Forms.RadioButton OBD_U0486;
+        private System.Windows.Forms.RadioButton OBD_U0426;
+        private System.Windows.Forms.RadioButton OBD_U0122;
+        private System.Windows.Forms.RadioButton OBD_U0121;
+        private System.Windows.Forms.RadioButton OBD_U0002;
+        private System.Windows.Forms.RadioButton OBD_U0140;
+        private System.Windows.Forms.RadioButton OBD_U0001;
+        private System.Windows.Forms.RadioButton OBD_U0128;
+        private System.Windows.Forms.RadioButton OBD_P2600;
+        private System.Windows.Forms.RadioButton OBD_P2158;
+        private System.Windows.Forms.RadioButton OBD_P1800;
+        private System.Windows.Forms.RadioButton OBD_P1607;
+        private System.Windows.Forms.RadioButton OBD_P1536;
+        private System.Windows.Forms.RadioButton OBD_P1310;
+        private System.Windows.Forms.RadioButton OBD_P0620_PIN31;
+        private System.Windows.Forms.RadioButton OBD_P1300;
+        private System.Windows.Forms.RadioButton OBD_P0620_PIN2;
+        private System.Windows.Forms.RadioButton OBD_P0A0F;
+        private System.Windows.Forms.RadioButton OBD_P0606;
+        private System.Windows.Forms.RadioButton OBD_P0655;
+        private System.Windows.Forms.RadioButton OBD_P0605;
+        private System.Windows.Forms.RadioButton OBD_P0650;
+        private System.Windows.Forms.RadioButton OBD_P0604;
+        private System.Windows.Forms.RadioButton OBD_P0601;
+        private System.Windows.Forms.RadioButton OBD_P0560;
+        private System.Windows.Forms.RadioButton OBD_P0512;
+        private System.Windows.Forms.TextBox Value_Battery;
+        private System.Windows.Forms.Label Label_Battery;
+        private System.Windows.Forms.TextBox Value_RoomTemp;
+        private System.Windows.Forms.TextBox Value_Fuel;
+        private System.Windows.Forms.Label Label_RoomTemp;
+        private System.Windows.Forms.Label Label_Fuel;
+        private System.Windows.Forms.TextBox Value_WaterTemp;
+        private System.Windows.Forms.Label Label_WaterTemp;
     }
 }
 
