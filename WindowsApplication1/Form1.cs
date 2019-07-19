@@ -505,22 +505,34 @@ namespace WindowsApplication1
             const int DATA_LEN = 8;
             byte[] DATA = new byte[DATA_LEN];
 
-            String str = "";
+            String str;
             for (UInt32 i = 0; i < res; i++)
             {
-                str = "接收到数据: ";
-                str += "  帧ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16);
-                str += "  帧格式:";
-                if (m_recobj[i].RemoteFlag == 0)
-                    str += "数据帧 ";
-                else
-                    str += "远程帧 ";
+                str = "";
+                //str = "接收到数据: ";
+                //str += "  帧ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16);
+                //str += "  帧格式:";
+
                 if (m_recobj[i].ExternFlag == 0)
-                    str += "标准帧 ";
+                {
+                    //str += "标准帧 ";
+                    str += "Base-format ";
+                }
                 else
-                    str += "扩展帧 ";
+                {
+                    //str += "扩展帧 ";
+                    str += "Extended-format ";
+                }
+                if (m_recobj[i].RemoteFlag == 0)
+                {
+                    //str += "数据帧 ";
+                    str += "data-frame ";
+                }
+                else
+                    //str += "远程帧 ";
+                    str += "remote-frame ";
 
-
+                str += " ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16) +" ";
                 ID = m_recobj[i].ID;
 
                 if (m_recobj[i].RemoteFlag == 0)
@@ -528,7 +540,8 @@ namespace WindowsApplication1
                     byte len = (byte)(m_recobj[i].DataLen % 9);
                     DLC = len;
 
-                    str += "数据: ";
+                    //str += "数据: ";
+                    str += "Data:";
 
                     fixed (VCI_CAN_OBJ* m_recobj1 = &m_recobj[i])
                     {
