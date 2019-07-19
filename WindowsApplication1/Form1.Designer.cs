@@ -414,7 +414,7 @@
             this.buttonConnect.Location = new System.Drawing.Point(639, 12);
             this.buttonConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(121, 31);
+            this.buttonConnect.Size = new System.Drawing.Size(130, 31);
             this.buttonConnect.TabIndex = 2;
             this.buttonConnect.Text = "Connect";
             this.buttonConnect.UseVisualStyleBackColor = true;
@@ -565,7 +565,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Size = new System.Drawing.Size(748, 160);
+            this.groupBox4.Size = new System.Drawing.Size(757, 160);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Message";
@@ -722,7 +722,7 @@
             // 
             // Value_AveSpeed
             // 
-            this.Value_AveSpeed.Location = new System.Drawing.Point(405, 98);
+            this.Value_AveSpeed.Location = new System.Drawing.Point(419, 99);
             this.Value_AveSpeed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_AveSpeed.Name = "Value_AveSpeed";
             this.Value_AveSpeed.ReadOnly = true;
@@ -762,7 +762,7 @@
             // 
             // Value_MaxSpeed
             // 
-            this.Value_MaxSpeed.Location = new System.Drawing.Point(405, 60);
+            this.Value_MaxSpeed.Location = new System.Drawing.Point(419, 61);
             this.Value_MaxSpeed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_MaxSpeed.Name = "Value_MaxSpeed";
             this.Value_MaxSpeed.ReadOnly = true;
@@ -793,7 +793,7 @@
             // 
             // Value_TotalMileage
             // 
-            this.Value_TotalMileage.Location = new System.Drawing.Point(405, 22);
+            this.Value_TotalMileage.Location = new System.Drawing.Point(419, 23);
             this.Value_TotalMileage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_TotalMileage.Name = "Value_TotalMileage";
             this.Value_TotalMileage.ReadOnly = true;
@@ -1762,7 +1762,7 @@
             // 
             // Value_Battery
             // 
-            this.Value_Battery.Location = new System.Drawing.Point(405, 182);
+            this.Value_Battery.Location = new System.Drawing.Point(419, 183);
             this.Value_Battery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_Battery.Name = "Value_Battery";
             this.Value_Battery.ReadOnly = true;
@@ -1793,7 +1793,7 @@
             // 
             // Value_Fuel
             // 
-            this.Value_Fuel.Location = new System.Drawing.Point(405, 145);
+            this.Value_Fuel.Location = new System.Drawing.Point(419, 146);
             this.Value_Fuel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_Fuel.Name = "Value_Fuel";
             this.Value_Fuel.ReadOnly = true;
@@ -1867,7 +1867,7 @@
             this.Group_Driving_Status.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Group_Driving_Status.Name = "Group_Driving_Status";
             this.Group_Driving_Status.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Group_Driving_Status.Size = new System.Drawing.Size(520, 229);
+            this.Group_Driving_Status.Size = new System.Drawing.Size(529, 229);
             this.Group_Driving_Status.TabIndex = 12;
             this.Group_Driving_Status.TabStop = false;
             this.Group_Driving_Status.Text = "Driving Status";
@@ -1895,7 +1895,7 @@
             this.textbox_Connection_Message.ReadOnly = true;
             this.textbox_Connection_Message.Size = new System.Drawing.Size(611, 31);
             this.textbox_Connection_Message.TabIndex = 14;
-            this.textbox_Connection_Message.Text = "Please click \"Connect\" button to start";
+            this.textbox_Connection_Message.Text = "Please click [Connect] button to start";
             // 
             // Form1
             // 

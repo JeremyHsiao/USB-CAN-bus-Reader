@@ -197,6 +197,7 @@ namespace WindowsApplication1
         {
             if (m_bOpen==1)
             {
+                textbox_Connection_Message.Text = "Please click[Connect] button to start";
                 VCI_CloseDevice(m_devtype, m_devind);
             }
         }
@@ -205,6 +206,7 @@ namespace WindowsApplication1
         {
             if (m_bOpen==1)
             {
+                VCI_ResetCAN(m_devtype, m_devind, m_canind);
                 VCI_CloseDevice(m_devtype, m_devind);
                 m_bOpen = 0;
             }
@@ -219,8 +221,7 @@ namespace WindowsApplication1
                 status = VCI_OpenDevice(m_devtype, m_devind, 0);
                 if ( status != 1)
                 {
-                    //MessageBox.Show("打开设备失败,请检查设备类型和设备索引号是否正确", "错误",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check your setup and try again.";
                     return;
                 }
 
@@ -232,9 +233,25 @@ namespace WindowsApplication1
                 config.Timing1 = System.Convert.ToByte("0x" + textBox_Time1.Text, 16);
                 config.Filter = (Byte)(comboBox_Filter.SelectedIndex+1);
                 config.Mode = (Byte)comboBox_Mode.SelectedIndex;
-                VCI_InitCAN(m_devtype, m_devind, m_canind, ref config);
+                status = VCI_InitCAN(m_devtype, m_devind, m_canind, ref config);
+                if (status != 1)
+                {
+                    VCI_CloseDevice(m_devtype, m_devind);
+                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check your setup and try again.";
+                    return;
+                }
+
+                status = VCI_StartCAN(m_devtype, m_devind, m_canind);
+                if (status != 1)
+                {
+                    VCI_CloseDevice(m_devtype, m_devind);
+                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check your setup and try again.";
+                    return;
+                }
+
             }
-            buttonConnect.Text = m_bOpen==1?"断开":"连接";
+            buttonConnect.Text = m_bOpen==1?"Disconnect":"Connect";
+            textbox_Connection_Message.Text = m_bOpen == 1 ? "Please click [Disonnect] button to stop." :"Please click [Connect] button to start.";
             timer_rec.Enabled = m_bOpen==1?true:false;
         }
 
