@@ -7,95 +7,98 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-/*------------兼容ZLG的数据类型---------------------------------*/
+///*------------兼容ZLG的数据类型---------------------------------*/
 
-//1.ZLGCAN系列接口卡信息的数据类型。
-public struct VCI_BOARD_INFO 
-{ 
-	public UInt16 hw_Version;
-    public UInt16 fw_Version;
-    public UInt16 dr_Version;
-    public UInt16 in_Version;
-    public UInt16 irq_Num;
-    public byte   can_Num;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst=20)] public byte []str_Serial_Num;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 40)]
-    public byte[] str_hw_Type;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-    public byte[] Reserved;
-}
+////1.ZLGCAN系列接口卡信息的数据类型。
+//public struct VCI_BOARD_INFO 
+//{ 
+//	public UInt16 hw_Version;
+//    public UInt16 fw_Version;
+//    public UInt16 dr_Version;
+//    public UInt16 in_Version;
+//    public UInt16 irq_Num;
+//    public byte   can_Num;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst=20)] public byte []str_Serial_Num;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 40)]
+//    public byte[] str_hw_Type;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+//    public byte[] Reserved;
+//}
 
-/////////////////////////////////////////////////////
-//2.定义CAN信息帧的数据类型。
-unsafe public struct VCI_CAN_OBJ  //使用不安全代码
-{
-    public uint ID;
-    public uint TimeStamp;        //时间标识
-    public byte TimeFlag;         //是否使用时间标识
-    public byte SendType;         //发送标志。保留，未用
-    public byte RemoteFlag;       //是否是远程帧
-    public byte ExternFlag;       //是否是扩展帧
-    public byte DataLen;          //数据长度
-    public fixed byte Data[8];    //数据
-    public fixed byte Reserved[3];//保留位
+///////////////////////////////////////////////////////
+////2.定义CAN信息帧的数据类型。
+//unsafe public struct VCI_CAN_OBJ  //使用不安全代码
+//{
+//    public uint ID;
+//    public uint TimeStamp;        //时间标识
+//    public byte TimeFlag;         //是否使用时间标识
+//    public byte SendType;         //发送标志。保留，未用
+//    public byte RemoteFlag;       //是否是远程帧
+//    public byte ExternFlag;       //是否是扩展帧
+//    public byte DataLen;          //数据长度
+//    public fixed byte Data[8];    //数据
+//    public fixed byte Reserved[3];//保留位
 
-}
+//}
 
-//3.定义初始化CAN的数据类型
-public struct VCI_INIT_CONFIG 
-{
-    public UInt32 AccCode;
-    public UInt32 AccMask;
-    public UInt32 Reserved;
-    public byte Filter;   //0或1接收所有帧。2标准帧滤波，3是扩展帧滤波。
-    public byte Timing0;  //波特率参数，具体配置，请查看二次开发库函数说明书。
-    public byte Timing1;
-    public byte Mode;     //模式，0表示正常模式，1表示只听模式,2自测模式
-}
+////3.定义初始化CAN的数据类型
+//public struct VCI_INIT_CONFIG 
+//{
+//    public UInt32 AccCode;
+//    public UInt32 AccMask;
+//    public UInt32 Reserved;
+//    public byte Filter;   //0或1接收所有帧。2标准帧滤波，3是扩展帧滤波。
+//    public byte Timing0;  //波特率参数，具体配置，请查看二次开发库函数说明书。
+//    public byte Timing1;
+//    public byte Mode;     //模式，0表示正常模式，1表示只听模式,2自测模式
+//}
 
-/*------------其他数据结构描述---------------------------------*/
-//4.USB-CAN总线适配器板卡信息的数据类型1，该类型为VCI_FindUsbDevice函数的返回参数。
-public struct VCI_BOARD_INFO1
-{
-    public UInt16 hw_Version;
-    public UInt16 fw_Version;
-    public UInt16 dr_Version;
-    public UInt16 in_Version;
-    public UInt16 irq_Num;
-    public byte can_Num;
-    public byte Reserved;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst=8)] public byte []str_Serial_Num;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-    public byte[] str_hw_Type;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-    public byte[] str_Usb_Serial;
-}
+///*------------其他数据结构描述---------------------------------*/
+////4.USB-CAN总线适配器板卡信息的数据类型1，该类型为VCI_FindUsbDevice函数的返回参数。
+//public struct VCI_BOARD_INFO1
+//{
+//    public UInt16 hw_Version;
+//    public UInt16 fw_Version;
+//    public UInt16 dr_Version;
+//    public UInt16 in_Version;
+//    public UInt16 irq_Num;
+//    public byte can_Num;
+//    public byte Reserved;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst=8)] public byte []str_Serial_Num;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+//    public byte[] str_hw_Type;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+//    public byte[] str_Usb_Serial;
+//}
 
-/*------------数据结构描述完成---------------------------------*/
+///*------------数据结构描述完成---------------------------------*/
 
-public struct CHGDESIPANDPORT 
-{
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
-    public byte[] szpwd;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
-    public byte[] szdesip;
-    public Int32 desport;
+//public struct CHGDESIPANDPORT 
+//{
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
+//    public byte[] szpwd;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
+//    public byte[] szdesip;
+//    public Int32 desport;
 
-    public void Init()
-    {
-        szpwd = new byte[10];
-        szdesip = new byte[20];
-    }
-}
+//    public void Init()
+//    {
+//        szpwd = new byte[10];
+//        szdesip = new byte[20];
+//    }
+//}
 
 
 namespace WindowsApplication1
 {
     public partial class Form1 : Form
     {
+
+        //// COPY - begin
+
         const int DEV_USBCAN = 3;
         const int DEV_USBCAN2 = 4;
-         /// <summary>
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="DeviceType"></param>
@@ -128,13 +131,13 @@ namespace WindowsApplication1
 
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_Receive(UInt32 DeviceType, UInt32 DeviceInd, UInt32 CANInd, ref VCI_CAN_OBJ pReceive, UInt32 Len, Int32 WaitTime);
-        
+
         /*------------其他函数描述---------------------------------*/
 
         [DllImport("controlcan.dll")]
-        static extern UInt32 VCI_ConnectDevice(UInt32 DevType,UInt32 DevIndex);
+        static extern UInt32 VCI_ConnectDevice(UInt32 DevType, UInt32 DevIndex);
         [DllImport("controlcan.dll")]
-        static extern UInt32 VCI_UsbDeviceReset(UInt32 DevType,UInt32 DevIndex,UInt32 Reserved);
+        static extern UInt32 VCI_UsbDeviceReset(UInt32 DevType, UInt32 DevIndex, UInt32 Reserved);
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_FindUsbDevice(ref VCI_BOARD_INFO1 pInfo);
         /*------------函数描述结束---------------------------------*/
@@ -148,6 +151,8 @@ namespace WindowsApplication1
         VCI_CAN_OBJ[] m_recobj = new VCI_CAN_OBJ[1000];
 
         UInt32[] m_arrdevtype = new UInt32[20];
+
+        //// COPY - end
 
         public Form1()
         {
@@ -183,7 +188,7 @@ namespace WindowsApplication1
             //comboBox_devtype.Items[3] = "VCI_USBCAN2";
             //m_arrdevtype[3]=  VCI_USBCAN2 ;
 
-             comboBox_devtype.SelectedIndex = 1;
+            comboBox_devtype.SelectedIndex = 1;
             comboBox_devtype.MaxDropDownItems = comboBox_devtype.Items.Count;
 
         }
@@ -205,14 +210,17 @@ namespace WindowsApplication1
             }
             else
             {
+                uint status;
+
                 m_devtype = m_arrdevtype[comboBox_devtype.SelectedIndex];
 
                 m_devind=(UInt32)comboBox_DevIndex.SelectedIndex;
                 m_canind = (UInt32)comboBox_CANIndex.SelectedIndex;
-                if (VCI_OpenDevice(m_devtype, m_devind, 0) == 0)
+                status = VCI_OpenDevice(m_devtype, m_devind, 0);
+                if ( status != 1)
                 {
-                    MessageBox.Show("打开设备失败,请检查设备类型和设备索引号是否正确", "错误",
-                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //MessageBox.Show("打开设备失败,请检查设备类型和设备索引号是否正确", "错误",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                     return;
                 }
 
@@ -230,11 +238,307 @@ namespace WindowsApplication1
             timer_rec.Enabled = m_bOpen==1?true:false;
         }
 
-        unsafe private void timer_rec_Tick(object sender, EventArgs e)
+        private void CAN_Update_DashBoard(uint ID, uint DLC, byte[] DATA)
+        {
+            switch (ID)
+            {
+                case 0x1:       // CMD_A
+                    if (DLC == 1)
+                    {
+                        Byte status = DATA[0];
+                        Status_OnOff.Checked = ((status & 0x01) != 0) ? true : false;
+                        Status_EngineOil.Checked = ((status & 0x02) != 0) ? true : false;
+                        Status_Fuel.Checked = ((status & 0x04) != 0) ? true : false;
+                        Status_ABS.Checked = ((status & 0x08) != 0) ? true : false;
+                        Status_WaterTemp.Checked = ((status & 0x10) != 0) ? true : false;
+                        Status_Maintenance.Checked = ((status & 0x20) != 0) ? true : false;
+                        Status_FrontTirePressure.Checked = ((status & 0x40) != 0) ? true : false;
+                        Status_RearTirePressure.Checked = ((status & 0x80) != 0) ? true : false;
+                    }
+                    else
+                    {
+                        // Error DLC
+                    }
+                    break;
+
+                case 0x2:       // CMD_B
+                    if (DLC == 5)
+                    {
+                        // Speed
+                        uint Speed = DATA[0];
+                        if (Speed <= 255)  // 180?
+                        {
+                            Value_Speed.Text = Speed.ToString() + " km/h";
+                        }
+                        else
+                        {
+                            // Out of range
+                        }
+
+                        // RPM
+                        uint RPM = DATA[1];
+                        RPM = RPM * 256 + DATA[2];
+                        Value_EngineRPM.Text = RPM.ToString() + " RPM"; ;
+
+                        // Consumption
+                        uint Consumption = DATA[3];
+                        Consumption = Consumption * 256 + DATA[4];
+                        if ((Consumption == 0xfffe) || (Speed < 9))
+                        {
+                            Value_Speed.Text = "--.-km/L";
+                        }
+                        else
+                        {
+                            float f_Consumption = ((float)Consumption) / 10;
+                            Value_FuelConsumption.Text = f_Consumption.ToString() + " km/L";
+                        }
+                    }
+                    else
+                    {
+                        // Error DLC
+                    }
+                    break;
+
+                case 0x3:       // CMD_C
+                    if (DLC == 5)
+                    {
+                        // Water Temp
+                        uint WaterTemp = DATA[0];
+                        if (WaterTemp <= 8)
+                        {
+                            Value_WaterTemp.Text = WaterTemp.ToString();
+                        }
+                        else
+                        {
+                            // Out of range
+                        }
+
+                        // Room Temperature
+                        uint Temp_Sign_Value = DATA[1];
+                        uint Room_Temp = DATA[2];
+                        if ((DATA[1] == 0xFF) && (DATA[2] == 0xFE))
+                        {
+                            Value_RoomTemp.Text = "-- C";
+                        }
+                        else if (Temp_Sign_Value == 0)
+                        {
+                            Value_RoomTemp.Text = "+" + Room_Temp.ToString() + " C";
+                        }
+                        else if (Temp_Sign_Value == 1)
+                        {
+                            Value_RoomTemp.Text = "-" + Room_Temp.ToString() + " C";
+                        }
+                        else
+                        {
+                            // Error data of Temp_Sign
+                        }
+
+                        // Fuel
+                        uint Fuel = DATA[3];
+                        if (Fuel <= 160)
+                        {
+                            float f_Fuel;
+                            f_Fuel = ((float)Fuel) / 10;
+                            Value_Fuel.Text = f_Fuel.ToString() + "L";
+                        }
+                        else
+                        {
+                            // Error data of Fuel
+                        }
+
+                        // Battery
+                        uint Battery = DATA[4];
+                        float f_Battery;
+                        f_Battery = ((float)Battery) / 10;
+                        Value_Battery.Text = f_Battery.ToString() + "V";
+                    }
+                    else
+                    {
+                        // Error DLC
+                    }
+                    break;
+
+                case 0x4:       // CMD_D
+                    if (DLC == 5)
+                    {
+                        // Mileage
+                        uint Mileage = (((uint)DATA[0]) * 0x10000) + (((uint)DATA[1]) * 0x100) + DATA[2];
+                        Value_TotalMileage.Text = Mileage.ToString() + " km";
+
+                        // Max Speed
+                        uint MaxSpeed = DATA[3];
+                        Value_MaxSpeed.Text = ((MaxSpeed != 0xff) ? (MaxSpeed.ToString()) : ("--")) + " km/h";
+
+                        // Average Speed
+                        uint AveSpeed = DATA[4];
+                        AveSpeed = DATA[4];
+                        Value_AveSpeed.Text = ((AveSpeed != 0xff) ? (AveSpeed.ToString()) : ("--")) + " km/h";
+                    }
+                    else
+                    {
+                        // Error DLC
+                    }
+                    break;
+
+                case 0x5:       // CMD_E
+                    if (DLC == 2)
+                    {
+                        Byte status = DATA[0];
+                        ABS_0x5055.Checked = ((status & 0x01) != 0) ? true : false;
+                        ABS_0x5019.Checked = ((status & 0x02) != 0) ? true : false;
+                        ABS_0x5017.Checked = ((status & 0x04) != 0) ? true : false;
+                        ABS_0x5013.Checked = ((status & 0x08) != 0) ? true : false;
+                        ABS_0x5018.Checked = ((status & 0x10) != 0) ? true : false;
+                        ABS_0x5014.Checked = ((status & 0x20) != 0) ? true : false;
+                        ABS_0x5053.Checked = ((status & 0x40) != 0) ? true : false;
+                        ABS_0x5052.Checked = ((status & 0x80) != 0) ? true : false;
+                        status = DATA[1];
+                        ABS_0x5035.Checked = ((status & 0x01) != 0) ? true : false;
+                        ABS_0x5043.Checked = ((status & 0x02) != 0) ? true : false;
+                        ABS_0x5045.Checked = ((status & 0x04) != 0) ? true : false;
+                        ABS_0x5042.Checked = ((status & 0x08) != 0) ? true : false;
+                        ABS_0x5044.Checked = ((status & 0x10) != 0) ? true : false;
+                        ABS_0x5025.Checked = ((status & 0x20) != 0) ? true : false;
+                    }
+                    else
+                    {
+                        // Error DLC
+                    }
+                    break;
+
+                case 0x6:       // CMD_F
+                    if (DLC == 7)
+                    {
+                        Byte status = DATA[0];
+                        OBD_P0503.Checked = ((status & 0x01) != 0) ? true : false;
+                        OBD_C0083.Checked = ((status & 0x02) != 0) ? true : false;
+                        OBD_C0085.Checked = ((status & 0x04) != 0) ? true : false;
+                        OBD_P0105.Checked = ((status & 0x08) != 0) ? true : false;
+                        OBD_P0110.Checked = ((status & 0x10) != 0) ? true : false;
+                        OBD_P0115.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P0120.Checked = ((status & 0x40) != 0) ? true : false;
+                        OBD_P0130.Checked = ((status & 0x80) != 0) ? true : false;
+                        status = DATA[1];
+                        OBD_P0135.Checked = ((status & 0x01) != 0) ? true : false;
+                        OBD_P0150.Checked = ((status & 0x02) != 0) ? true : false;
+                        OBD_P0155.Checked = ((status & 0x04) != 0) ? true : false;
+                        OBD_P0201.Checked = ((status & 0x08) != 0) ? true : false;
+                        OBD_P0202.Checked = ((status & 0x10) != 0) ? true : false;
+                        OBD_P0217.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P0230.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P0335.Checked = ((status & 0x20) != 0) ? true : false;
+                        status = DATA[2];
+                        OBD_P0336.Checked = ((status & 0x01) != 0) ? true : false;
+                        OBD_P0351.Checked = ((status & 0x02) != 0) ? true : false;
+                        OBD_P0352.Checked = ((status & 0x04) != 0) ? true : false;
+                        OBD_P0410.Checked = ((status & 0x08) != 0) ? true : false;
+                        OBD_P0480.Checked = ((status & 0x10) != 0) ? true : false;
+                        OBD_P0500.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P0501.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P0505.Checked = ((status & 0x20) != 0) ? true : false;
+                        status = DATA[3];
+                        OBD_P0512.Checked = ((status & 0x01) != 0) ? true : false;
+                        OBD_P0560.Checked = ((status & 0x02) != 0) ? true : false;
+                        OBD_P0601.Checked = ((status & 0x04) != 0) ? true : false;
+                        OBD_P0604.Checked = ((status & 0x08) != 0) ? true : false;
+                        OBD_P0605.Checked = ((status & 0x10) != 0) ? true : false;
+                        OBD_P0606.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P0620_PIN2.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P0620_PIN31.Checked = ((status & 0x20) != 0) ? true : false;
+                        status = DATA[4];
+                        OBD_P0650.Checked = ((status & 0x01) != 0) ? true : false;
+                        OBD_P0655.Checked = ((status & 0x02) != 0) ? true : false;
+                        OBD_P0A0F.Checked = ((status & 0x04) != 0) ? true : false;
+                        OBD_P1300.Checked = ((status & 0x08) != 0) ? true : false;
+                        OBD_P1310.Checked = ((status & 0x10) != 0) ? true : false;
+                        OBD_P1536.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P1607.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_P1800.Checked = ((status & 0x20) != 0) ? true : false;
+                        status = DATA[5];
+                        OBD_P2158.Checked = ((status & 0x01) != 0) ? true : false;
+                        OBD_P2600.Checked = ((status & 0x02) != 0) ? true : false;
+                        OBD_U0001.Checked = ((status & 0x04) != 0) ? true : false;
+                        OBD_U0002.Checked = ((status & 0x08) != 0) ? true : false;
+                        OBD_U0121.Checked = ((status & 0x10) != 0) ? true : false;
+                        OBD_U0122.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_U0128.Checked = ((status & 0x20) != 0) ? true : false;
+                        OBD_U0140.Checked = ((status & 0x20) != 0) ? true : false;
+                        status = DATA[6];
+                        OBD_U0426.Checked = ((status & 0x01) != 0) ? true : false;
+                        OBD_U0486.Checked = ((status & 0x02) != 0) ? true : false;
+                    }
+                    else
+                    {
+                        // Error DLC
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+         unsafe private void timer_rec_Tick(object sender, EventArgs e)
         {
             UInt32 res = new UInt32();
 
             res = VCI_Receive(m_devtype, m_devind, m_canind, ref m_recobj[0],1000, 100);
+
+            uint ID=0, DLC=0;
+            const int DATA_LEN = 8;
+            byte[] DATA = new byte[DATA_LEN];
+
+            String str = "";
+            for (UInt32 i = 0; i < res; i++)
+            {
+                str = "接收到数据: ";
+                str += "  帧ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16);
+                str += "  帧格式:";
+                if (m_recobj[i].RemoteFlag == 0)
+                    str += "数据帧 ";
+                else
+                    str += "远程帧 ";
+                if (m_recobj[i].ExternFlag == 0)
+                    str += "标准帧 ";
+                else
+                    str += "扩展帧 ";
+
+
+                ID = m_recobj[i].ID;
+
+                if (m_recobj[i].RemoteFlag == 0)
+                {
+                    byte len = (byte)(m_recobj[i].DataLen % 9);
+                    DLC = len;
+
+                    str += "数据: ";
+
+                    fixed (VCI_CAN_OBJ* m_recobj1 = &m_recobj[i])
+                    {
+                        byte j = 0;
+                        while ((j<len)&&(j<DATA_LEN))
+                        {
+                            DATA[j] = m_recobj1->Data[j];
+                            str += " " + System.Convert.ToString(DATA[j], 16);
+                            j++;
+                        }
+                    }
+
+                    CAN_Update_DashBoard(ID, DLC, DATA);
+                }
+                listBox_Info.Items.Add(str);
+                listBox_Info.SelectedIndex = listBox_Info.Items.Count - 1;
+
+            }
+            //Marshal.FreeHGlobal(ptArray[0]);
+            //Marshal.FreeHGlobal(pt);
+        }
+
+        unsafe private void timer_rec_Tick_Original(object sender, EventArgs e)
+        {
+            UInt32 res = new UInt32();
+
+            res = VCI_Receive(m_devtype, m_devind, m_canind, ref m_recobj[0], 1000, 100);
 
             /////////////////////////////////////
             //IntPtr[] ptArray = new IntPtr[1];
@@ -247,7 +551,7 @@ namespace WindowsApplication1
             //res = VCI_Receive(m_devtype, m_devind, m_canind, pt, 50/*50*/, 100);
             ////////////////////////////////////////////////////////
 
-            uint ID=0, DLC=0;
+            uint ID = 0, DLC = 0;
             byte[] DATA = new byte[8];
 
             String str = "";
@@ -298,7 +602,7 @@ namespace WindowsApplication1
                             str += " " + System.Convert.ToString(m_recobj1->Data[3], 16);
                             DATA[3] = m_recobj1->Data[3];
                         }
-                       if (j++ < len)
+                        if (j++ < len)
                         {
                             str += " " + System.Convert.ToString(m_recobj1->Data[4], 16);
                             DATA[4] = m_recobj1->Data[4];
@@ -324,20 +628,20 @@ namespace WindowsApplication1
                 listBox_Info.Items.Add(str);
                 listBox_Info.SelectedIndex = listBox_Info.Items.Count - 1;
 
-                switch(ID)
+                switch (ID)
                 {
                     case 0x1:       // CMD_A
-                        if ( DLC == 1 )
+                        if (DLC == 1)
                         {
                             Byte status = DATA[0];
-                            Status_OnOff.Checked             = ((status & 0x01) != 0) ? true : false;
-                            Status_EngineOil.Checked         = ((status & 0x02) != 0) ? true : false;
-                            Status_Fuel.Checked              = ((status & 0x04) != 0) ? true : false;
-                            Status_ABS.Checked               = ((status & 0x08) != 0) ? true : false;
-                            Status_WaterTemp.Checked         = ((status & 0x10) != 0) ? true : false;
-                            Status_Maintenance.Checked       = ((status & 0x20) != 0) ? true : false;
+                            Status_OnOff.Checked = ((status & 0x01) != 0) ? true : false;
+                            Status_EngineOil.Checked = ((status & 0x02) != 0) ? true : false;
+                            Status_Fuel.Checked = ((status & 0x04) != 0) ? true : false;
+                            Status_ABS.Checked = ((status & 0x08) != 0) ? true : false;
+                            Status_WaterTemp.Checked = ((status & 0x10) != 0) ? true : false;
+                            Status_Maintenance.Checked = ((status & 0x20) != 0) ? true : false;
                             Status_FrontTirePressure.Checked = ((status & 0x40) != 0) ? true : false;
-                            Status_RearTirePressure.Checked  = ((status & 0x80) != 0) ? true : false;
+                            Status_RearTirePressure.Checked = ((status & 0x80) != 0) ? true : false;
                         }
                         else
                         {
@@ -350,7 +654,7 @@ namespace WindowsApplication1
                         {
                             // Speed
                             uint Speed = DATA[0];
-                            if (Speed<=255)  // 180?
+                            if (Speed <= 255)  // 180?
                             {
                                 Value_Speed.Text = Speed.ToString() + " km/h";
                             }
@@ -388,7 +692,7 @@ namespace WindowsApplication1
                         {
                             // Water Temp
                             uint WaterTemp = DATA[0];
-                            if (WaterTemp <= 8)  
+                            if (WaterTemp <= 8)
                             {
                                 Value_WaterTemp.Text = WaterTemp.ToString();
                             }
@@ -446,12 +750,12 @@ namespace WindowsApplication1
                         if (DLC == 5)
                         {
                             // Mileage
-                            uint Mileage = (((uint)DATA[0])*0x10000) + (((uint)DATA[1]) * 0x100) + DATA[2];
+                            uint Mileage = (((uint)DATA[0]) * 0x10000) + (((uint)DATA[1]) * 0x100) + DATA[2];
                             Value_TotalMileage.Text = Mileage.ToString() + " km";
 
                             // Max Speed
                             uint MaxSpeed = DATA[3];
-                            Value_MaxSpeed.Text = ((MaxSpeed!=0xff)?(MaxSpeed.ToString()):("--")) + " km/h";
+                            Value_MaxSpeed.Text = ((MaxSpeed != 0xff) ? (MaxSpeed.ToString()) : ("--")) + " km/h";
 
                             // Average Speed
                             uint AveSpeed = DATA[4];
@@ -567,9 +871,11 @@ namespace WindowsApplication1
 
         private void button_StartCAN_Click(object sender, EventArgs e)
         {
+            uint status;
+
             if (m_bOpen == 0)
                 return;
-            VCI_StartCAN(m_devtype, m_devind, m_canind);
+            status = VCI_StartCAN(m_devtype, m_devind, m_canind);
         }
 
         private void button_StopCAN_Click(object sender, EventArgs e)
