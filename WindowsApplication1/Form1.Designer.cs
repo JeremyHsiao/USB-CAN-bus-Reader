@@ -185,9 +185,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(20, 25);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(626, 172);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -201,7 +201,7 @@
             "3",
             "4"});
             this.comboBox_devtype.Location = new System.Drawing.Point(68, 24);
-            this.comboBox_devtype.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_devtype.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_devtype.MaxDropDownItems = 15;
             this.comboBox_devtype.Name = "comboBox_devtype";
             this.comboBox_devtype.Size = new System.Drawing.Size(160, 28);
@@ -232,9 +232,9 @@
             this.groupBox2.Controls.Add(this.textBox_AccCode);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(13, 62);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(605, 96);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -243,7 +243,7 @@
             // textBox_Time1
             // 
             this.textBox_Time1.Location = new System.Drawing.Point(298, 58);
-            this.textBox_Time1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Time1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Time1.Name = "textBox_Time1";
             this.textBox_Time1.Size = new System.Drawing.Size(36, 31);
             this.textBox_Time1.TabIndex = 1;
@@ -251,7 +251,7 @@
             // textBox_AccMask
             // 
             this.textBox_AccMask.Location = new System.Drawing.Point(103, 55);
-            this.textBox_AccMask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_AccMask.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_AccMask.Name = "textBox_AccMask";
             this.textBox_AccMask.Size = new System.Drawing.Size(92, 31);
             this.textBox_AccMask.TabIndex = 1;
@@ -275,7 +275,7 @@
             "只听",
             "自测"});
             this.comboBox_Mode.Location = new System.Drawing.Point(442, 59);
-            this.comboBox_Mode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_Mode.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Mode.Name = "comboBox_Mode";
             this.comboBox_Mode.Size = new System.Drawing.Size(92, 28);
             this.comboBox_Mode.TabIndex = 1;
@@ -289,7 +289,7 @@
             "只接收标准帧",
             "只接收扩展帧"});
             this.comboBox_Filter.Location = new System.Drawing.Point(442, 28);
-            this.comboBox_Filter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_Filter.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Filter.Name = "comboBox_Filter";
             this.comboBox_Filter.Size = new System.Drawing.Size(92, 28);
             this.comboBox_Filter.TabIndex = 1;
@@ -297,7 +297,7 @@
             // textBox_Time0
             // 
             this.textBox_Time0.Location = new System.Drawing.Point(298, 24);
-            this.textBox_Time0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Time0.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Time0.Name = "textBox_Time0";
             this.textBox_Time0.Size = new System.Drawing.Size(36, 31);
             this.textBox_Time0.TabIndex = 1;
@@ -345,7 +345,7 @@
             // textBox_AccCode
             // 
             this.textBox_AccCode.Location = new System.Drawing.Point(103, 24);
-            this.textBox_AccCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_AccCode.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_AccCode.Name = "textBox_AccCode";
             this.textBox_AccCode.Size = new System.Drawing.Size(92, 31);
             this.textBox_AccCode.TabIndex = 1;
@@ -368,7 +368,7 @@
             "0",
             "1"});
             this.comboBox_CANIndex.Location = new System.Drawing.Point(557, 26);
-            this.comboBox_CANIndex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_CANIndex.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_CANIndex.Name = "comboBox_CANIndex";
             this.comboBox_CANIndex.Size = new System.Drawing.Size(61, 28);
             this.comboBox_CANIndex.TabIndex = 1;
@@ -383,7 +383,7 @@
             "2",
             "3"});
             this.comboBox_DevIndex.Location = new System.Drawing.Point(355, 28);
-            this.comboBox_DevIndex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_DevIndex.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_DevIndex.Name = "comboBox_DevIndex";
             this.comboBox_DevIndex.Size = new System.Drawing.Size(53, 28);
             this.comboBox_DevIndex.TabIndex = 1;
@@ -412,7 +412,7 @@
             // 
             this.buttonConnect.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.buttonConnect.Location = new System.Drawing.Point(639, 12);
-            this.buttonConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonConnect.Margin = new System.Windows.Forms.Padding(4);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(130, 31);
             this.buttonConnect.TabIndex = 2;
@@ -424,7 +424,7 @@
             // 
             this.button_StartCAN.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button_StartCAN.Location = new System.Drawing.Point(665, 100);
-            this.button_StartCAN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_StartCAN.Margin = new System.Windows.Forms.Padding(4);
             this.button_StartCAN.Name = "button_StartCAN";
             this.button_StartCAN.Size = new System.Drawing.Size(100, 29);
             this.button_StartCAN.TabIndex = 5;
@@ -436,7 +436,7 @@
             // 
             this.button_StopCAN.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button_StopCAN.Location = new System.Drawing.Point(665, 172);
-            this.button_StopCAN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_StopCAN.Margin = new System.Windows.Forms.Padding(4);
             this.button_StopCAN.Name = "button_StopCAN";
             this.button_StopCAN.Size = new System.Drawing.Size(100, 29);
             this.button_StopCAN.TabIndex = 5;
@@ -456,9 +456,9 @@
             this.groupBox3.Controls.Add(this.textBox_ID);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Location = new System.Drawing.Point(20, 205);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(626, 101);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
@@ -472,7 +472,7 @@
             "数据帧",
             "远程帧"});
             this.comboBox_FrameFormat.Location = new System.Drawing.Point(261, 24);
-            this.comboBox_FrameFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_FrameFormat.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_FrameFormat.Name = "comboBox_FrameFormat";
             this.comboBox_FrameFormat.Size = new System.Drawing.Size(92, 28);
             this.comboBox_FrameFormat.TabIndex = 1;
@@ -485,7 +485,7 @@
             "标准帧",
             "扩展帧"});
             this.comboBox_FrameType.Location = new System.Drawing.Point(92, 25);
-            this.comboBox_FrameType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_FrameType.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_FrameType.Name = "comboBox_FrameType";
             this.comboBox_FrameType.Size = new System.Drawing.Size(92, 28);
             this.comboBox_FrameType.TabIndex = 1;
@@ -493,7 +493,7 @@
             // button_Send
             // 
             this.button_Send.Location = new System.Drawing.Point(519, 62);
-            this.button_Send.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Send.Margin = new System.Windows.Forms.Padding(4);
             this.button_Send.Name = "button_Send";
             this.button_Send.Size = new System.Drawing.Size(100, 29);
             this.button_Send.TabIndex = 5;
@@ -524,7 +524,7 @@
             // textBox_Data
             // 
             this.textBox_Data.Location = new System.Drawing.Point(75, 60);
-            this.textBox_Data.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Data.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Data.Name = "textBox_Data";
             this.textBox_Data.Size = new System.Drawing.Size(333, 31);
             this.textBox_Data.TabIndex = 1;
@@ -542,7 +542,7 @@
             // textBox_ID
             // 
             this.textBox_ID.Location = new System.Drawing.Point(519, 24);
-            this.textBox_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_ID.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_ID.Name = "textBox_ID";
             this.textBox_ID.Size = new System.Drawing.Size(100, 31);
             this.textBox_ID.TabIndex = 1;
@@ -562,9 +562,9 @@
             this.groupBox4.Controls.Add(this.listBox_Info);
             this.groupBox4.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox4.Location = new System.Drawing.Point(12, 49);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(757, 160);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
@@ -575,7 +575,7 @@
             this.listBox_Info.FormattingEnabled = true;
             this.listBox_Info.ItemHeight = 20;
             this.listBox_Info.Location = new System.Drawing.Point(13, 25);
-            this.listBox_Info.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox_Info.Margin = new System.Windows.Forms.Padding(4);
             this.listBox_Info.Name = "listBox_Info";
             this.listBox_Info.Size = new System.Drawing.Size(727, 124);
             this.listBox_Info.TabIndex = 0;
@@ -588,7 +588,7 @@
             // 
             this.button_Clear.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button_Clear.Location = new System.Drawing.Point(665, 240);
-            this.button_Clear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Clear.Margin = new System.Windows.Forms.Padding(4);
             this.button_Clear.Name = "button_Clear";
             this.button_Clear.Size = new System.Drawing.Size(100, 29);
             this.button_Clear.TabIndex = 8;
@@ -711,14 +711,16 @@
             // 
             this.Status_OnOff.AutoCheck = false;
             this.Status_OnOff.AutoSize = true;
-            this.Status_OnOff.Location = new System.Drawing.Point(13, 24);
+            this.Status_OnOff.BackColor = System.Drawing.SystemColors.Control;
+            this.Status_OnOff.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Status_OnOff.Location = new System.Drawing.Point(13, 22);
             this.Status_OnOff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_OnOff.Name = "Status_OnOff";
             this.Status_OnOff.Size = new System.Drawing.Size(130, 24);
             this.Status_OnOff.TabIndex = 0;
             this.Status_OnOff.TabStop = true;
             this.Status_OnOff.Text = "開機指示燈";
-            this.Status_OnOff.UseVisualStyleBackColor = true;
+            this.Status_OnOff.UseVisualStyleBackColor = false;
             // 
             // Value_AveSpeed
             // 
@@ -754,7 +756,7 @@
             // Label_FuelConsumption
             // 
             this.Label_FuelConsumption.AutoSize = true;
-            this.Label_FuelConsumption.Location = new System.Drawing.Point(17, 100);
+            this.Label_FuelConsumption.Location = new System.Drawing.Point(17, 101);
             this.Label_FuelConsumption.Name = "Label_FuelConsumption";
             this.Label_FuelConsumption.Size = new System.Drawing.Size(108, 20);
             this.Label_FuelConsumption.TabIndex = 12;
@@ -834,6 +836,7 @@
             // Label_Speed
             // 
             this.Label_Speed.AutoSize = true;
+            this.Label_Speed.BackColor = System.Drawing.SystemColors.Control;
             this.Label_Speed.Location = new System.Drawing.Point(17, 26);
             this.Label_Speed.Name = "Label_Speed";
             this.Label_Speed.Size = new System.Drawing.Size(58, 20);
@@ -1910,7 +1913,7 @@
             this.Controls.Add(this.Group_Car_Status_Indicator);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonConnect);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "USB CAN Tool";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);

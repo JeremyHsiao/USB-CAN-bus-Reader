@@ -152,6 +152,21 @@ namespace WindowsApplication1
 
         UInt32[] m_arrdevtype = new UInt32[20];
 
+
+        private bool First_Run = true;
+        private byte Previous_Car_Indicator = 0;
+        private uint Previous_Speed = 0;
+        private uint Previous_RPM = 0;
+        private uint Previous_Consumption = 0;
+        private uint Previous_WaterTemp = 0;
+        private int  Previous_Final_Room_temp = 0;
+        private uint Previous_Fuel = 0;
+        private uint Previous_Battery;
+        private uint Previous_Mileage;
+        private uint Previous_MaxSpeed = 0;
+        private uint Previous_AveSpeed = 0;
+
+
         //// COPY - end
 
         public Form1()
@@ -255,6 +270,94 @@ namespace WindowsApplication1
             timer_rec.Enabled = m_bOpen==1?true:false;
         }
 
+
+        //private bool FirstRun = true;
+        //private byte Previous_Car_Indicator = 0;
+        //private uint Previous_Speed = 0;
+        //private uint Previous_RPM = 0;
+        //private uint Previous_Consumption = 0;
+        //private uint Previous_WaterTemp = 0;
+        //private uint Previous_Fuel = 0;
+        //private uint Previous_Battery;
+        //private uint Previous_Mileage;
+        //private uint Previous_MaxSpeed = 0;
+        //private uint Previous_AveSpeed = 0;
+        private bool FirstRun_Car_Indicator = true;
+        private bool FirstRun_Speed = true;
+        private bool FirstRun_RPM = true;
+        private bool FirstRun_Consumption = true;
+        private bool FirstRun_WaterTemp = true;
+        private bool FirstRun_Room_Temp = true;
+        private bool FirstRun_Fuel = true;
+        private bool FirstRun_Battery = true;
+        private bool FirstRun_Mileage = true;
+        private bool FirstRun_MaxSpeed = true;
+        private bool FirstRun_AveSpeed = true;
+
+        private Color BGHighLightColor = System.Drawing.SystemColors.ActiveCaption;
+        private Color BGNormalColor = System.Drawing.SystemColors.Control;
+        private Color BGOutOfRange = System.Drawing.Color.Maroon;
+
+        private const byte MASK_Status_OnOff = 0x01;
+        private const byte MASK_Status_EngineOil = 0x02;
+        private const byte MASK_Status_Fuel = 0x04;
+        private const byte MASK_Status_ABS = 0x08;
+        private const byte MASK_Status_WaterTemp = 0x10;
+        private const byte MASK_Status_Maintenance = 0x20;
+        private const byte MASK_Status_FrontTirePressure = 0x40;
+        private const byte MASK_Status_RearTirePressure = 0x80;
+
+        private Color UpdateItemColor(ref bool FirstRunBit, ref byte Previous, byte Current)
+        {
+            Color ret_color;
+
+            if (FirstRunBit == true)
+            {
+                ret_color = BGHighLightColor;
+                FirstRunBit = false;
+            }
+            else
+            {
+                ret_color = (Previous != Current) ? BGHighLightColor : BGNormalColor;
+            }
+            Previous = Current;
+            return ret_color;
+        }
+
+        private Color UpdateItemColor(ref bool FirstRunBit, ref uint Previous, uint Current)
+        {
+            Color ret_color;
+
+            if (FirstRunBit == true)
+            {
+                ret_color = BGHighLightColor;
+                FirstRunBit = false;
+            }
+            else
+            {
+                ret_color = (Previous != Current) ? BGHighLightColor : BGNormalColor;
+            }
+            Previous = Current;
+            return ret_color;
+        }
+
+        private Color UpdateItemColor(ref bool FirstRunBit, ref int Previous, int Current)
+        {
+            Color ret_color;
+
+            if (FirstRunBit == true)
+            {
+                ret_color = BGHighLightColor;
+                FirstRunBit = false;
+            }
+            else
+            {
+                ret_color = (Previous != Current) ? BGHighLightColor : BGNormalColor;
+            }
+            Previous = Current;
+            return ret_color;
+        }
+
         private void CAN_Update_DashBoard(uint ID, uint DLC, byte[] DATA)
         {
             switch (ID)
@@ -263,14 +366,41 @@ namespace WindowsApplication1
                     if (DLC == 1)
                     {
                         Byte status = DATA[0];
-                        Status_OnOff.Checked = ((status & 0x01) != 0) ? true : false;
-                        Status_EngineOil.Checked = ((status & 0x02) != 0) ? true : false;
-                        Status_Fuel.Checked = ((status & 0x04) != 0) ? true : false;
-                        Status_ABS.Checked = ((status & 0x08) != 0) ? true : false;
-                        Status_WaterTemp.Checked = ((status & 0x10) != 0) ? true : false;
-                        Status_Maintenance.Checked = ((status & 0x20) != 0) ? true : false;
-                        Status_FrontTirePressure.Checked = ((status & 0x40) != 0) ? true : false;
-                        Status_RearTirePressure.Checked = ((status & 0x80) != 0) ? true : false;
+
+                        Status_OnOff.Checked = ((status & MASK_Status_OnOff) != 0) ? true : false;
+                        Status_EngineOil.Checked = ((status & MASK_Status_EngineOil) != 0) ? true : false;
+                        Status_Fuel.Checked = ((status & MASK_Status_Fuel) != 0) ? true : false;
+                        Status_ABS.Checked = ((status & MASK_Status_ABS) != 0) ? true : false;
+                        Status_WaterTemp.Checked = ((status & MASK_Status_WaterTemp) != 0) ? true : false;
+                        Status_Maintenance.Checked = ((status & MASK_Status_Maintenance) != 0) ? true : false;
+                        Status_FrontTirePressure.Checked = ((status & MASK_Status_FrontTirePressure) != 0) ? true : false;
+                        Status_RearTirePressure.Checked = ((status & MASK_Status_RearTirePressure) != 0) ? true : false;
+
+                        if (FirstRun_Car_Indicator == true)
+                        {
+                            Status_OnOff.BackColor = BGHighLightColor;
+                            Status_EngineOil.BackColor = BGHighLightColor;
+                            Status_Fuel.BackColor = BGHighLightColor;
+                            Status_ABS.BackColor = BGHighLightColor;
+                            Status_WaterTemp.BackColor = BGHighLightColor;
+                            Status_Maintenance.BackColor = BGHighLightColor;
+                            Status_FrontTirePressure.BackColor = BGHighLightColor;
+                            Status_RearTirePressure.BackColor = BGHighLightColor;
+                            FirstRun_Car_Indicator = false;
+                        }
+                        else
+                        {
+                            // if changed, bit_a ^ bit_b != 0
+                            Status_OnOff.BackColor = (((Previous_Car_Indicator ^ status) & MASK_Status_OnOff) != 0)?BGHighLightColor:BGNormalColor;
+                            Status_EngineOil.BackColor = (((Previous_Car_Indicator ^ status) & MASK_Status_EngineOil) != 0) ? BGHighLightColor : BGNormalColor;
+                            Status_Fuel.BackColor = (((Previous_Car_Indicator ^ status) & MASK_Status_Fuel) != 0) ? BGHighLightColor : BGNormalColor;
+                            Status_ABS.BackColor = (((Previous_Car_Indicator ^ status) & MASK_Status_ABS) != 0) ? BGHighLightColor : BGNormalColor;
+                            Status_WaterTemp.BackColor = (((Previous_Car_Indicator ^ status) & MASK_Status_WaterTemp) != 0) ? BGHighLightColor : BGNormalColor;
+                            Status_Maintenance.BackColor = (((Previous_Car_Indicator ^ status) & MASK_Status_Maintenance) != 0) ? BGHighLightColor : BGNormalColor;
+                            Status_FrontTirePressure.BackColor = (((Previous_Car_Indicator ^ status) & MASK_Status_FrontTirePressure) != 0) ? BGHighLightColor : BGNormalColor;
+                            Status_RearTirePressure.BackColor = (((Previous_Car_Indicator ^ status) & MASK_Status_RearTirePressure) != 0) ? BGHighLightColor : BGNormalColor;
+                        }
+                        Previous_Car_Indicator = status;
                     }
                     else
                     {
@@ -286,16 +416,21 @@ namespace WindowsApplication1
                         if (Speed <= 255)  // 180?
                         {
                             Value_Speed.Text = Speed.ToString() + " km/h";
+                            Label_Speed.BackColor = UpdateItemColor(ref FirstRun_Speed, ref Previous_Speed, Speed);
                         }
                         else
                         {
-                            // Out of range
+                            // Always warning if out of range
+                            FirstRun_Speed = false;
+                            Label_Speed.BackColor = BGOutOfRange;
+                            Previous_Speed = Speed;
                         }
 
                         // RPM
                         uint RPM = DATA[1];
                         RPM = RPM * 256 + DATA[2];
-                        Value_EngineRPM.Text = RPM.ToString() + " RPM"; ;
+                        Value_EngineRPM.Text = RPM.ToString() + " RPM";
+                        Label_EngineRPM.BackColor = UpdateItemColor(ref FirstRun_RPM, ref Previous_RPM, RPM);
 
                         // Consumption
                         uint Consumption = DATA[3];
@@ -309,6 +444,7 @@ namespace WindowsApplication1
                             float f_Consumption = ((float)Consumption) / 10;
                             Value_FuelConsumption.Text = f_Consumption.ToString() + " km/L";
                         }
+                        Label_FuelConsumption.BackColor = UpdateItemColor(ref FirstRun_Consumption, ref Previous_Consumption, Consumption);
                     }
                     else
                     {
@@ -329,25 +465,35 @@ namespace WindowsApplication1
                         {
                             // Out of range
                         }
+                        Label_WaterTemp.BackColor = UpdateItemColor(ref FirstRun_WaterTemp, ref Previous_WaterTemp, WaterTemp);
 
                         // Room Temperature
                         uint Temp_Sign_Value = DATA[1];
                         uint Room_Temp = DATA[2];
+                        int Final_Room_temp;
+
                         if ((DATA[1] == 0xFF) && (DATA[2] == 0xFE))
                         {
                             Value_RoomTemp.Text = "-- C";
                         }
-                        else if (Temp_Sign_Value == 0)
+                        if (Temp_Sign_Value == 0)
                         {
                             Value_RoomTemp.Text = "+" + Room_Temp.ToString() + " C";
+                            Final_Room_temp = (int)Room_Temp;
+                            Label_RoomTemp.BackColor = UpdateItemColor(ref FirstRun_Room_Temp, ref Previous_Final_Room_temp, Final_Room_temp);
                         }
                         else if (Temp_Sign_Value == 1)
                         {
                             Value_RoomTemp.Text = "-" + Room_Temp.ToString() + " C";
+                            Final_Room_temp = -((int)Room_Temp);
+                            Label_RoomTemp.BackColor = UpdateItemColor(ref FirstRun_Room_Temp, ref Previous_Final_Room_temp, Final_Room_temp);
                         }
                         else
                         {
                             // Error data of Temp_Sign
+                            FirstRun_Room_Temp = false;
+                            Label_RoomTemp.BackColor = BGOutOfRange;
+                            Previous_Final_Room_temp = 32767;
                         }
 
                         // Fuel
@@ -357,10 +503,14 @@ namespace WindowsApplication1
                             float f_Fuel;
                             f_Fuel = ((float)Fuel) / 10;
                             Value_Fuel.Text = f_Fuel.ToString() + "L";
+                            Label_Fuel.BackColor = UpdateItemColor(ref FirstRun_Fuel, ref Previous_Fuel, Fuel);
                         }
                         else
                         {
                             // Error data of Fuel
+                            FirstRun_Fuel = false;
+                            Label_Fuel.BackColor = BGOutOfRange;
+                            Previous_Fuel = Fuel;
                         }
 
                         // Battery
@@ -368,6 +518,7 @@ namespace WindowsApplication1
                         float f_Battery;
                         f_Battery = ((float)Battery) / 10;
                         Value_Battery.Text = f_Battery.ToString() + "V";
+                        Label_Battery.BackColor = UpdateItemColor(ref FirstRun_Battery, ref Previous_Battery, Battery);
                     }
                     else
                     {
@@ -495,7 +646,7 @@ namespace WindowsApplication1
 
         }
 
-         unsafe private void timer_rec_Tick(object sender, EventArgs e)
+        unsafe private void timer_rec_Tick(object sender, EventArgs e)
         {
             UInt32 res = new UInt32();
 
@@ -564,7 +715,8 @@ namespace WindowsApplication1
             //Marshal.FreeHGlobal(pt);
         }
 
-        unsafe private void timer_rec_Tick_Original(object sender, EventArgs e)
+/*
+unsafe private void timer_rec_Tick_Original(object sender, EventArgs e)
         {
             UInt32 res = new UInt32();
 
@@ -578,7 +730,7 @@ namespace WindowsApplication1
             //Marshal.Copy(ptArray, 0, pt, 1);
 
 
-            //res = VCI_Receive(m_devtype, m_devind, m_canind, pt, 50/*50*/, 100);
+            //res = VCI_Receive(m_devtype, m_devind, m_canind, pt, 50, 100);
             ////////////////////////////////////////////////////////
 
             uint ID = 0, DLC = 0;
@@ -898,6 +1050,7 @@ namespace WindowsApplication1
             //Marshal.FreeHGlobal(ptArray[0]);
             //Marshal.FreeHGlobal(pt);
         }
+*/
 
         private void button_StartCAN_Click(object sender, EventArgs e)
         {
