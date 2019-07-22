@@ -164,6 +164,8 @@
             this.Group_Driving_Status = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textbox_Connection_Message = new System.Windows.Forms.TextBox();
+            this.Value_FuelConsumption_02 = new System.Windows.Forms.TextBox();
+            this.Label_FuelConsumption_02 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -411,7 +413,7 @@
             // buttonConnect
             // 
             this.buttonConnect.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.buttonConnect.Location = new System.Drawing.Point(639, 12);
+            this.buttonConnect.Location = new System.Drawing.Point(659, 10);
             this.buttonConnect.Margin = new System.Windows.Forms.Padding(4);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(130, 31);
@@ -565,7 +567,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(757, 160);
+            this.groupBox4.Size = new System.Drawing.Size(786, 160);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Message";
@@ -577,7 +579,7 @@
             this.listBox_Info.Location = new System.Drawing.Point(13, 25);
             this.listBox_Info.Margin = new System.Windows.Forms.Padding(4);
             this.listBox_Info.Name = "listBox_Info";
-            this.listBox_Info.Size = new System.Drawing.Size(727, 124);
+            this.listBox_Info.Size = new System.Drawing.Size(758, 124);
             this.listBox_Info.TabIndex = 0;
             // 
             // timer_rec
@@ -611,7 +613,7 @@
             this.Group_Car_Status_Indicator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Group_Car_Status_Indicator.Name = "Group_Car_Status_Indicator";
             this.Group_Car_Status_Indicator.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Group_Car_Status_Indicator.Size = new System.Drawing.Size(222, 229);
+            this.Group_Car_Status_Indicator.Size = new System.Drawing.Size(222, 261);
             this.Group_Car_Status_Indicator.TabIndex = 9;
             this.Group_Car_Status_Indicator.TabStop = false;
             this.Group_Car_Status_Indicator.Text = "Car Status Indicator";
@@ -620,7 +622,7 @@
             // 
             this.Status_RearTirePressure.AutoCheck = false;
             this.Status_RearTirePressure.AutoSize = true;
-            this.Status_RearTirePressure.Location = new System.Drawing.Point(13, 200);
+            this.Status_RearTirePressure.Location = new System.Drawing.Point(13, 211);
             this.Status_RearTirePressure.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_RearTirePressure.Name = "Status_RearTirePressure";
             this.Status_RearTirePressure.Size = new System.Drawing.Size(190, 24);
@@ -633,7 +635,7 @@
             // 
             this.Status_FrontTirePressure.AutoCheck = false;
             this.Status_FrontTirePressure.AutoSize = true;
-            this.Status_FrontTirePressure.Location = new System.Drawing.Point(13, 175);
+            this.Status_FrontTirePressure.Location = new System.Drawing.Point(13, 186);
             this.Status_FrontTirePressure.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_FrontTirePressure.Name = "Status_FrontTirePressure";
             this.Status_FrontTirePressure.Size = new System.Drawing.Size(190, 24);
@@ -646,7 +648,7 @@
             // 
             this.Status_Maintenance.AutoCheck = false;
             this.Status_Maintenance.AutoSize = true;
-            this.Status_Maintenance.Location = new System.Drawing.Point(13, 150);
+            this.Status_Maintenance.Location = new System.Drawing.Point(13, 161);
             this.Status_Maintenance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_Maintenance.Name = "Status_Maintenance";
             this.Status_Maintenance.Size = new System.Drawing.Size(170, 24);
@@ -659,7 +661,7 @@
             // 
             this.Status_WaterTemp.AutoCheck = false;
             this.Status_WaterTemp.AutoSize = true;
-            this.Status_WaterTemp.Location = new System.Drawing.Point(13, 125);
+            this.Status_WaterTemp.Location = new System.Drawing.Point(13, 136);
             this.Status_WaterTemp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_WaterTemp.Name = "Status_WaterTemp";
             this.Status_WaterTemp.Size = new System.Drawing.Size(90, 24);
@@ -672,7 +674,7 @@
             // 
             this.Status_ABS.AutoCheck = false;
             this.Status_ABS.AutoSize = true;
-            this.Status_ABS.Location = new System.Drawing.Point(13, 100);
+            this.Status_ABS.Location = new System.Drawing.Point(13, 111);
             this.Status_ABS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_ABS.Name = "Status_ABS";
             this.Status_ABS.Size = new System.Drawing.Size(127, 24);
@@ -685,7 +687,7 @@
             // 
             this.Status_Fuel.AutoCheck = false;
             this.Status_Fuel.AutoSize = true;
-            this.Status_Fuel.Location = new System.Drawing.Point(13, 75);
+            this.Status_Fuel.Location = new System.Drawing.Point(13, 86);
             this.Status_Fuel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_Fuel.Name = "Status_Fuel";
             this.Status_Fuel.Size = new System.Drawing.Size(90, 24);
@@ -698,7 +700,7 @@
             // 
             this.Status_EngineOil.AutoCheck = false;
             this.Status_EngineOil.AutoSize = true;
-            this.Status_EngineOil.Location = new System.Drawing.Point(13, 49);
+            this.Status_EngineOil.Location = new System.Drawing.Point(13, 60);
             this.Status_EngineOil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_EngineOil.Name = "Status_EngineOil";
             this.Status_EngineOil.Size = new System.Drawing.Size(170, 24);
@@ -713,7 +715,7 @@
             this.Status_OnOff.AutoSize = true;
             this.Status_OnOff.BackColor = System.Drawing.SystemColors.Control;
             this.Status_OnOff.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Status_OnOff.Location = new System.Drawing.Point(13, 22);
+            this.Status_OnOff.Location = new System.Drawing.Point(13, 33);
             this.Status_OnOff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Status_OnOff.Name = "Status_OnOff";
             this.Status_OnOff.Size = new System.Drawing.Size(130, 24);
@@ -724,7 +726,7 @@
             // 
             // Value_AveSpeed
             // 
-            this.Value_AveSpeed.Location = new System.Drawing.Point(419, 99);
+            this.Value_AveSpeed.Location = new System.Drawing.Point(450, 99);
             this.Value_AveSpeed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_AveSpeed.Name = "Value_AveSpeed";
             this.Value_AveSpeed.ReadOnly = true;
@@ -735,11 +737,11 @@
             // 
             // Value_FuelConsumption
             // 
-            this.Value_FuelConsumption.Location = new System.Drawing.Point(147, 98);
+            this.Value_FuelConsumption.Location = new System.Drawing.Point(134, 98);
             this.Value_FuelConsumption.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_FuelConsumption.Name = "Value_FuelConsumption";
             this.Value_FuelConsumption.ReadOnly = true;
-            this.Value_FuelConsumption.Size = new System.Drawing.Size(93, 31);
+            this.Value_FuelConsumption.Size = new System.Drawing.Size(147, 31);
             this.Value_FuelConsumption.TabIndex = 13;
             this.Value_FuelConsumption.Text = "No Data";
             this.Value_FuelConsumption.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -747,7 +749,7 @@
             // Label_AveSpeed
             // 
             this.Label_AveSpeed.AutoSize = true;
-            this.Label_AveSpeed.Location = new System.Drawing.Point(276, 100);
+            this.Label_AveSpeed.Location = new System.Drawing.Point(314, 102);
             this.Label_AveSpeed.Name = "Label_AveSpeed";
             this.Label_AveSpeed.Size = new System.Drawing.Size(120, 20);
             this.Label_AveSpeed.TabIndex = 18;
@@ -756,7 +758,7 @@
             // Label_FuelConsumption
             // 
             this.Label_FuelConsumption.AutoSize = true;
-            this.Label_FuelConsumption.Location = new System.Drawing.Point(17, 101);
+            this.Label_FuelConsumption.Location = new System.Drawing.Point(6, 102);
             this.Label_FuelConsumption.Name = "Label_FuelConsumption";
             this.Label_FuelConsumption.Size = new System.Drawing.Size(108, 20);
             this.Label_FuelConsumption.TabIndex = 12;
@@ -764,7 +766,7 @@
             // 
             // Value_MaxSpeed
             // 
-            this.Value_MaxSpeed.Location = new System.Drawing.Point(419, 61);
+            this.Value_MaxSpeed.Location = new System.Drawing.Point(450, 61);
             this.Value_MaxSpeed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_MaxSpeed.Name = "Value_MaxSpeed";
             this.Value_MaxSpeed.ReadOnly = true;
@@ -776,7 +778,7 @@
             // Label_MaxSpeed
             // 
             this.Label_MaxSpeed.AutoSize = true;
-            this.Label_MaxSpeed.Location = new System.Drawing.Point(276, 62);
+            this.Label_MaxSpeed.Location = new System.Drawing.Point(314, 64);
             this.Label_MaxSpeed.Name = "Label_MaxSpeed";
             this.Label_MaxSpeed.Size = new System.Drawing.Size(92, 20);
             this.Label_MaxSpeed.TabIndex = 16;
@@ -784,18 +786,18 @@
             // 
             // Value_EngineRPM
             // 
-            this.Value_EngineRPM.Location = new System.Drawing.Point(147, 60);
+            this.Value_EngineRPM.Location = new System.Drawing.Point(134, 60);
             this.Value_EngineRPM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_EngineRPM.Name = "Value_EngineRPM";
             this.Value_EngineRPM.ReadOnly = true;
-            this.Value_EngineRPM.Size = new System.Drawing.Size(93, 31);
+            this.Value_EngineRPM.Size = new System.Drawing.Size(147, 31);
             this.Value_EngineRPM.TabIndex = 11;
             this.Value_EngineRPM.Text = "No Data";
             this.Value_EngineRPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Value_TotalMileage
             // 
-            this.Value_TotalMileage.Location = new System.Drawing.Point(419, 23);
+            this.Value_TotalMileage.Location = new System.Drawing.Point(450, 23);
             this.Value_TotalMileage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_TotalMileage.Name = "Value_TotalMileage";
             this.Value_TotalMileage.ReadOnly = true;
@@ -807,7 +809,7 @@
             // Label_EngineRPM
             // 
             this.Label_EngineRPM.AutoSize = true;
-            this.Label_EngineRPM.Location = new System.Drawing.Point(17, 62);
+            this.Label_EngineRPM.Location = new System.Drawing.Point(6, 62);
             this.Label_EngineRPM.Name = "Label_EngineRPM";
             this.Label_EngineRPM.Size = new System.Drawing.Size(65, 20);
             this.Label_EngineRPM.TabIndex = 10;
@@ -816,7 +818,7 @@
             // Label_TotalMileage
             // 
             this.Label_TotalMileage.AutoSize = true;
-            this.Label_TotalMileage.Location = new System.Drawing.Point(276, 26);
+            this.Label_TotalMileage.Location = new System.Drawing.Point(314, 28);
             this.Label_TotalMileage.Name = "Label_TotalMileage";
             this.Label_TotalMileage.Size = new System.Drawing.Size(69, 20);
             this.Label_TotalMileage.TabIndex = 14;
@@ -824,11 +826,11 @@
             // 
             // Value_Speed
             // 
-            this.Value_Speed.Location = new System.Drawing.Point(147, 22);
+            this.Value_Speed.Location = new System.Drawing.Point(134, 22);
             this.Value_Speed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_Speed.Name = "Value_Speed";
             this.Value_Speed.ReadOnly = true;
-            this.Value_Speed.Size = new System.Drawing.Size(93, 31);
+            this.Value_Speed.Size = new System.Drawing.Size(147, 31);
             this.Value_Speed.TabIndex = 9;
             this.Value_Speed.Text = "No Data";
             this.Value_Speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -837,7 +839,7 @@
             // 
             this.Label_Speed.AutoSize = true;
             this.Label_Speed.BackColor = System.Drawing.SystemColors.Control;
-            this.Label_Speed.Location = new System.Drawing.Point(17, 26);
+            this.Label_Speed.Location = new System.Drawing.Point(6, 26);
             this.Label_Speed.Name = "Label_Speed";
             this.Label_Speed.Size = new System.Drawing.Size(58, 20);
             this.Label_Speed.TabIndex = 8;
@@ -1765,7 +1767,7 @@
             // 
             // Value_Battery
             // 
-            this.Value_Battery.Location = new System.Drawing.Point(419, 183);
+            this.Value_Battery.Location = new System.Drawing.Point(450, 213);
             this.Value_Battery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_Battery.Name = "Value_Battery";
             this.Value_Battery.ReadOnly = true;
@@ -1777,7 +1779,7 @@
             // Label_Battery
             // 
             this.Label_Battery.AutoSize = true;
-            this.Label_Battery.Location = new System.Drawing.Point(276, 185);
+            this.Label_Battery.Location = new System.Drawing.Point(314, 217);
             this.Label_Battery.Name = "Label_Battery";
             this.Label_Battery.Size = new System.Drawing.Size(63, 20);
             this.Label_Battery.TabIndex = 26;
@@ -1785,18 +1787,18 @@
             // 
             // Value_RoomTemp
             // 
-            this.Value_RoomTemp.Location = new System.Drawing.Point(147, 182);
+            this.Value_RoomTemp.Location = new System.Drawing.Point(134, 212);
             this.Value_RoomTemp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_RoomTemp.Name = "Value_RoomTemp";
             this.Value_RoomTemp.ReadOnly = true;
-            this.Value_RoomTemp.Size = new System.Drawing.Size(93, 31);
+            this.Value_RoomTemp.Size = new System.Drawing.Size(147, 31);
             this.Value_RoomTemp.TabIndex = 23;
             this.Value_RoomTemp.Text = "No Data";
             this.Value_RoomTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Value_Fuel
             // 
-            this.Value_Fuel.Location = new System.Drawing.Point(419, 146);
+            this.Value_Fuel.Location = new System.Drawing.Point(450, 176);
             this.Value_Fuel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_Fuel.Name = "Value_Fuel";
             this.Value_Fuel.ReadOnly = true;
@@ -1808,7 +1810,7 @@
             // Label_RoomTemp
             // 
             this.Label_RoomTemp.AutoSize = true;
-            this.Label_RoomTemp.Location = new System.Drawing.Point(17, 185);
+            this.Label_RoomTemp.Location = new System.Drawing.Point(6, 215);
             this.Label_RoomTemp.Name = "Label_RoomTemp";
             this.Label_RoomTemp.Size = new System.Drawing.Size(102, 20);
             this.Label_RoomTemp.TabIndex = 22;
@@ -1817,7 +1819,7 @@
             // Label_Fuel
             // 
             this.Label_Fuel.AutoSize = true;
-            this.Label_Fuel.Location = new System.Drawing.Point(276, 148);
+            this.Label_Fuel.Location = new System.Drawing.Point(314, 180);
             this.Label_Fuel.Name = "Label_Fuel";
             this.Label_Fuel.Size = new System.Drawing.Size(41, 20);
             this.Label_Fuel.TabIndex = 24;
@@ -1825,11 +1827,11 @@
             // 
             // Value_WaterTemp
             // 
-            this.Value_WaterTemp.Location = new System.Drawing.Point(147, 145);
+            this.Value_WaterTemp.Location = new System.Drawing.Point(134, 175);
             this.Value_WaterTemp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Value_WaterTemp.Name = "Value_WaterTemp";
             this.Value_WaterTemp.ReadOnly = true;
-            this.Value_WaterTemp.Size = new System.Drawing.Size(93, 31);
+            this.Value_WaterTemp.Size = new System.Drawing.Size(147, 31);
             this.Value_WaterTemp.TabIndex = 21;
             this.Value_WaterTemp.Text = "No Data";
             this.Value_WaterTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1837,7 +1839,7 @@
             // Label_WaterTemp
             // 
             this.Label_WaterTemp.AutoSize = true;
-            this.Label_WaterTemp.Location = new System.Drawing.Point(17, 150);
+            this.Label_WaterTemp.Location = new System.Drawing.Point(6, 180);
             this.Label_WaterTemp.Name = "Label_WaterTemp";
             this.Label_WaterTemp.Size = new System.Drawing.Size(102, 20);
             this.Label_WaterTemp.TabIndex = 20;
@@ -1845,6 +1847,8 @@
             // 
             // Group_Driving_Status
             // 
+            this.Group_Driving_Status.Controls.Add(this.Label_FuelConsumption_02);
+            this.Group_Driving_Status.Controls.Add(this.Value_FuelConsumption_02);
             this.Group_Driving_Status.Controls.Add(this.Value_Battery);
             this.Group_Driving_Status.Controls.Add(this.Label_Battery);
             this.Group_Driving_Status.Controls.Add(this.Value_RoomTemp);
@@ -1870,7 +1874,7 @@
             this.Group_Driving_Status.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Group_Driving_Status.Name = "Group_Driving_Status";
             this.Group_Driving_Status.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Group_Driving_Status.Size = new System.Drawing.Size(529, 229);
+            this.Group_Driving_Status.Size = new System.Drawing.Size(558, 261);
             this.Group_Driving_Status.TabIndex = 12;
             this.Group_Driving_Status.TabStop = false;
             this.Group_Driving_Status.Text = "Driving Status";
@@ -1900,11 +1904,31 @@
             this.textbox_Connection_Message.TabIndex = 14;
             this.textbox_Connection_Message.Text = "Please click [Connect] button to start";
             // 
+            // Value_FuelConsumption_02
+            // 
+            this.Value_FuelConsumption_02.Location = new System.Drawing.Point(134, 136);
+            this.Value_FuelConsumption_02.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Value_FuelConsumption_02.Name = "Value_FuelConsumption_02";
+            this.Value_FuelConsumption_02.ReadOnly = true;
+            this.Value_FuelConsumption_02.Size = new System.Drawing.Size(147, 31);
+            this.Value_FuelConsumption_02.TabIndex = 28;
+            this.Value_FuelConsumption_02.Text = "No Data";
+            this.Value_FuelConsumption_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Label_FuelConsumption_02
+            // 
+            this.Label_FuelConsumption_02.AutoSize = true;
+            this.Label_FuelConsumption_02.Location = new System.Drawing.Point(6, 140);
+            this.Label_FuelConsumption_02.Name = "Label_FuelConsumption_02";
+            this.Label_FuelConsumption_02.Size = new System.Drawing.Size(108, 20);
+            this.Label_FuelConsumption_02.TabIndex = 29;
+            this.Label_FuelConsumption_02.Text = "Consumption";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(808, 483);
             this.Controls.Add(this.textbox_Connection_Message);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.Group_Driving_Status);
@@ -2076,6 +2100,8 @@
         private System.Windows.Forms.GroupBox Group_Driving_Status;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textbox_Connection_Message;
+        private System.Windows.Forms.TextBox Value_FuelConsumption_02;
+        private System.Windows.Forms.Label Label_FuelConsumption_02;
     }
 }
 

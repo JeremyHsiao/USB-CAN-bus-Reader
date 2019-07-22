@@ -437,14 +437,20 @@ namespace WindowsApplication1
                         Consumption = Consumption * 256 + DATA[4];
                         if ((Consumption == 0xfffe) || (Speed < 9))
                         {
-                            Value_Speed.Text = "--.-km/L";
+                            Value_FuelConsumption.Text = "--.-km/L";
+                            Value_FuelConsumption_02.Text = "--.-L/100km";
                         }
                         else
                         {
                             float f_Consumption = ((float)Consumption) / 10;
                             Value_FuelConsumption.Text = f_Consumption.ToString() + " km/L";
+                            if(Consumption > 0)
+                            {
+                                uint temp = 100000 / Consumption;
+                                Value_FuelConsumption_02.Text = (((float)temp)/100).ToString() + " L/100km";
+                            }
                         }
-                        Label_FuelConsumption.BackColor = UpdateItemColor(ref FirstRun_Consumption, ref Previous_Consumption, Consumption);
+                        Label_FuelConsumption_02.BackColor = Label_FuelConsumption.BackColor = UpdateItemColor(ref FirstRun_Consumption, ref Previous_Consumption, Consumption);
                     }
                     else
                     {
