@@ -532,15 +532,18 @@ namespace WindowsApplication1
                         // Mileage
                         uint Mileage = (((uint)DATA[0]) * 0x10000) + (((uint)DATA[1]) * 0x100) + DATA[2];
                         Value_TotalMileage.Text = Mileage.ToString() + " km";
+                        Label_TotalMileage.BackColor = UpdateItemColor(ref FirstRun_Mileage, ref Previous_Mileage, Mileage);
 
                         // Max Speed
                         uint MaxSpeed = DATA[3];
                         Value_MaxSpeed.Text = ((MaxSpeed != 0xff) ? (MaxSpeed.ToString()) : ("--")) + " km/h";
+                        Label_MaxSpeed.BackColor = UpdateItemColor(ref FirstRun_MaxSpeed, ref Previous_MaxSpeed, MaxSpeed);
 
                         // Average Speed
                         uint AveSpeed = DATA[4];
                         AveSpeed = DATA[4];
                         Value_AveSpeed.Text = ((AveSpeed != 0xff) ? (AveSpeed.ToString()) : ("--")) + " km/h";
+                        Label_AveSpeed.BackColor = UpdateItemColor(ref FirstRun_AveSpeed, ref Previous_AveSpeed, AveSpeed);
                     }
                     else
                     {
