@@ -557,7 +557,6 @@ namespace USB_CAN_READER
             for (UInt32 i = 0; i < res; i++)
             {
                 str = "";
-
                 if (m_recobj[i].ExternFlag == 0)
                 {
                     str += "Base-format ";
@@ -571,7 +570,9 @@ namespace USB_CAN_READER
                     str += "data-frame ";
                 }
                 else
+                {
                     str += "remote-frame ";
+                }
 
                 str += " ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16) +" ";
                 ID = m_recobj[i].ID;

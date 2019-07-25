@@ -62,7 +62,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_ID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.GroupBox_CMD_Info = new System.Windows.Forms.GroupBox();
             this.listBox_Info = new System.Windows.Forms.ListBox();
             this.timer_rec = new System.Windows.Forms.Timer(this.components);
             this.button_Clear = new System.Windows.Forms.Button();
@@ -169,7 +169,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.GroupBox_CMD_Info.SuspendLayout();
             this.Group_Car_Status_Indicator.SuspendLayout();
             this.Group_ABS_Error_Code.SuspendLayout();
             this.Group_OBD_Error_Code.SuspendLayout();
@@ -559,18 +559,17 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "帧ID:0x";
             // 
-            // groupBox4
+            // GroupBox_CMD_Info
             // 
-            this.groupBox4.Controls.Add(this.listBox_Info);
-            this.groupBox4.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox4.Location = new System.Drawing.Point(12, 49);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(786, 160);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Message";
+            this.GroupBox_CMD_Info.Controls.Add(this.listBox_Info);
+            this.GroupBox_CMD_Info.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.GroupBox_CMD_Info.Location = new System.Drawing.Point(12, 49);
+            this.GroupBox_CMD_Info.Margin = new System.Windows.Forms.Padding(4);
+            this.GroupBox_CMD_Info.Name = "GroupBox_CMD_Info";
+            this.GroupBox_CMD_Info.Padding = new System.Windows.Forms.Padding(4);
+            this.GroupBox_CMD_Info.Size = new System.Drawing.Size(786, 160);
+            this.GroupBox_CMD_Info.TabIndex = 7;
+            this.GroupBox_CMD_Info.TabStop = false;
             // 
             // listBox_Info
             // 
@@ -1935,11 +1934,11 @@
             this.Controls.Add(this.Group_OBD_Error_Code);
             this.Controls.Add(this.Group_ABS_Error_Code);
             this.Controls.Add(this.Group_Car_Status_Indicator);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.GroupBox_CMD_Info);
             this.Controls.Add(this.buttonConnect);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CAN_Reader_Form";
-            this.Text = "USB CAN Tool";
+            this.Text = "USB CAN Reader Tool";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -1948,7 +1947,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
+            this.GroupBox_CMD_Info.ResumeLayout(false);
             this.Group_Car_Status_Indicator.ResumeLayout(false);
             this.Group_Car_Status_Indicator.PerformLayout();
             this.Group_ABS_Error_Code.ResumeLayout(false);
@@ -1996,7 +1995,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox_ID;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox GroupBox_CMD_Info;
         private System.Windows.Forms.ListBox listBox_Info;
         private System.Windows.Forms.Timer timer_rec;
         private System.Windows.Forms.ComboBox comboBox_devtype;
