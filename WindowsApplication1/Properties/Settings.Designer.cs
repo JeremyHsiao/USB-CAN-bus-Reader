@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsApplication1.Properties {
+namespace USB_CAN_READER.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列属性集
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("USBCAN_Demo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("USB_CAN_Reader")]
+[assembly: AssemblyDescription("USB CAN Reader for intepreting CMD")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("创芯光电科技有限公司")]
-[assembly: AssemblyProduct("WindowsApplication1")]
-[assembly: AssemblyCopyright("版权所有 (C) 创芯光电科技有限公司 2014")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("USB CAN Reader")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

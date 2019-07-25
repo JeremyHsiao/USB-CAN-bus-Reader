@@ -1,6 +1,6 @@
 ﻿namespace WindowsApplication1
 {
-    partial class Form1
+    partial class CAN_Reader_Form
     {
         /// <summary>
         /// 必需的设计器变量。

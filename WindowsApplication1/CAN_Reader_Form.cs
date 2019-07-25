@@ -91,7 +91,7 @@ using System.Runtime.InteropServices;
 
 namespace WindowsApplication1
 {
-    public partial class Form1 : Form
+    public partial class CAN_Reader_Form : Form
     {
 
         //// COPY - begin
@@ -169,7 +169,7 @@ namespace WindowsApplication1
 
         //// COPY - end
 
-        public Form1()
+        public CAN_Reader_Form()
         {
             InitializeComponent();
         }
@@ -413,7 +413,7 @@ namespace WindowsApplication1
                     {
                         // Speed
                         uint Speed = DATA[0];
-                        if (Speed <= 255)  // 180?
+                        if (Speed <= 180)  // 180?
                         {
                             Value_Speed.Text = Speed.ToString() + " km/h";
                             Label_Speed.BackColor = UpdateItemColor(ref FirstRun_Speed, ref Previous_Speed, Speed);
@@ -421,6 +421,7 @@ namespace WindowsApplication1
                         else
                         {
                             // Always warning if out of range
+                            Value_Speed.Text = Speed.ToString() + " km/h";
                             FirstRun_Speed = false;
                             Label_Speed.BackColor = BGOutOfRange;
                             Previous_Speed = Speed;
@@ -514,6 +515,9 @@ namespace WindowsApplication1
                         else
                         {
                             // Error data of Fuel
+                            float f_Fuel;
+                            f_Fuel = ((float)Fuel) / 10;
+                            Value_Fuel.Text = f_Fuel.ToString() + "L";
                             FirstRun_Fuel = false;
                             Label_Fuel.BackColor = BGOutOfRange;
                             Previous_Fuel = Fuel;
