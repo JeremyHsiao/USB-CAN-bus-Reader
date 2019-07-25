@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace WindowsApplication1
+namespace USB_CAN_READER
 {
     static class Program
     {
         /// <summary>
-        /// 应用程序的主入口点。
+        /// Main Entry point of application
         /// </summary>
         [STAThread]
         static void Main()

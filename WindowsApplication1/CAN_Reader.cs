@@ -88,7 +88,7 @@ public struct CHGDESIPANDPORT
     }
 }
 
-namespace WindowsApplication1
+namespace USB_CAN_READER
 {
     public class CAN_Reader 
     {

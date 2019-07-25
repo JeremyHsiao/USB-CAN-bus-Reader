@@ -1,4 +1,4 @@
-﻿namespace WindowsApplication1
+﻿namespace USB_CAN_READER
 {
     partial class CAN_Reader_Form
     {
