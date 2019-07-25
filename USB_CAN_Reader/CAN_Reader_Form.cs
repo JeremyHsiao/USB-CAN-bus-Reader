@@ -48,7 +48,8 @@ namespace USB_CAN_READER
         UInt32 m_devind = 0;
         UInt32 m_canind = 0;
 
-        VCI_CAN_OBJ[] m_recobj = new VCI_CAN_OBJ[1000];
+        const int MAX_CAN_OBJ_ARRAY_LEN = 1000;
+        VCI_CAN_OBJ[] m_recobj = new VCI_CAN_OBJ[MAX_CAN_OBJ_ARRAY_LEN];
 
         UInt32[] m_arrdevtype = new UInt32[20];
 
@@ -111,6 +112,7 @@ namespace USB_CAN_READER
                 VCI_ResetCAN(m_devtype, m_devind, m_canind);
                 VCI_CloseDevice(m_devtype, m_devind);
             }
+            m_bOpen = 0;
         }
 
         enum E_CONNECTION_MSG_STATE
@@ -592,7 +594,18 @@ namespace USB_CAN_READER
         {
             UInt32 res = new UInt32();
 
-            res = VCI_Receive(m_devtype, m_devind, m_canind, ref m_recobj[0],1000, 100);
+            res = VCI_Receive(m_devtype, m_devind, m_canind, ref m_recobj[0], MAX_CAN_OBJ_ARRAY_LEN, 100);
+
+            if(res>= MAX_CAN_OBJ_ARRAY_LEN)     // Must be something wrong
+            { 
+                timer_rec.Enabled = false;
+                VCI_ResetCAN(m_devtype, m_devind, m_canind);
+                VCI_CloseDevice(m_devtype, m_devind);
+                Update_TextBox_Connection_Message_Text(E_CONNECTION_MSG_STATE.CHECK_CONNECTION);
+                buttonConnect.Text = "Connect";
+                m_bOpen = 0;
+                return;
+            }
 
             uint ID=0, DLC=0;
             const int DATA_LEN = 8;
