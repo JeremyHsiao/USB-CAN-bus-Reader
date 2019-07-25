@@ -1939,8 +1939,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CAN_Reader_Form";
             this.Text = "USB CAN Reader Tool";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.USB_CAN_Reader_From_FormClosed);
+            this.Load += new System.EventHandler(this.USB_CAN_Reader_From);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

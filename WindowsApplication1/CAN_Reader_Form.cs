@@ -71,7 +71,7 @@ namespace USB_CAN_READER
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void USB_CAN_Reader_From(object sender, EventArgs e)
         {
             // Setup default CAN parameter for connection
 
@@ -103,21 +103,59 @@ namespace USB_CAN_READER
 
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void USB_CAN_Reader_From_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (m_bOpen==1)
             {
-                textbox_Connection_Message.Text = "Please click[Connect] button to start";
+                timer_rec.Enabled = false;
+                VCI_ResetCAN(m_devtype, m_devind, m_canind);
                 VCI_CloseDevice(m_devtype, m_devind);
             }
         }
 
+        enum E_CONNECTION_MSG_STATE
+        {
+            CLICK_TO_CONNECT = 0,
+            CHECK_CONNECTION = 1,
+            CLICK_TO_DISCONNECT = 2,
+        };
+
+        private void Update_TextBox_Connection_Message_Text(E_CONNECTION_MSG_STATE Message_State)
+        {
+            switch (Message_State)
+            {
+                case E_CONNECTION_MSG_STATE.CLICK_TO_CONNECT:
+                    textbox_Connection_Message.Text = "Please click[Connect] button to start.";
+                    textbox_Connection_Message.ForeColor = System.Drawing.SystemColors.WindowText;
+                    break;
+                case E_CONNECTION_MSG_STATE.CHECK_CONNECTION:
+                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check your setup and try again.";
+                    textbox_Connection_Message.ForeColor = System.Drawing.Color.Red;
+                    break;
+                case E_CONNECTION_MSG_STATE.CLICK_TO_DISCONNECT:
+                    textbox_Connection_Message.Text = "Please click [Disonnect] button to stop.";
+                    textbox_Connection_Message.ForeColor = System.Drawing.SystemColors.WindowText;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private bool buttonConnect_is_working = false;
+
         private void buttonConnect_Click(object sender, EventArgs e)
         {
+            if (buttonConnect_is_working == true)
+                return;
+
+            buttonConnect_is_working = true;
             if (m_bOpen==1)
             {
+                timer_rec.Enabled = false;
                 VCI_ResetCAN(m_devtype, m_devind, m_canind);
                 VCI_CloseDevice(m_devtype, m_devind);
+                buttonConnect.Text = "Connect";
+                Update_TextBox_Connection_Message_Text(E_CONNECTION_MSG_STATE.CLICK_TO_CONNECT);
                 m_bOpen = 0;
             }
             else
@@ -131,40 +169,44 @@ namespace USB_CAN_READER
                 status = VCI_OpenDevice(m_devtype, m_devind, 0);
                 if ( status != 1)
                 {
-                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check your setup and try again.";
-                    return;
+                    Update_TextBox_Connection_Message_Text(E_CONNECTION_MSG_STATE.CHECK_CONNECTION);
                 }
-
-                m_bOpen = 1;
-                VCI_INIT_CONFIG config=new VCI_INIT_CONFIG();
-                config.AccCode=System.Convert.ToUInt32("0x" + textBox_AccCode.Text,16);
-                config.AccMask = System.Convert.ToUInt32("0x" + textBox_AccMask.Text, 16);
-                config.Timing0 = System.Convert.ToByte("0x" + textBox_Time0.Text, 16);
-                config.Timing1 = System.Convert.ToByte("0x" + textBox_Time1.Text, 16);
-                config.Filter = (Byte)(comboBox_Filter.SelectedIndex+1);
-                config.Mode = (Byte)comboBox_Mode.SelectedIndex;
-                status = VCI_InitCAN(m_devtype, m_devind, m_canind, ref config);
-                if (status != 1)
+                else  // VCI_OpenDevice is OK
                 {
-                    VCI_CloseDevice(m_devtype, m_devind);
-                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check your setup and try again.";
-                    return;
+                    VCI_INIT_CONFIG config = new VCI_INIT_CONFIG();
+                    config.AccCode = System.Convert.ToUInt32("0x" + textBox_AccCode.Text, 16);
+                    config.AccMask = System.Convert.ToUInt32("0x" + textBox_AccMask.Text, 16);
+                    config.Timing0 = System.Convert.ToByte("0x" + textBox_Time0.Text, 16);
+                    config.Timing1 = System.Convert.ToByte("0x" + textBox_Time1.Text, 16);
+                    config.Filter = (Byte)(comboBox_Filter.SelectedIndex + 1);
+                    config.Mode = (Byte)comboBox_Mode.SelectedIndex;
+                    status = VCI_InitCAN(m_devtype, m_devind, m_canind, ref config);
+                    if (status != 1)
+                    {
+                        VCI_CloseDevice(m_devtype, m_devind);
+                        Update_TextBox_Connection_Message_Text(E_CONNECTION_MSG_STATE.CHECK_CONNECTION);
+                    }
+                    else   // VCI_InitCAN is OK
+                    {
+                        status = VCI_StartCAN(m_devtype, m_devind, m_canind);
+                        if (status != 1)
+                        {
+                            VCI_ResetCAN(m_devtype, m_devind, m_canind);
+                            VCI_CloseDevice(m_devtype, m_devind);
+                            Update_TextBox_Connection_Message_Text(E_CONNECTION_MSG_STATE.CHECK_CONNECTION);
+                        }
+                        else   // VCI_StartCAN is OK
+                        {
+                            buttonConnect.Text = "Disconnect";
+                            Update_TextBox_Connection_Message_Text(E_CONNECTION_MSG_STATE.CLICK_TO_DISCONNECT);
+                            timer_rec.Enabled = true;
+                            m_bOpen = 1;
+                        }
+                    }
                 }
-
-                status = VCI_StartCAN(m_devtype, m_devind, m_canind);
-                if (status != 1)
-                {
-                    VCI_CloseDevice(m_devtype, m_devind);
-                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check your setup and try again.";
-                    return;
-                }
-
             }
-            buttonConnect.Text = m_bOpen==1?"Disconnect":"Connect";
-            textbox_Connection_Message.Text = m_bOpen == 1 ? "Please click [Disonnect] button to stop." :"Please click [Connect] button to start.";
-            timer_rec.Enabled = m_bOpen==1?true:false;
+            buttonConnect_is_working = false;
         }
-
 
         private bool FirstRun_Car_Indicator = true;
         private bool FirstRun_Speed = true;
@@ -180,7 +222,7 @@ namespace USB_CAN_READER
 
         private Color BGHighLightColor = System.Drawing.SystemColors.ActiveCaption;
         private Color BGNormalColor = System.Drawing.SystemColors.Control;
-        private Color BGOutOfRange = System.Drawing.Color.Maroon;
+        private Color BGOutOfRange = System.Drawing.Color.Red;
 
         private const byte MASK_Status_OnOff = 0x01;
         private const byte MASK_Status_EngineOil = 0x02;
