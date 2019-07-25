@@ -125,16 +125,19 @@ namespace USB_CAN_READER
             switch (Message_State)
             {
                 case E_CONNECTION_MSG_STATE.CLICK_TO_CONNECT:
-                    textbox_Connection_Message.Text = "Please click[Connect] button to start.";
+                    textbox_Connection_Message.Text = "Please click [Connect] button to start.";
                     textbox_Connection_Message.ForeColor = System.Drawing.SystemColors.WindowText;
+                    textbox_Connection_Message.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular);
                     break;
                 case E_CONNECTION_MSG_STATE.CHECK_CONNECTION:
-                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check your setup and try again.";
+                    textbox_Connection_Message.Text = "USB-CAN connection failed. Please check and try again.";
                     textbox_Connection_Message.ForeColor = System.Drawing.Color.Red;
+                    textbox_Connection_Message.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold);
                     break;
                 case E_CONNECTION_MSG_STATE.CLICK_TO_DISCONNECT:
                     textbox_Connection_Message.Text = "Please click [Disonnect] button to stop.";
                     textbox_Connection_Message.ForeColor = System.Drawing.SystemColors.WindowText;
+                    textbox_Connection_Message.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular);
                     break;
                 default:
                     break;

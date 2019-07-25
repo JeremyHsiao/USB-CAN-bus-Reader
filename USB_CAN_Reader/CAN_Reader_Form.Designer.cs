@@ -1916,6 +1916,7 @@
             // textbox_Connection_Message
             // 
             this.textbox_Connection_Message.Font = new System.Drawing.Font("新細明體", 12F);
+            this.textbox_Connection_Message.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textbox_Connection_Message.Location = new System.Drawing.Point(12, 12);
             this.textbox_Connection_Message.Name = "textbox_Connection_Message";
             this.textbox_Connection_Message.ReadOnly = true;

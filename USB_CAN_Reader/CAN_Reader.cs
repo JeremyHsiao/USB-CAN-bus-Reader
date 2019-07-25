@@ -22,7 +22,7 @@ public struct VCI_BOARD_INFO
     public byte[] Reserved;
 }
 
-unsafe public struct VCI_CAN_OBJ  //使用不安全代码
+unsafe public struct VCI_CAN_OBJ  //使用unsafe -- 為了相容於dll
 {
     public uint ID;
     public uint TimeStamp;         
