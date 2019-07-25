@@ -12,56 +12,37 @@ namespace USB_CAN_READER
 {
     public partial class CAN_Reader_Form : Form
     {
-
-        //// COPY - begin
-
-        const int DEV_USBCAN = 3;
-        const int DEV_USBCAN2 = 4;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="DeviceType"></param>
-        /// <param name="DeviceInd"></param>
-        /// <param name="Reserved"></param>
-        /// <returns></returns>
-        /*------------兼容ZLG的函数描述---------------------------------*/
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_OpenDevice(UInt32 DeviceType, UInt32 DeviceInd, UInt32 Reserved);
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_CloseDevice(UInt32 DeviceType, UInt32 DeviceInd);
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_InitCAN(UInt32 DeviceType, UInt32 DeviceInd, UInt32 CANInd, ref VCI_INIT_CONFIG pInitConfig);
-
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_ReadBoardInfo(UInt32 DeviceType, UInt32 DeviceInd, ref VCI_BOARD_INFO pInfo);
-
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_GetReceiveNum(UInt32 DeviceType, UInt32 DeviceInd, UInt32 CANInd);
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_ClearBuffer(UInt32 DeviceType, UInt32 DeviceInd, UInt32 CANInd);
-
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_StartCAN(UInt32 DeviceType, UInt32 DeviceInd, UInt32 CANInd);
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_ResetCAN(UInt32 DeviceType, UInt32 DeviceInd, UInt32 CANInd);
-
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_Transmit(UInt32 DeviceType, UInt32 DeviceInd, UInt32 CANInd, ref VCI_CAN_OBJ pSend, UInt32 Len);
-
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_Receive(UInt32 DeviceType, UInt32 DeviceInd, UInt32 CANInd, ref VCI_CAN_OBJ pReceive, UInt32 Len, Int32 WaitTime);
-
-        /*------------其他函数描述---------------------------------*/
-
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_ConnectDevice(UInt32 DevType, UInt32 DevIndex);
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_UsbDeviceReset(UInt32 DevType, UInt32 DevIndex, UInt32 Reserved);
         [DllImport("controlcan.dll")]
         static extern UInt32 VCI_FindUsbDevice(ref VCI_BOARD_INFO1 pInfo);
-        /*------------函数描述结束---------------------------------*/
 
-        static UInt32 m_devtype = 4;//USBCAN2
+        const int DEV_USBCAN = 3;
+        const int DEV_USBCAN2 = 4;
+
+        static UInt32 m_devtype = DEV_USBCAN2;
 
         UInt32 m_bOpen = 0;
         UInt32 m_devind = 0;
@@ -85,9 +66,6 @@ namespace USB_CAN_READER
         private uint Previous_MaxSpeed = 0;
         private uint Previous_AveSpeed = 0;
 
-
-        //// COPY - end
-
         public CAN_Reader_Form()
         {
             InitializeComponent();
@@ -95,32 +73,30 @@ namespace USB_CAN_READER
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Setup default CAN parameter for connection
+
             comboBox_DevIndex.SelectedIndex = 0;
             comboBox_CANIndex.SelectedIndex = 1;
             textBox_AccCode.Text = "80000000";
             textBox_AccMask.Text = "FFFFFFFF";
             textBox_Time0.Text = "00";
             textBox_Time1.Text = "1C";
-            comboBox_Filter.SelectedIndex = 0;              //接收所有类型
-            comboBox_Mode.SelectedIndex = 0;                //还回测试模式
+            comboBox_Filter.SelectedIndex = 0;               
+            comboBox_Mode.SelectedIndex = 0;                 
             comboBox_FrameFormat.SelectedIndex = 0;
             comboBox_FrameType.SelectedIndex = 0;
             textBox_ID.Text = "00000001";
             textBox_Data.Text = "00 00 00 00 00 00 00 00 ";
 
-            //
+            // For Debug purpose
             Int32 curindex = 0;
             comboBox_devtype.Items.Clear();
 
             curindex = comboBox_devtype.Items.Add("DEV_USBCAN");
             m_arrdevtype[curindex] =  DEV_USBCAN;
-            //comboBox_devtype.Items[2] = "VCI_USBCAN1";
-            //m_arrdevtype[2]=  VCI_USBCAN1 ;
 
             curindex = comboBox_devtype.Items.Add("DEV_USBCAN2");
             m_arrdevtype[curindex] = DEV_USBCAN2 ;
-            //comboBox_devtype.Items[3] = "VCI_USBCAN2";
-            //m_arrdevtype[3]=  VCI_USBCAN2 ;
 
             comboBox_devtype.SelectedIndex = 1;
             comboBox_devtype.MaxDropDownItems = comboBox_devtype.Items.Count;
@@ -190,17 +166,6 @@ namespace USB_CAN_READER
         }
 
 
-        //private bool FirstRun = true;
-        //private byte Previous_Car_Indicator = 0;
-        //private uint Previous_Speed = 0;
-        //private uint Previous_RPM = 0;
-        //private uint Previous_Consumption = 0;
-        //private uint Previous_WaterTemp = 0;
-        //private uint Previous_Fuel = 0;
-        //private uint Previous_Battery;
-        //private uint Previous_Mileage;
-        //private uint Previous_MaxSpeed = 0;
-        //private uint Previous_AveSpeed = 0;
         private bool FirstRun_Car_Indicator = true;
         private bool FirstRun_Speed = true;
         private bool FirstRun_RPM = true;
@@ -592,27 +557,20 @@ namespace USB_CAN_READER
             for (UInt32 i = 0; i < res; i++)
             {
                 str = "";
-                //str = "接收到数据: ";
-                //str += "  帧ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16);
-                //str += "  帧格式:";
 
                 if (m_recobj[i].ExternFlag == 0)
                 {
-                    //str += "标准帧 ";
                     str += "Base-format ";
                 }
                 else
                 {
-                    //str += "扩展帧 ";
                     str += "Extended-format ";
                 }
                 if (m_recobj[i].RemoteFlag == 0)
                 {
-                    //str += "数据帧 ";
                     str += "data-frame ";
                 }
                 else
-                    //str += "远程帧 ";
                     str += "remote-frame ";
 
                 str += " ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16) +" ";
@@ -623,7 +581,6 @@ namespace USB_CAN_READER
                     byte len = (byte)(m_recobj[i].DataLen % 9);
                     DLC = len;
 
-                    //str += "数据: ";
                     str += "Data:";
 
                     fixed (VCI_CAN_OBJ* m_recobj1 = &m_recobj[i])
@@ -643,346 +600,7 @@ namespace USB_CAN_READER
                 listBox_Info.SelectedIndex = listBox_Info.Items.Count - 1;
 
             }
-            //Marshal.FreeHGlobal(ptArray[0]);
-            //Marshal.FreeHGlobal(pt);
         }
-
-/*
-unsafe private void timer_rec_Tick_Original(object sender, EventArgs e)
-        {
-            UInt32 res = new UInt32();
-
-            res = VCI_Receive(m_devtype, m_devind, m_canind, ref m_recobj[0], 1000, 100);
-
-            /////////////////////////////////////
-            //IntPtr[] ptArray = new IntPtr[1];
-            //ptArray[0] = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(VCI_CAN_OBJ)) * 50);
-            //IntPtr pt = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(IntPtr)) * 1);
-
-            //Marshal.Copy(ptArray, 0, pt, 1);
-
-
-            //res = VCI_Receive(m_devtype, m_devind, m_canind, pt, 50, 100);
-            ////////////////////////////////////////////////////////
-
-            uint ID = 0, DLC = 0;
-            byte[] DATA = new byte[8];
-
-            String str = "";
-            for (UInt32 i = 0; i < res; i++)
-            {
-                //VCI_CAN_OBJ obj = (VCI_CAN_OBJ)Marshal.PtrToStructure((IntPtr)((UInt32)pt + i * Marshal.SizeOf(typeof(VCI_CAN_OBJ))), typeof(VCI_CAN_OBJ));
-
-                str = "接收到数据: ";
-                str += "  帧ID:0x" + System.Convert.ToString(m_recobj[i].ID, 16);
-                ID = m_recobj[i].ID;
-                str += "  帧格式:";
-                if (m_recobj[i].RemoteFlag == 0)
-                    str += "数据帧 ";
-                else
-                    str += "远程帧 ";
-                if (m_recobj[i].ExternFlag == 0)
-                    str += "标准帧 ";
-                else
-                    str += "扩展帧 ";
-
-                //////////////////////////////////////////
-                if (m_recobj[i].RemoteFlag == 0)
-                {
-                    str += "数据: ";
-                    byte len = (byte)(m_recobj[i].DataLen % 9);
-                    byte j = 0;
-                    DLC = len;
-
-                    fixed (VCI_CAN_OBJ* m_recobj1 = &m_recobj[i])
-                    {
-                        if (j++ < len)
-                        {
-                            str += " " + System.Convert.ToString(m_recobj1->Data[0], 16);
-                            DATA[0] = m_recobj1->Data[0];
-                        }
-                        if (j++ < len)
-                        {
-                            str += " " + System.Convert.ToString(m_recobj1->Data[1], 16);
-                            DATA[1] = m_recobj1->Data[1];
-                        }
-                        if (j++ < len)
-                        {
-                            str += " " + System.Convert.ToString(m_recobj1->Data[2], 16);
-                            DATA[2] = m_recobj1->Data[2];
-                        }
-                        if (j++ < len)
-                        {
-                            str += " " + System.Convert.ToString(m_recobj1->Data[3], 16);
-                            DATA[3] = m_recobj1->Data[3];
-                        }
-                        if (j++ < len)
-                        {
-                            str += " " + System.Convert.ToString(m_recobj1->Data[4], 16);
-                            DATA[4] = m_recobj1->Data[4];
-                        }
-                        if (j++ < len)
-                        {
-                            str += " " + System.Convert.ToString(m_recobj1->Data[5], 16);
-                            DATA[5] = m_recobj1->Data[5];
-                        }
-                        if (j++ < len)
-                        {
-                            str += " " + System.Convert.ToString(m_recobj1->Data[6], 16);
-                            DATA[6] = m_recobj1->Data[6];
-                        }
-                        if (j++ < len)
-                        {
-                            str += " " + System.Convert.ToString(m_recobj1->Data[7], 16);
-                            DATA[7] = m_recobj1->Data[7];
-                        }
-                    }
-                }
-
-                listBox_Info.Items.Add(str);
-                listBox_Info.SelectedIndex = listBox_Info.Items.Count - 1;
-
-                switch (ID)
-                {
-                    case 0x1:       // CMD_A
-                        if (DLC == 1)
-                        {
-                            Byte status = DATA[0];
-                            Status_OnOff.Checked = ((status & 0x01) != 0) ? true : false;
-                            Status_EngineOil.Checked = ((status & 0x02) != 0) ? true : false;
-                            Status_Fuel.Checked = ((status & 0x04) != 0) ? true : false;
-                            Status_ABS.Checked = ((status & 0x08) != 0) ? true : false;
-                            Status_WaterTemp.Checked = ((status & 0x10) != 0) ? true : false;
-                            Status_Maintenance.Checked = ((status & 0x20) != 0) ? true : false;
-                            Status_FrontTirePressure.Checked = ((status & 0x40) != 0) ? true : false;
-                            Status_RearTirePressure.Checked = ((status & 0x80) != 0) ? true : false;
-                        }
-                        else
-                        {
-                            // Error DLC
-                        }
-                        break;
-
-                    case 0x2:       // CMD_B
-                        if (DLC == 5)
-                        {
-                            // Speed
-                            uint Speed = DATA[0];
-                            if (Speed <= 255)  // 180?
-                            {
-                                Value_Speed.Text = Speed.ToString() + " km/h";
-                            }
-                            else
-                            {
-                                // Out of range
-                            }
-
-                            // RPM
-                            uint RPM = DATA[1];
-                            RPM = RPM * 256 + DATA[2];
-                            Value_EngineRPM.Text = RPM.ToString() + " RPM"; ;
-
-                            // Consumption
-                            uint Consumption = DATA[3];
-                            Consumption = Consumption * 256 + DATA[4];
-                            if ((Consumption == 0xfffe) || (Speed < 9))
-                            {
-                                Value_Speed.Text = "--.-km/L";
-                            }
-                            else
-                            {
-                                float f_Consumption = ((float)Consumption) / 10;
-                                Value_FuelConsumption.Text = f_Consumption.ToString() + " km/L";
-                            }
-                        }
-                        else
-                        {
-                            // Error DLC
-                        }
-                        break;
-
-                    case 0x3:       // CMD_C
-                        if (DLC == 5)
-                        {
-                            // Water Temp
-                            uint WaterTemp = DATA[0];
-                            if (WaterTemp <= 8)
-                            {
-                                Value_WaterTemp.Text = WaterTemp.ToString();
-                            }
-                            else
-                            {
-                                // Out of range
-                            }
-
-                            // Room Temperature
-                            uint Temp_Sign_Value = DATA[1];
-                            uint Room_Temp = DATA[2];
-                            if ((DATA[1] == 0xFF) && (DATA[2] == 0xFE))
-                            {
-                                Value_RoomTemp.Text = "-- C";
-                            }
-                            else if (Temp_Sign_Value == 0)
-                            {
-                                Value_RoomTemp.Text = "+" + Room_Temp.ToString() + " C";
-                            }
-                            else if (Temp_Sign_Value == 1)
-                            {
-                                Value_RoomTemp.Text = "-" + Room_Temp.ToString() + " C";
-                            }
-                            else
-                            {
-                                // Error data of Temp_Sign
-                            }
-
-                            // Fuel
-                            uint Fuel = DATA[3];
-                            if (Fuel <= 160)
-                            {
-                                float f_Fuel;
-                                f_Fuel = ((float)Fuel) / 10;
-                                Value_Fuel.Text = f_Fuel.ToString() + "L";
-                            }
-                            else
-                            {
-                                // Error data of Fuel
-                            }
-
-                            // Battery
-                            uint Battery = DATA[4];
-                            float f_Battery;
-                            f_Battery = ((float)Battery) / 10;
-                            Value_Battery.Text = f_Battery.ToString() + "V";
-                        }
-                        else
-                        {
-                            // Error DLC
-                        }
-                        break;
-
-                    case 0x4:       // CMD_D
-                        if (DLC == 5)
-                        {
-                            // Mileage
-                            uint Mileage = (((uint)DATA[0]) * 0x10000) + (((uint)DATA[1]) * 0x100) + DATA[2];
-                            Value_TotalMileage.Text = Mileage.ToString() + " km";
-
-                            // Max Speed
-                            uint MaxSpeed = DATA[3];
-                            Value_MaxSpeed.Text = ((MaxSpeed != 0xff) ? (MaxSpeed.ToString()) : ("--")) + " km/h";
-
-                            // Average Speed
-                            uint AveSpeed = DATA[4];
-                            AveSpeed = DATA[4];
-                            Value_AveSpeed.Text = ((AveSpeed != 0xff) ? (AveSpeed.ToString()) : ("--")) + " km/h";
-                        }
-                        else
-                        {
-                            // Error DLC
-                        }
-                        break;
-
-                    case 0x5:       // CMD_E
-                        if (DLC == 2)
-                        {
-                            Byte status = DATA[0];
-                            ABS_0x5055.Checked = ((status & 0x01) != 0) ? true : false;
-                            ABS_0x5019.Checked = ((status & 0x02) != 0) ? true : false;
-                            ABS_0x5017.Checked = ((status & 0x04) != 0) ? true : false;
-                            ABS_0x5013.Checked = ((status & 0x08) != 0) ? true : false;
-                            ABS_0x5018.Checked = ((status & 0x10) != 0) ? true : false;
-                            ABS_0x5014.Checked = ((status & 0x20) != 0) ? true : false;
-                            ABS_0x5053.Checked = ((status & 0x40) != 0) ? true : false;
-                            ABS_0x5052.Checked = ((status & 0x80) != 0) ? true : false;
-                            status = DATA[1];
-                            ABS_0x5035.Checked = ((status & 0x01) != 0) ? true : false;
-                            ABS_0x5043.Checked = ((status & 0x02) != 0) ? true : false;
-                            ABS_0x5045.Checked = ((status & 0x04) != 0) ? true : false;
-                            ABS_0x5042.Checked = ((status & 0x08) != 0) ? true : false;
-                            ABS_0x5044.Checked = ((status & 0x10) != 0) ? true : false;
-                            ABS_0x5025.Checked = ((status & 0x20) != 0) ? true : false;
-                        }
-                        else
-                        {
-                            // Error DLC
-                        }
-                        break;
-
-                    case 0x6:       // CMD_F
-                        if (DLC == 7)
-                        {
-                            Byte status = DATA[0];
-                            OBD_P0503.Checked = ((status & 0x01) != 0) ? true : false;
-                            OBD_C0083.Checked = ((status & 0x02) != 0) ? true : false;
-                            OBD_C0085.Checked = ((status & 0x04) != 0) ? true : false;
-                            OBD_P0105.Checked = ((status & 0x08) != 0) ? true : false;
-                            OBD_P0110.Checked = ((status & 0x10) != 0) ? true : false;
-                            OBD_P0115.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P0120.Checked = ((status & 0x40) != 0) ? true : false;
-                            OBD_P0130.Checked = ((status & 0x80) != 0) ? true : false;
-                            status = DATA[1];
-                            OBD_P0135.Checked = ((status & 0x01) != 0) ? true : false;
-                            OBD_P0150.Checked = ((status & 0x02) != 0) ? true : false;
-                            OBD_P0155.Checked = ((status & 0x04) != 0) ? true : false;
-                            OBD_P0201.Checked = ((status & 0x08) != 0) ? true : false;
-                            OBD_P0202.Checked = ((status & 0x10) != 0) ? true : false;
-                            OBD_P0217.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P0230.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P0335.Checked = ((status & 0x20) != 0) ? true : false;
-                            status = DATA[2];
-                            OBD_P0336.Checked = ((status & 0x01) != 0) ? true : false;
-                            OBD_P0351.Checked = ((status & 0x02) != 0) ? true : false;
-                            OBD_P0352.Checked = ((status & 0x04) != 0) ? true : false;
-                            OBD_P0410.Checked = ((status & 0x08) != 0) ? true : false;
-                            OBD_P0480.Checked = ((status & 0x10) != 0) ? true : false;
-                            OBD_P0500.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P0501.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P0505.Checked = ((status & 0x20) != 0) ? true : false;
-                            status = DATA[3];
-                            OBD_P0512.Checked = ((status & 0x01) != 0) ? true : false;
-                            OBD_P0560.Checked = ((status & 0x02) != 0) ? true : false;
-                            OBD_P0601.Checked = ((status & 0x04) != 0) ? true : false;
-                            OBD_P0604.Checked = ((status & 0x08) != 0) ? true : false;
-                            OBD_P0605.Checked = ((status & 0x10) != 0) ? true : false;
-                            OBD_P0606.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P0620_PIN2.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P0620_PIN31.Checked = ((status & 0x20) != 0) ? true : false;
-                            status = DATA[4];
-                            OBD_P0650.Checked = ((status & 0x01) != 0) ? true : false;
-                            OBD_P0655.Checked = ((status & 0x02) != 0) ? true : false;
-                            OBD_P0A0F.Checked = ((status & 0x04) != 0) ? true : false;
-                            OBD_P1300.Checked = ((status & 0x08) != 0) ? true : false;
-                            OBD_P1310.Checked = ((status & 0x10) != 0) ? true : false;
-                            OBD_P1536.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P1607.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_P1800.Checked = ((status & 0x20) != 0) ? true : false;
-                            status = DATA[5];
-                            OBD_P2158.Checked = ((status & 0x01) != 0) ? true : false;
-                            OBD_P2600.Checked = ((status & 0x02) != 0) ? true : false;
-                            OBD_U0001.Checked = ((status & 0x04) != 0) ? true : false;
-                            OBD_U0002.Checked = ((status & 0x08) != 0) ? true : false;
-                            OBD_U0121.Checked = ((status & 0x10) != 0) ? true : false;
-                            OBD_U0122.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_U0128.Checked = ((status & 0x20) != 0) ? true : false;
-                            OBD_U0140.Checked = ((status & 0x20) != 0) ? true : false;
-                            status = DATA[6];
-                            OBD_U0426.Checked = ((status & 0x01) != 0) ? true : false;
-                            OBD_U0486.Checked = ((status & 0x02) != 0) ? true : false;
-                        }
-                        else
-                        {
-                            // Error DLC
-                        }
-                        break;
-                    default:
-                        break;
-                }
-
-            }
-            //Marshal.FreeHGlobal(ptArray[0]);
-            //Marshal.FreeHGlobal(pt);
-        }
-*/
 
         private void button_StartCAN_Click(object sender, EventArgs e)
         {
@@ -1033,7 +651,7 @@ unsafe private void timer_rec_Tick_Original(object sender, EventArgs e)
 
             if(VCI_Transmit(m_devtype,m_devind,m_canind,ref sendobj,1)==0)
             {
-                MessageBox.Show("发送失败", "错误",
+                MessageBox.Show("Fail to send", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }

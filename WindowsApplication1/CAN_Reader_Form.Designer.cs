@@ -162,10 +162,10 @@
             this.Value_WaterTemp = new System.Windows.Forms.TextBox();
             this.Label_WaterTemp = new System.Windows.Forms.Label();
             this.Group_Driving_Status = new System.Windows.Forms.GroupBox();
+            this.Label_FuelConsumption_02 = new System.Windows.Forms.Label();
+            this.Value_FuelConsumption_02 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textbox_Connection_Message = new System.Windows.Forms.TextBox();
-            this.Value_FuelConsumption_02 = new System.Windows.Forms.TextBox();
-            this.Label_FuelConsumption_02 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1879,6 +1879,26 @@
             this.Group_Driving_Status.TabStop = false;
             this.Group_Driving_Status.Text = "Driving Status";
             // 
+            // Label_FuelConsumption_02
+            // 
+            this.Label_FuelConsumption_02.AutoSize = true;
+            this.Label_FuelConsumption_02.Location = new System.Drawing.Point(6, 140);
+            this.Label_FuelConsumption_02.Name = "Label_FuelConsumption_02";
+            this.Label_FuelConsumption_02.Size = new System.Drawing.Size(108, 20);
+            this.Label_FuelConsumption_02.TabIndex = 29;
+            this.Label_FuelConsumption_02.Text = "Consumption";
+            // 
+            // Value_FuelConsumption_02
+            // 
+            this.Value_FuelConsumption_02.Location = new System.Drawing.Point(134, 136);
+            this.Value_FuelConsumption_02.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Value_FuelConsumption_02.Name = "Value_FuelConsumption_02";
+            this.Value_FuelConsumption_02.ReadOnly = true;
+            this.Value_FuelConsumption_02.Size = new System.Drawing.Size(147, 31);
+            this.Value_FuelConsumption_02.TabIndex = 28;
+            this.Value_FuelConsumption_02.Text = "No Data";
+            this.Value_FuelConsumption_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.groupBox1);
@@ -1904,27 +1924,7 @@
             this.textbox_Connection_Message.TabIndex = 14;
             this.textbox_Connection_Message.Text = "Please click [Connect] button to start";
             // 
-            // Value_FuelConsumption_02
-            // 
-            this.Value_FuelConsumption_02.Location = new System.Drawing.Point(134, 136);
-            this.Value_FuelConsumption_02.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Value_FuelConsumption_02.Name = "Value_FuelConsumption_02";
-            this.Value_FuelConsumption_02.ReadOnly = true;
-            this.Value_FuelConsumption_02.Size = new System.Drawing.Size(147, 31);
-            this.Value_FuelConsumption_02.TabIndex = 28;
-            this.Value_FuelConsumption_02.Text = "No Data";
-            this.Value_FuelConsumption_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Label_FuelConsumption_02
-            // 
-            this.Label_FuelConsumption_02.AutoSize = true;
-            this.Label_FuelConsumption_02.Location = new System.Drawing.Point(6, 140);
-            this.Label_FuelConsumption_02.Name = "Label_FuelConsumption_02";
-            this.Label_FuelConsumption_02.Size = new System.Drawing.Size(108, 20);
-            this.Label_FuelConsumption_02.TabIndex = 29;
-            this.Label_FuelConsumption_02.Text = "Consumption";
-            // 
-            // Form1
+            // CAN_Reader_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1938,7 +1938,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonConnect);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "CAN_Reader_Form";
             this.Text = "USB CAN Tool";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
