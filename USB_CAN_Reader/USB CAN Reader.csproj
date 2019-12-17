@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="USB_CAN_Adaptor.cs" />
     <EmbeddedResource Include="CAN_Reader_Form.resx">
       <SubType>Designer</SubType>
       <DependentUpon>CAN_Reader_Form.cs</DependentUpon>

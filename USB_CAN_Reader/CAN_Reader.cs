@@ -1,82 +1,82 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
+//using System.Drawing;
+//using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-public struct VCI_BOARD_INFO
-{
-    public UInt16 hw_Version;
-    public UInt16 fw_Version;
-    public UInt16 dr_Version;
-    public UInt16 in_Version;
-    public UInt16 irq_Num;
-    public byte can_Num;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)] public byte[] str_Serial_Num;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 40)]
-    public byte[] str_hw_Type;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-    public byte[] Reserved;
-}
+//public struct VCI_BOARD_INFO
+//{
+//    public UInt16 hw_Version;
+//    public UInt16 fw_Version;
+//    public UInt16 dr_Version;
+//    public UInt16 in_Version;
+//    public UInt16 irq_Num;
+//    public byte can_Num;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)] public byte[] str_Serial_Num;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 40)]
+//    public byte[] str_hw_Type;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+//    public byte[] Reserved;
+//}
 
-unsafe public struct VCI_CAN_OBJ  //使用unsafe -- 為了相容於dll
-{
-    public uint ID;
-    public uint TimeStamp;         
-    public byte TimeFlag;          
-    public byte SendType;          
-    public byte RemoteFlag;        
-    public byte ExternFlag;        
-    public byte DataLen;           
-    public fixed byte Data[8];     
-    public fixed byte Reserved[3]; 
+//unsafe public struct VCI_CAN_OBJ  //使用unsafe -- 為了相容於dll
+//{
+//    public uint ID;
+//    public uint TimeStamp;         
+//    public byte TimeFlag;          
+//    public byte SendType;          
+//    public byte RemoteFlag;        
+//    public byte ExternFlag;        
+//    public byte DataLen;           
+//    public fixed byte Data[8];     
+//    public fixed byte Reserved[3]; 
 
-}
+//}
 
-public struct VCI_INIT_CONFIG
-{
-    public UInt32 AccCode;
-    public UInt32 AccMask;
-    public UInt32 Reserved;
-    public byte Filter;  
-    public byte Timing0;  
-    public byte Timing1;
-    public byte Mode;     
-}
+//public struct VCI_INIT_CONFIG
+//{
+//    public UInt32 AccCode;
+//    public UInt32 AccMask;
+//    public UInt32 Reserved;
+//    public byte Filter;  
+//    public byte Timing0;  
+//    public byte Timing1;
+//    public byte Mode;     
+//}
 
-public struct VCI_BOARD_INFO1
-{
-    public UInt16 hw_Version;
-    public UInt16 fw_Version;
-    public UInt16 dr_Version;
-    public UInt16 in_Version;
-    public UInt16 irq_Num;
-    public byte can_Num;
-    public byte Reserved;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] public byte[] str_Serial_Num;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-    public byte[] str_hw_Type;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-    public byte[] str_Usb_Serial;
-}
+//public struct VCI_BOARD_INFO1
+//{
+//    public UInt16 hw_Version;
+//    public UInt16 fw_Version;
+//    public UInt16 dr_Version;
+//    public UInt16 in_Version;
+//    public UInt16 irq_Num;
+//    public byte can_Num;
+//    public byte Reserved;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] public byte[] str_Serial_Num;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+//    public byte[] str_hw_Type;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+//    public byte[] str_Usb_Serial;
+//}
 
-public struct CHGDESIPANDPORT
-{
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
-    public byte[] szpwd;
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
-    public byte[] szdesip;
-    public Int32 desport;
+//public struct CHGDESIPANDPORT
+//{
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
+//    public byte[] szpwd;
+//    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
+//    public byte[] szdesip;
+//    public Int32 desport;
 
-    public void Init()
-    {
-        szpwd = new byte[10];
-        szdesip = new byte[20];
-    }
-}
+//    public void Init()
+//    {
+//        szpwd = new byte[10];
+//        szdesip = new byte[20];
+//    }
+//}
 
 namespace USB_CAN_READER
 {
